@@ -5,3 +5,33 @@ Temp/FSTimeGet-721c778a98713544b910065f566d3104
 Temp/FSTimeGet-c3d1fe20385d771419b2e54625723ef3
 Temp/UnityLockfile
 .vs/FarmGame2/FileContentIndex/d417b933-e4af-47a0-af8e-46b266d25c92.vsidx
+
+* text=auto
+*.cs text eol=lf
+*.meta text eol=lf
+*.prefab text eol=lf
+*.unity text eol=lf
+*.asset text eol=lf
+
+# Unity generated folders
+[Ll]ibrary/
+[Tt]emp/
+[Oo]bj/
+[Bb]uild/
+[Bb]uilds/
+[Ll]ogs/
+[Uu]ser[Ss]ettings/
+
+# Unity3D generated meta files
+*.pidb.meta
+*.pdb.meta
+*.mdb.meta
+
+# OS generated
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
