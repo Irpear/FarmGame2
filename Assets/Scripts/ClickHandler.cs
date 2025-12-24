@@ -28,4 +28,17 @@ public class ClickHandler : MonoBehaviour
         SceneManager.LoadScene("FarmScene");
     }
 
+    public void BuySeeds()
+    {
+        if (CoinManager.Instance.coins > 0)
+        {
+            CoinManager.Instance.AddCoins(-1);
+            SeedManager.Instance.AddSeeds(1);
+            Debug.Log($"You have {SeedManager.Instance.seeds} seeds");
+        }
+        else
+        {
+            Debug.Log($"You have no money.");
+        }
+    }
 }
