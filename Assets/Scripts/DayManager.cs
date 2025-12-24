@@ -57,6 +57,8 @@ public class DayManager : MonoBehaviour
         //    Debug.LogWarning("No NightTransition found in scene!");
     }
 
+    allPlots = GameObject.FindObjectsOfType<Plot>();
+    Debug.Log($"Found {allPlots.Length} plots in scene");
 
         UpdateUI();
 }
