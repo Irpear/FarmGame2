@@ -2,6 +2,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using TMPro;
 using System.Collections;
+using System.Collections.Generic;
 
 public class DayManager : MonoBehaviour
 {
@@ -16,6 +17,8 @@ public class DayManager : MonoBehaviour
     public NightTransition nightTransition;
 
     public Plot[] allPlots;
+
+    private Dictionary<string, int> plotStates = new Dictionary<string, int>();
 
     private void Awake()
     {
@@ -57,11 +60,63 @@ public class DayManager : MonoBehaviour
         //    Debug.LogWarning("No NightTransition found in scene!");
     }
 
-    allPlots = GameObject.FindObjectsOfType<Plot>();
-    Debug.Log($"Found {allPlots.Length} plots in scene");
+        allPlots = FindObjectsByType<Plot>(FindObjectsSortMode.None);
+        Debug.Log($"Found {allPlots.Length} plots in scene");
 
-        UpdateUI();
+    RestorePlotStates();
+
+    UpdateUI();
 }
+
+    public void SavePlotStates()
+    {
+        if (SceneManager.GetActiveScene().name != "FarmScene") // als ergens anders plots komen moet die scene hierbij
+        {
+            Debug.Log("Not in farm scene - skipping save");
+            return;
+        }
+
+        plotStates.Clear();
+
+        if (allPlots != null)
+        {
+            foreach (var plot in allPlots)
+            {
+                if (plot != null)
+                {
+                    // Gebruik de positie als unieke identifier
+                    string key = $"{plot.transform.position.x}_{plot.transform.position.y}";
+                    plotStates[key] = plot.growthStage;
+                }
+            }
+        }
+
+        Debug.Log($"Saved {plotStates.Count} plot states");
+    }
+
+    // Herstel de plot states
+    private void RestorePlotStates()
+    {
+        if (allPlots == null || plotStates.Count == 0)
+            return;
+
+        int restored = 0;
+        foreach (var plot in allPlots)
+        {
+            if (plot != null)
+            {
+                string key = $"{plot.transform.position.x}_{plot.transform.position.y}";
+                if (plotStates.ContainsKey(key))
+                {
+                    plot.growthStage = plotStates[key];
+                    plot.UpdateSprite(); // Moet public worden in Plot script!
+                    restored++;
+                }
+            }
+        }
+
+        Debug.Log($"Restored {restored} plot states");
+    }
 
     public void EndDay()
     {
@@ -79,6 +134,8 @@ public class DayManager : MonoBehaviour
             {
                 plot.AdvanceDay();
             }
+
+            SavePlotStates();
         });
 
     }

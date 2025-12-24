@@ -12,16 +12,19 @@ public class ClickHandler : MonoBehaviour
 
     public void LoadStore()
     {
+        DayManager.Instance.SavePlotStates();
         SceneManager.LoadScene("StoreScene");
     }
 
     public void LoadBarn()
     {
+        DayManager.Instance.SavePlotStates();
         SceneManager.LoadScene("BarnScene");
     }
 
     public void LoadFarm()
     {
+        DayManager.Instance.SavePlotStates();
         SceneManager.LoadScene("FarmScene");
     }
 

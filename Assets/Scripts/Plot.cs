@@ -10,7 +10,7 @@ public class Plot : MonoBehaviour
 
     private SpriteRenderer sr;
 
-    void Start()
+    void Awake() // Was: void Start()
     {
         sr = GetComponent<SpriteRenderer>();
         UpdateSprite();
@@ -42,7 +42,7 @@ public class Plot : MonoBehaviour
         }
     }
 
-    void UpdateSprite()
+    public void UpdateSprite()
     {
         if (growthStage == 0)
         {
