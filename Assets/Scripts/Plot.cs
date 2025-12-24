@@ -27,6 +27,7 @@ public class Plot : MonoBehaviour
         {
             // Oogst of reset
             growthStage = 0;
+            CoinManager.Instance.AddCoins(1);
         }
 
         UpdateSprite();
