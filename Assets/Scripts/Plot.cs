@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 public class Plot : MonoBehaviour
@@ -20,8 +21,16 @@ public class Plot : MonoBehaviour
     {
         if (growthStage == 0)
         {
-            // Plant een zaadje
-            growthStage = 1;
+            if (SeedManager.Instance.seeds > 0)
+            {
+                // Plant een zaadje
+                growthStage = 1;
+                SeedManager.Instance.AddSeeds(-1);
+                Debug.Log($"You have {SeedManager.Instance.seeds} seeds left");
+            } else
+            {
+                Debug.Log("You have no seeds left!");
+            }
         }
         else if (growthStage >= maxGrowthStage)
         {
