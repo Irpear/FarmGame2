@@ -130,14 +130,21 @@ public class DayManager : MonoBehaviour
             
             Debug.Log("EndDay called. Now day is: " + currentDay);
 
-            foreach (var plot in allPlots)
-            {
-                plot.AdvanceDay();
-            }
-
-            SavePlotStates();
         });
 
+        StartCoroutine(DelayedGrowth());
+
+    }
+
+    private IEnumerator DelayedGrowth()
+    {
+        yield return new WaitForSeconds(0.5f);
+        foreach (var plot in allPlots)
+        {
+            plot.AdvanceDay();
+        }
+
+        SavePlotStates();
     }
 
     private IEnumerator DelayedUIUpdate()
