@@ -35,3 +35,21 @@ Temp/UnityLockfile
 .Trashes
 ehthumbs.db
 Thumbs.db
+
+# Visual Studio / Rider
+.vs/
+.vscode/
+.idea/
+*.csproj
+*.unityproj
+*.sln
+*.suo
+*.user
+*.userprefs
+*.pidb
+*.booproj
+*.svd
+*.pdb
+*.mdb
+*.opendb
+*.VC.db
