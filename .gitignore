@@ -67,3 +67,5 @@ Logs/AssetImportWorker1-prev.log
 /UserSettings
 /.vs
 /Logs
+/.vs
+*.csproj

@@ -24,6 +24,13 @@ public class SeedSelectionUI : MonoBehaviour
 
     private Plot currentPlot;  // Welke plot is geselecteerd
 
+    public PlantData carrotData;
+    public PlantData tomatoData;
+    public PlantData wheatData;
+    public PlantData cornData;
+    public PlantData grapeData;
+    public PlantData potatoData;
+
     void Awake()
     {
         if (Instance == null)
@@ -41,13 +48,14 @@ public class SeedSelectionUI : MonoBehaviour
 
         // Koppel buttons
         closeButton.onClick.AddListener(HideSelectionMenu);
-        carrotButton.onClick.AddListener(() => SelectSeed("carrot"));
-        tomatoButton.onClick.AddListener(() => SelectSeed("tomato"));
-        wheatButton.onClick.AddListener(() => SelectSeed("wheat"));
-        cornButton.onClick.AddListener(() => SelectSeed("corn"));
-        grapeButton.onClick.AddListener(() => SelectSeed("grape"));
-        potatoButton.onClick.AddListener(() => SelectSeed("potato"));
-        
+        carrotButton.onClick.AddListener(() => SelectSeed(carrotData));
+        tomatoButton.onClick.AddListener(() => SelectSeed(tomatoData));
+        wheatButton.onClick.AddListener(() => SelectSeed(wheatData));
+        cornButton.onClick.AddListener(() => SelectSeed(cornData));
+        grapeButton.onClick.AddListener(() => SelectSeed(grapeData));
+        potatoButton.onClick.AddListener(() => SelectSeed(potatoData));
+
+
     }
 
     public void ShowSelectionMenu(Plot plot)
@@ -65,14 +73,15 @@ public class SeedSelectionUI : MonoBehaviour
         currentPlot = null;
     }
 
-    private void SelectSeed(string seedType)
+    private void SelectSeed(PlantData plant)
     {
         if (currentPlot != null)
         {
-            currentPlot.PlantSeed(seedType);
+            currentPlot.PlantSeed(plant);
             HideSelectionMenu();
         }
     }
+
 
     private void UpdateSeedCounts()
     {

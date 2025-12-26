@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 95602123d38924240895692133e84f1d, type: 3}
+  m_Name: CarrotData
+  m_EditorClassIdentifier: Assembly-CSharp::PlantData
+  seedType: carrot
+  growthSprites:
+  - {fileID: -1345407864245720061, guid: 393a4fbd52c3b1a458f8b59f1a269ed8, type: 3}
+  - {fileID: 4181256891758000884, guid: 5bb702b8df80b6849a5dcaf5a0ee876d, type: 3}
+  - {fileID: -3219643733414295277, guid: bc7f52992e2540549a782d57d695bbea, type: 3}
+  - {fileID: 4973622818362185939, guid: 45cc04a31cd2657458dc8d7c98c2327a, type: 3}
+  harvestCoins: 1

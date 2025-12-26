@@ -1,20 +1,17 @@
-using System;
 using UnityEngine;
-using UnityEngine.EventSystems;
 
 public class Plot : MonoBehaviour
 {
-    public int growthStage = 0;      // 0 = leeg, 1-4 = groei stages
-    public int maxGrowthStage = 4;
+    public int growthStage = 0;
+    public int maxGrowthStage => plantedPlant.growthSprites.Length;
+
 
     public Sprite emptySprite;
-    public Sprite[] growthSprites;   // Array met sprites voor stage 1-4
 
     private SpriteRenderer sr;
+    private PlantData plantedPlant = null;
 
-    private string plantedSeedType = "";
-
-    void Awake() // Was: void Start()
+    void Awake()
     {
         sr = GetComponent<SpriteRenderer>();
         UpdateSprite();
@@ -26,35 +23,54 @@ public class Plot : MonoBehaviour
 
         if (growthStage == 0)
         {
-            // Toon seed selectie menu
+            // Toon selectie menu
             SeedSelectionUI.Instance.ShowSelectionMenu(this);
         }
         else if (growthStage >= maxGrowthStage)
         {
-            // Oogst of reset
-            growthStage = 0;
-            plantedSeedType = "";
-            CoinManager.Instance.AddCoins(1);
-            UpdateSprite();
+            // Oogsten
+            HarvestPlant();
         }
     }
 
-    public void PlantSeed(string seedType)
+    private void HarvestPlant()
     {
-        if (SeedManager.Instance.UseSeeds(seedType, 1))
+        if (plantedPlant != null)
         {
+            CoinManager.Instance.AddCoins(plantedPlant.harvestCoins);
+        }
+
+        // Reset plot
+        plantedPlant = null;
+        growthStage = 0;
+
+        UpdateSprite();
+    }
+
+    public void PlantSeed(PlantData plant)
+    {
+        if (plant == null)
+        {
+            Debug.LogError("No PlantData assigned!");
+            return;
+        }
+
+        // Check of je genoeg seeds hebt
+        if (SeedManager.Instance.UseSeeds(plant.seedType, 1))
+        {
+            plantedPlant = plant;
             growthStage = 1;
-            plantedSeedType = seedType;
-            Debug.Log($"Planted {seedType}. You have {SeedManager.Instance.GetSeeds(seedType)} {seedType} seeds left");
+
+            Debug.Log($"Planted {plant.seedType}. Seeds left: {SeedManager.Instance.GetSeeds(plant.seedType)}");
             UpdateSprite();
         }
         else
         {
-            Debug.Log($"You have no {seedType} seeds left!");
+            Debug.Log($"You have no {plant.seedType} seeds left!");
         }
     }
 
-    // Deze functie wordt aangeroepen bij dagwisseling
+    // Dag wissel
     public void AdvanceDay()
     {
         if (growthStage > 0 && growthStage < maxGrowthStage)
@@ -66,18 +82,24 @@ public class Plot : MonoBehaviour
 
     public void UpdateSprite()
     {
-        if (growthStage == 0)
+        if (growthStage == 0 || plantedPlant == null)
         {
             sr.sprite = emptySprite;
+            return;
         }
-        else
+
+        // Veiligheidscheck
+        if (plantedPlant.growthSprites == null || plantedPlant.growthSprites.Length < growthStage)
         {
-            sr.sprite = growthSprites[growthStage - 1];
+            Debug.LogError($"PlantData for {plantedPlant.seedType} has not enough sprites!");
+            return;
         }
+
+        sr.sprite = plantedPlant.growthSprites[growthStage - 1];
     }
 
-    public string GetPlantedSeedType()
+    public PlantData GetPlantedPlant()
     {
-        return plantedSeedType;
+        return plantedPlant;
     }
 }

@@ -1023,6 +1023,12 @@ MonoBehaviour:
   cornText: {fileID: 889165150}
   grapeText: {fileID: 1836841054}
   potatoText: {fileID: 846137675}
+  carrotData: {fileID: 11400000, guid: 3421e46334afbf147bb041881aa178a5, type: 2}
+  tomatoData: {fileID: 11400000, guid: 48ae8054e2ce8fc4da20daf3e93438b9, type: 2}
+  wheatData: {fileID: 11400000, guid: 14cf9a936fd74fb4484ac62c78f3be1c, type: 2}
+  cornData: {fileID: 11400000, guid: 7181b751b84875a47a8fe5f67cc6f3e6, type: 2}
+  grapeData: {fileID: 11400000, guid: 5b9ea38a96413d144ab925c3964d044f, type: 2}
+  potatoData: {fileID: 11400000, guid: de3f142bf3736264b9d2eb9666b18a60, type: 2}
 --- !u!1001 &669222981
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2751,7 +2757,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: '::'
   currentDay: 1
-  dayButtonText: {fileID: 0}
+  dayButtonText: {fileID: 193723239}
   nightTransition: {fileID: 2017309771}
   allPlots: []
 --- !u!4 &1080962169
