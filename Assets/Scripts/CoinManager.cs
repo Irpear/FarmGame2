@@ -6,7 +6,7 @@ public class CoinManager : MonoBehaviour
 {
     public static CoinManager Instance;
 
-    public int coins = 0;
+    public int coins = 5;
     public TextMeshProUGUI coinText;
 
     private void Awake()

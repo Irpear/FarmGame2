@@ -1,5 +1,6 @@
 using TMPro;
 using UnityEngine;
+using UnityEngine.Rendering.Universal;
 
 public class ShopManager : MonoBehaviour
 {
@@ -19,19 +20,28 @@ public class ShopManager : MonoBehaviour
     public TextMeshProUGUI grapePriceText;
     public TextMeshProUGUI potatoPriceText;
 
+    [Header("Inventory Text Fields")]
+    public TextMeshProUGUI carrotInventory;
+    public TextMeshProUGUI tomatoInventory;
+    public TextMeshProUGUI wheatInventory;
+    public TextMeshProUGUI cornInventory;
+    public TextMeshProUGUI grapeInventory;
+    public TextMeshProUGUI potatoInventory;
+
     void Start()
     {
-        UpdatePriceTexts();
+        UpdateTexts();
     }
 
-    public void UpdatePriceTexts()
+    public void UpdateTexts()
     {
-        if (carrotPriceText != null) carrotPriceText.text = carrotPrice.ToString();
-        if (tomatoPriceText != null) tomatoPriceText.text = tomatoPrice.ToString();
-        if (wheatPriceText != null) wheatPriceText.text = wheatPrice.ToString();
-        if (cornPriceText != null) cornPriceText.text = cornPrice.ToString();
-        if (grapePriceText != null) grapePriceText.text = grapePrice.ToString();
-        if (potatoPriceText != null) potatoPriceText.text = potatoPrice.ToString();
+        if (carrotPriceText != null) { carrotPriceText.text = carrotPrice.ToString(); carrotInventory.text = SeedManager.Instance.GetSeeds("carrot").ToString(); }
+        if (tomatoPriceText != null) { tomatoPriceText.text = tomatoPrice.ToString(); tomatoInventory.text = SeedManager.Instance.GetSeeds("tomato").ToString(); }
+        if (wheatPriceText != null) { wheatPriceText.text = wheatPrice.ToString(); wheatInventory.text = SeedManager.Instance.GetSeeds("wheat").ToString(); }
+        if (cornPriceText != null) { cornPriceText.text = cornPrice.ToString(); cornInventory.text = SeedManager.Instance.GetSeeds("corn").ToString(); }
+        if (grapePriceText != null) { grapePriceText.text = grapePrice.ToString(); grapeInventory.text = SeedManager.Instance.GetSeeds("grape").ToString(); }
+        if (potatoPriceText != null) { potatoPriceText.text = potatoPrice.ToString(); potatoInventory.text = SeedManager.Instance.GetSeeds("potato").ToString(); }
+
     }
 
     public void BuySeed(string seedType, int price)
@@ -40,6 +50,7 @@ public class ShopManager : MonoBehaviour
         {
             CoinManager.Instance.AddCoins(-price);
             SeedManager.Instance.AddSeeds(seedType, 1);
+            UpdateTexts();
             Debug.Log($"Bought 1 {seedType} seed for {price} coins");
         }
         else
