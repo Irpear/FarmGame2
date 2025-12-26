@@ -6,6 +6,8 @@ public class SeedSelectionUI : MonoBehaviour
 {
     public static SeedSelectionUI Instance;
 
+    public PlantData[] allPlants; // Vul dit in inspector met al je PlantData assets
+
     public GameObject selectionPanel;  // Panel dat je aan/uit zet
     public Button closeButton;
     public Button carrotButton;
@@ -22,14 +24,15 @@ public class SeedSelectionUI : MonoBehaviour
     public TextMeshProUGUI grapeText;
     public TextMeshProUGUI potatoText;
 
-    private Plot currentPlot;  // Welke plot is geselecteerd
-
     public PlantData carrotData;
     public PlantData tomatoData;
     public PlantData wheatData;
     public PlantData cornData;
     public PlantData grapeData;
     public PlantData potatoData;
+
+    public static PlantData ActiveSelectedPlant = null;
+
 
     void Awake()
     {
@@ -58,28 +61,26 @@ public class SeedSelectionUI : MonoBehaviour
 
     }
 
-    public void ShowSelectionMenu(Plot plot)
+    public void ShowSelectionMenu()
     {
-        currentPlot = plot;
         UpdateSeedCounts();
         closeButton.gameObject.SetActive(true);
         selectionPanel.SetActive(true);
     }
 
+
     public void HideSelectionMenu()
     {
         closeButton.gameObject.SetActive(false);
         selectionPanel.SetActive(false);
-        currentPlot = null;
     }
 
     private void SelectSeed(PlantData plant)
     {
-        if (currentPlot != null)
-        {
-            currentPlot.PlantSeed(plant);
-            HideSelectionMenu();
-        }
+            ActiveSelectedPlant = plant;   // Onthoud de gekozen plant
+            closeButton.gameObject.SetActive(false);
+            selectionPanel.SetActive(false);
+        
     }
 
 
@@ -97,4 +98,22 @@ public class SeedSelectionUI : MonoBehaviour
     {
         return selectionPanel.activeSelf;
     }
+
+    public void ClearActiveSeed()
+    {
+        ActiveSelectedPlant = null;
+        closeButton.gameObject.SetActive(false);
+        selectionPanel.SetActive(false);
+    }
+
+    public PlantData GetPlantDataByType(string type)
+    {
+        foreach (var plant in allPlants)
+        {
+            if (plant != null && plant.seedType == type)
+                return plant;
+        }
+        return null;
+    }
+
 }

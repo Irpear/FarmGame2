@@ -1,4 +1,4 @@
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.SceneManagement;
 using TMPro;
 using System.Collections;
@@ -18,7 +18,9 @@ public class DayManager : MonoBehaviour
 
     public Plot[] allPlots;
 
-    private Dictionary<string, int> plotStates = new Dictionary<string, int>();
+    private Dictionary<string, (string plantType, int growthStage)> plotStates
+    = new Dictionary<string, (string, int)>();
+
 
     private void Awake()
     {
@@ -38,8 +40,10 @@ public class DayManager : MonoBehaviour
 
     private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
 {
-    // Zoek de UI
-    if (dayButtonText == null)
+        SeedSelectionUI.ActiveSelectedPlant = null;
+
+        // Zoek de UI
+        if (dayButtonText == null)
         dayButtonText = GameObject.Find("DayButtonText")?.GetComponent<TextMeshProUGUI>();
 
     // Zoek de button
@@ -85,8 +89,11 @@ public class DayManager : MonoBehaviour
                 if (plot != null)
                 {
                     // Gebruik de positie als unieke identifier
-                    string key = $"{plot.transform.position.x}_{plot.transform.position.y}";
-                    plotStates[key] = plot.growthStage;
+                    string key = $"{plot.transform.position.x}_{plot.transform.position.y}"; 
+                    string plantType = plot.GetPlantedPlant() != null ? plot.GetPlantedPlant().seedType : "";
+
+                    plotStates[key] = (plantType, plot.growthStage);
+
                 }
             }
         }
@@ -108,8 +115,20 @@ public class DayManager : MonoBehaviour
                 string key = $"{plot.transform.position.x}_{plot.transform.position.y}";
                 if (plotStates.ContainsKey(key))
                 {
-                    plot.growthStage = plotStates[key];
-                    plot.UpdateSprite(); // Moet public worden in Plot script!
+                    var state = plotStates[key];
+
+                    // Als er geen plant in zat → skip
+                    if (string.IsNullOrEmpty(state.plantType))
+                    {
+                        plot.SetEmpty();
+                        continue;
+                    }
+
+                    // Zoek de juiste PlantData
+                    PlantData plant = SeedSelectionUI.Instance.GetPlantDataByType(state.plantType);
+
+                    plot.ForcePlantState(plant, state.growthStage);
+
                     restored++;
                 }
             }
@@ -158,4 +177,6 @@ public class DayManager : MonoBehaviour
         if (dayButtonText != null)
             dayButtonText.text = $"End Day {currentDay}";
     }
+
+
 }

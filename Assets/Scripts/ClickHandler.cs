@@ -28,4 +28,5 @@ public class ClickHandler : MonoBehaviour
         SceneManager.LoadScene("FarmScene");
     }
 
+
 }

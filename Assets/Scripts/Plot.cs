@@ -21,12 +21,13 @@ public class Plot : MonoBehaviour
     {
         if (SeedSelectionUI.Instance.IsMenuOpen()) return;
 
-        if (growthStage == 0)
+        if (SeedSelectionUI.ActiveSelectedPlant != null && growthStage == 0)
         {
-            // Toon selectie menu
-            SeedSelectionUI.Instance.ShowSelectionMenu(this);
+            PlantSeed(SeedSelectionUI.ActiveSelectedPlant);
+            return;
         }
-        else if (growthStage >= maxGrowthStage)
+
+        if (plantedPlant != null && growthStage >= maxGrowthStage)
         {
             // Oogsten
             HarvestPlant();
@@ -73,7 +74,7 @@ public class Plot : MonoBehaviour
     // Dag wissel
     public void AdvanceDay()
     {
-        if (growthStage > 0 && growthStage < maxGrowthStage)
+        if (plantedPlant != null && growthStage > 0 && growthStage < maxGrowthStage)
         {
             growthStage++;
             UpdateSprite();
@@ -102,4 +103,20 @@ public class Plot : MonoBehaviour
     {
         return plantedPlant;
     }
+
+    public void SetEmpty()
+    {
+        plantedPlant = null;
+        growthStage = 0;
+        UpdateSprite();
+    }
+
+    public void ForcePlantState(PlantData plant, int stage)
+    {
+        plantedPlant = plant;
+        growthStage = stage;
+        UpdateSprite();
+    }
+
+
 }
