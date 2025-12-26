@@ -57,3 +57,10 @@ Logs/AssetImportWorker0-prev.log
 /UserSettings
 /Logs
 *.log
+UserSettings/Layouts/default-6000.dwlt
+Logs/AssetImportWorker0-prev.log
+Logs/AssetImportWorker0.log
+Logs/AssetImportWorker1-prev.log
+Logs/AssetImportWorker1-prev.log
+*.dwlt
+/UserSettings

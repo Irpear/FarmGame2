@@ -11,35 +11,44 @@ public class Plot : MonoBehaviour
 
     private SpriteRenderer sr;
 
+    private string plantedSeedType = "";
+
     void Awake() // Was: void Start()
     {
         sr = GetComponent<SpriteRenderer>();
         UpdateSprite();
     }
 
-    void OnMouseDown()
+    void OnMouseUp()
     {
         if (growthStage == 0)
         {
-            if (SeedManager.Instance.seeds > 0)
-            {
-                // Plant een zaadje
-                growthStage = 1;
-                SeedManager.Instance.AddSeeds(-1);
-                Debug.Log($"You have {SeedManager.Instance.seeds} seeds left");
-            } else
-            {
-                Debug.Log("You have no seeds left!");
-            }
+            // Toon seed selectie menu
+            SeedSelectionUI.Instance.ShowSelectionMenu(this);
         }
         else if (growthStage >= maxGrowthStage)
         {
             // Oogst of reset
             growthStage = 0;
+            plantedSeedType = "";
             CoinManager.Instance.AddCoins(1);
+            UpdateSprite();
         }
+    }
 
-        UpdateSprite();
+    public void PlantSeed(string seedType)
+    {
+        if (SeedManager.Instance.UseSeeds(seedType, 1))
+        {
+            growthStage = 1;
+            plantedSeedType = seedType;
+            Debug.Log($"Planted {seedType}. You have {SeedManager.Instance.GetSeeds(seedType)} {seedType} seeds left");
+            UpdateSprite();
+        }
+        else
+        {
+            Debug.Log($"You have no {seedType} seeds left!");
+        }
     }
 
     // Deze functie wordt aangeroepen bij dagwisseling
@@ -62,5 +71,10 @@ public class Plot : MonoBehaviour
         {
             sr.sprite = growthSprites[growthStage - 1];
         }
+    }
+
+    public string GetPlantedSeedType()
+    {
+        return plantedSeedType;
     }
 }

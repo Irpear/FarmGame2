@@ -34,7 +34,7 @@ public class ClickHandler : MonoBehaviour
         {
             CoinManager.Instance.AddCoins(-1);
             SeedManager.Instance.AddSeeds(1);
-            Debug.Log($"You have {SeedManager.Instance.seeds} seeds");
+            //Debug.Log($"You have {SeedManager.Instance.seeds} seeds");
         }
         else
         {
