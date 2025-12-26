@@ -64,3 +64,6 @@ Logs/AssetImportWorker1-prev.log
 Logs/AssetImportWorker1-prev.log
 *.dwlt
 /UserSettings
+/UserSettings
+/.vs
+/Logs
