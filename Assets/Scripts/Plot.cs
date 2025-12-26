@@ -1,5 +1,6 @@
 using System;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 public class Plot : MonoBehaviour
 {
@@ -21,6 +22,8 @@ public class Plot : MonoBehaviour
 
     void OnMouseUp()
     {
+        if (SeedSelectionUI.Instance.IsMenuOpen()) return;
+
         if (growthStage == 0)
         {
             // Toon seed selectie menu

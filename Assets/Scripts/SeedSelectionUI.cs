@@ -83,4 +83,9 @@ public class SeedSelectionUI : MonoBehaviour
         grapeText.text = $"Grape ({SeedManager.Instance.GetSeeds("grape")})";
         potatoText.text = $"Potato ({SeedManager.Instance.GetSeeds("potato")})";
     }
+
+    public bool IsMenuOpen()
+    {
+        return selectionPanel.activeSelf;
+    }
 }
