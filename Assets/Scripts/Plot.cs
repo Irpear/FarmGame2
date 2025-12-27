@@ -90,11 +90,12 @@ public class Plot : MonoBehaviour
     // Dag wissel
     public void AdvanceDay()
     {
+        isWatered = false;
         if (plantedPlant != null && growthStage > 0 && growthStage < maxGrowthStage)
         {
             growthStage++;
-            UpdateSprite();
         }
+        UpdateSprite();
     }
 
     public void UpdateSprite()

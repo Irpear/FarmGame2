@@ -69,3 +69,5 @@ Logs/AssetImportWorker1-prev.log
 /Logs
 /.vs
 *.csproj
+/.vs/FarmGame2
+.vs/FarmGame2/CopilotIndices/17.14.1518.61961/SemanticSymbols.db

@@ -146,6 +146,7 @@ public class DayManager : MonoBehaviour
 
         currentDay++;
 
+
         StartCoroutine(DelayedUIUpdate());
 
         nightTransition.PlayTransition(() => {
@@ -172,6 +173,8 @@ public class DayManager : MonoBehaviour
     private IEnumerator DelayedUIUpdate()
     {
         yield return new WaitForSeconds(0.5f);
+        SeedSelectionUI.ActiveSelectedPlant = null;
+        SeedSelectionUI.ActiveSelectedTool = null;
         UpdateUI();
     }
 
