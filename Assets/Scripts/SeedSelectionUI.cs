@@ -121,7 +121,8 @@ public class SeedSelectionUI : MonoBehaviour
 
     public void SelectWateringCan()
     {
-        ActiveSelectedTool = "wateringCan";
+        if (ActiveSelectedTool == "wateringCan") ActiveSelectedTool = null;
+        else ActiveSelectedTool = "wateringCan";
         ActiveSelectedPlant = null;
     }
 

@@ -294,6 +294,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Plot (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 1529228334866393523, guid: 3a520520f664a2e4eae623a1b0b05ccf, type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4177051592404811067, guid: 3a520520f664a2e4eae623a1b0b05ccf, type: 3}
+      propertyPath: m_SortingOrder
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -950,7 +958,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: '::'
   coins: 5
-  coinText: {fileID: 0}
+  coinText: {fileID: 1885195563}
 --- !u!4 &470562997
 Transform:
   m_ObjectHideFlags: 0
@@ -2323,6 +2331,22 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 987846856}
     m_Modifications:
+    - target: {fileID: -8430854158643945971, guid: 3a520520f664a2e4eae623a1b0b05ccf, type: 3}
+      propertyPath: m_Size.x
+      value: 2.04
+      objectReference: {fileID: 0}
+    - target: {fileID: -8430854158643945971, guid: 3a520520f664a2e4eae623a1b0b05ccf, type: 3}
+      propertyPath: m_Size.y
+      value: 1.7000257
+      objectReference: {fileID: 0}
+    - target: {fileID: -8430854158643945971, guid: 3a520520f664a2e4eae623a1b0b05ccf, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: -8430854158643945971, guid: 3a520520f664a2e4eae623a1b0b05ccf, type: 3}
+      propertyPath: m_WasSpriteAssigned
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 122218302725034294, guid: 3a520520f664a2e4eae623a1b0b05ccf, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -2406,6 +2430,30 @@ PrefabInstance:
     - target: {fileID: 640480307509986340, guid: 3a520520f664a2e4eae623a1b0b05ccf, type: 3}
       propertyPath: m_Name
       value: Plot (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1529228334866393523, guid: 3a520520f664a2e4eae623a1b0b05ccf, type: 3}
+      propertyPath: m_Size.x
+      value: 20.56
+      objectReference: {fileID: 0}
+    - target: {fileID: 1529228334866393523, guid: 3a520520f664a2e4eae623a1b0b05ccf, type: 3}
+      propertyPath: m_Size.y
+      value: 10.320156
+      objectReference: {fileID: 0}
+    - target: {fileID: 1529228334866393523, guid: 3a520520f664a2e4eae623a1b0b05ccf, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: ed4a8a224b78dd241b68c8713d323c66, type: 3}
+    - target: {fileID: 1529228334866393523, guid: 3a520520f664a2e4eae623a1b0b05ccf, type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1529228334866393523, guid: 3a520520f664a2e4eae623a1b0b05ccf, type: 3}
+      propertyPath: m_WasSpriteAssigned
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4177051592404811067, guid: 3a520520f664a2e4eae623a1b0b05ccf, type: 3}
+      propertyPath: m_SortingOrder
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

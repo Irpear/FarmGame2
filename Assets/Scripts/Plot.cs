@@ -5,16 +5,24 @@ public class Plot : MonoBehaviour
     public int growthStage = 0;
     public int maxGrowthStage => plantedPlant.growthSprites.Length;
 
+    public bool isWatered = false;
 
     public Sprite emptySprite;
 
-    private SpriteRenderer sr;
     private PlantData plantedPlant = null;
+
+    public SpriteRenderer groundRenderer;
+    public SpriteRenderer plantRenderer;
+
+    public Sprite dryGroundSprite;
+    public Sprite wetGroundSprite;
+
+
 
     void Awake()
     {
-        sr = GetComponent<SpriteRenderer>();
-        UpdateSprite();
+        
+        //UpdateSprite();
     }
 
     void OnMouseUp()
@@ -27,7 +35,15 @@ public class Plot : MonoBehaviour
             return;
         }
 
-        if (plantedPlant != null && growthStage >= maxGrowthStage)
+        if (SeedSelectionUI.ActiveSelectedTool != null)
+        {
+            if (SeedSelectionUI.ActiveSelectedTool == "wateringCan")
+            {
+                WaterPlant();
+            }
+        }
+
+        else if (plantedPlant != null && growthStage >= maxGrowthStage && SeedSelectionUI.ActiveSelectedPlant == null)
         {
             // Oogsten
             HarvestPlant();
@@ -83,21 +99,20 @@ public class Plot : MonoBehaviour
 
     public void UpdateSprite()
     {
+        // 1. Ground
+        groundRenderer.sprite = isWatered ? wetGroundSprite : dryGroundSprite;
+
+        // 2. Plant
         if (growthStage == 0 || plantedPlant == null)
         {
-            sr.sprite = emptySprite;
-            return;
+            plantRenderer.sprite = null;
         }
-
-        // Veiligheidscheck
-        if (plantedPlant.growthSprites == null || plantedPlant.growthSprites.Length < growthStage)
+        else
         {
-            Debug.LogError($"PlantData for {plantedPlant.seedType} has not enough sprites!");
-            return;
+            plantRenderer.sprite = plantedPlant.growthSprites[growthStage - 1];
         }
-
-        sr.sprite = plantedPlant.growthSprites[growthStage - 1];
     }
+
 
     public PlantData GetPlantedPlant()
     {
@@ -115,6 +130,13 @@ public class Plot : MonoBehaviour
     {
         plantedPlant = plant;
         growthStage = stage;
+        UpdateSprite();
+    }
+
+    public void WaterPlant()
+    {
+        
+        isWatered = true;
         UpdateSprite();
     }
 

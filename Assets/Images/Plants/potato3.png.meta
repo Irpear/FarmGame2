@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 393a4fbd52c3b1a458f8b59f1a269ed8
+guid: 8de0ffc7690fc094e8101f83940fc13b
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -1345407864245720061
-    second: PlotSeeded_0
+      213: -8252639578736527881
+    second: potato3_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -46,7 +46,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 2
+  spriteMode: 1
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -113,13 +113,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: PlotSeeded_0
+      name: potato3_0
       rect:
         serializedVersion: 2
-        x: 958
-        y: 383
-        width: 204
-        height: 170
+        x: 879
+        y: 344
+        width: 269
+        height: 276
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 30ced9dfca6245de0800000000000000
-      internalID: -1345407864245720061
+      spriteID: 7f5741a070cb87d80800000000000000
+      internalID: -8252639578736527881
       vertices: []
       indices: 
       edges: []
@@ -138,7 +138,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 5e97eb03825dee720800000000000000
     internalID: 0
     vertices: []
     indices: 
@@ -148,7 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      PlotSeeded_0: -1345407864245720061
+      potato3_0: -8252639578736527881
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -14,8 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PlantData
   seedType: corn
   growthSprites:
-  - {fileID: -1345407864245720061, guid: 393a4fbd52c3b1a458f8b59f1a269ed8, type: 3}
-  - {fileID: 4181256891758000884, guid: 5bb702b8df80b6849a5dcaf5a0ee876d, type: 3}
-  - {fileID: -3219643733414295277, guid: bc7f52992e2540549a782d57d695bbea, type: 3}
-  - {fileID: -1645834703626371804, guid: 30762b24aed4de0488f45ce2b0653e6a, type: 3}
+  - {fileID: 21300000, guid: 393a4fbd52c3b1a458f8b59f1a269ed8, type: 3}
+  - {fileID: 21300000, guid: d5301d3faca33294bb7c3927f27ecf23, type: 3}
+  - {fileID: 21300000, guid: 1858ff3ae448a314f8205e799659226a, type: 3}
+  - {fileID: 21300000, guid: 97161c42d9f872149ace5d512973c8c5, type: 3}
+  groundDrySprite: {fileID: 21300000, guid: ed4a8a224b78dd241b68c8713d323c66, type: 3}
+  groundWetSprite: {fileID: 21300000, guid: c8954fc8f53271a449273c041405976d, type: 3}
   harvestCoins: 4
