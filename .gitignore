@@ -71,3 +71,126 @@ Logs/AssetImportWorker1-prev.log
 *.csproj
 /.vs/FarmGame2
 .vs/FarmGame2/CopilotIndices/17.14.1518.61961/SemanticSymbols.db
+
+# =============================================
+# Unity generated
+# =============================================
+
+[Ll]ibrary/
+[Tt]emp/
+[Oo]bj/
+[Bb]uild/
+[Bb]uilds/
+[Ll]ogs/
+
+# Unity cache
+UserSettings/
+MemoryCaptures/
+
+# Addressables
+/Assets/AddressableAssetsData/*/*.bin
+/Assets/AddressableAssetsData/*/*.bin*
+*.aa
+*.ab
+
+# PlasticSCM / DevOps artifacts
+/.plastic/
+/.plastic.meta
+
+# =============================================
+# OS generated
+# =============================================
+
+# Windows
+Thumbs.db
+ehthumbs.db
+[Dd]esktop.ini
+$RECYCLE.BIN/
+
+# macOS
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+Icon?
+*.swp
+
+# Linux
+*~
+
+# =============================================
+# IDE / Editors
+# =============================================
+
+# Visual Studio
+.vs/
+*.csproj
+*.sln
+*.user
+*.userprefs
+/*.pidb
+/*.svd
+*.pdb
+*.opendb
+
+# JetBrains Rider
+.idea/
+*.sln.iml
+
+# Visual Studio Code
+.vscode/
+.history/
+
+# Mono / ProjectFiles
+*.mdb
+*.booproj
+
+# =============================================
+# Unity Cloud / Collaborate
+# =============================================
+
+/UnityCloud/
+/UnityCollaborate/
+
+# =============================================
+# Builds
+# =============================================
+
+*.apk
+*.aab
+*.xcodeproj
+*.xcworkspace
+*.xcuserstate
+*.xccheckout
+*.xcuserdatad
+*.xcsettings
+*.xcassets
+
+# =============================================
+# TextMesh Pro
+# =============================================
+
+/Assets/TextMesh Pro/*/Resources/*.asset
+
+# =============================================
+# Crash / Debug / Profiling
+# =============================================
+
+*.stacktrace
+*.dmp
+*.memsnap
+*.heapsnapshot
+
+
+# =============================================
+# Auto-generated backups
+# =============================================
+
+*.bak
+*.backup
+*.tmp
+*.temp
+*.old
+
+
