@@ -26,8 +26,13 @@ public class CurrentToolUI : MonoBehaviour
         // 1. Default: hand
         string currentToolName = "hand";
 
+        if (!string.IsNullOrEmpty(SeedSelectionUI.ActiveSelectedTool))
+        {
+            currentToolName = SeedSelectionUI.ActiveSelectedTool;
+        }
+
         // 2. Check of er een actieve plant is
-        if (SeedSelectionUI.ActiveSelectedPlant != null)
+        else if (SeedSelectionUI.ActiveSelectedPlant != null)
         {
             currentToolName = SeedSelectionUI.ActiveSelectedPlant.seedType;
         }

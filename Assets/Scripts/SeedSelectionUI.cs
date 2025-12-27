@@ -33,6 +33,8 @@ public class SeedSelectionUI : MonoBehaviour
 
     public static PlantData ActiveSelectedPlant = null;
 
+    public static string ActiveSelectedTool = null;
+
 
     void Awake()
     {
@@ -77,9 +79,10 @@ public class SeedSelectionUI : MonoBehaviour
 
     private void SelectSeed(PlantData plant)
     {
-            ActiveSelectedPlant = plant;   // Onthoud de gekozen plant
-            closeButton.gameObject.SetActive(false);
-            selectionPanel.SetActive(false);
+        ActiveSelectedPlant = plant;   // Onthoud de gekozen plant
+        ActiveSelectedTool = null;
+        closeButton.gameObject.SetActive(false);
+        selectionPanel.SetActive(false);
         
     }
 
@@ -114,6 +117,12 @@ public class SeedSelectionUI : MonoBehaviour
                 return plant;
         }
         return null;
+    }
+
+    public void SelectWateringCan()
+    {
+        ActiveSelectedTool = "wateringCan";
+        ActiveSelectedPlant = null;
     }
 
 }
