@@ -17,7 +17,7 @@ public class Plot : MonoBehaviour
     public Sprite dryGroundSprite;
     public Sprite wetGroundSprite;
 
-
+    public HarvestPopup popupPrefab;
 
     void Awake()
     {
@@ -54,12 +54,33 @@ public class Plot : MonoBehaviour
     {
         if (plantedPlant != null)
         {
-            CoinManager.Instance.AddCoins(plantedPlant.harvestCoins);
+            int coins = plantedPlant.harvestCoins;
+
+            // --- POPUP AANMAKEN ---
+            if (popupPrefab != null)
+            {
+                // Zoek canvas
+                Canvas canvas = FindFirstObjectByType<Canvas>();
+
+                if (canvas != null)
+                {
+                    var popup = Instantiate(popupPrefab, canvas.transform);
+
+                    // Popup positie = boven de plot
+                    Vector3 screenPos = Camera.main.WorldToScreenPoint(transform.position);
+
+                    popup.Show(coins, screenPos);
+                }
+            }
+
+            // Voeg coins toe
+            CoinManager.Instance.AddCoins(coins);
         }
 
         // Reset plot
         plantedPlant = null;
         growthStage = 0;
+        isWatered = false;
 
         UpdateSprite();
     }
