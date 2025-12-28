@@ -1,0 +1,12 @@
+# ninja log v5
+39	340	7885855322061653	FramePacing/CMakeFiles/swappywrapper.dir/UnitySwappyWrapper.cpp.o	e409c68c03d48f9b
+341	531	7885855323802713	C:/Unity Games/ChillFarm/FarmGame2/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/build/intermediates/cxx/RelWithDebInfo/5o6y1l4c/obj/arm64-v8a/libswappywrapper.so	13e1d6e241d47d4c
+23	1412	7885855332739338	GameActivity/CMakeFiles/game.dir/UGAEntry.cpp.o	1a1f79ff4d6af811
+18	1422	7885855332784733	GameActivity/CMakeFiles/game.dir/UGAInputKeyEvent.cpp.o	e0811d3b54663f4f
+5	1430	7885855332951040	GameActivity/CMakeFiles/game.dir/UGAConfiguration.cpp.o	7147dcecbeaecb1
+33	1446	7885855333087138	GameActivity/CMakeFiles/game.dir/UGAInputMotionEvent.cpp.o	f6ca05f144f41f5d
+9	1501	7885855333634949	GameActivity/CMakeFiles/game.dir/UGADebug.cpp.o	d14e5099f6817846
+14	1644	7885855335087511	GameActivity/CMakeFiles/game.dir/UGAInput.cpp.o	6e1e105f03c6ca39
+0	1728	7885855335907738	GameActivity/CMakeFiles/game.dir/UGAApplication.cpp.o	af32377726383690
+28	1730	7885855335952993	GameActivity/CMakeFiles/game.dir/UGASoftKeyboard.cpp.o	7ae2499f8235734d
+1730	1818	7885855336849443	C:/Unity Games/ChillFarm/FarmGame2/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/build/intermediates/cxx/RelWithDebInfo/5o6y1l4c/obj/arm64-v8a/libgame.so	d87a6aa55713ac69
