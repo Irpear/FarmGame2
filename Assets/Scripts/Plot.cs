@@ -25,6 +25,8 @@ public class Plot : MonoBehaviour
 
     public HarvestPopup popupPrefab;
 
+    public SpriteRenderer compostEffect;
+
     void Awake()
     {
         
@@ -51,6 +53,7 @@ public class Plot : MonoBehaviour
             if (SeedSelectionUI.ActiveSelectedTool == "compost" && growthStage == 0)
             {
                 composted = true;
+                compostEffect.enabled = composted;
                 SeedSelectionUI.ActiveSelectedTool = null;
             }
         }
@@ -112,6 +115,8 @@ public class Plot : MonoBehaviour
         growthStage = 0;
         dead = false;
         isWatered = false;
+        composted = false;
+        compostEffect.enabled = composted;
 
         UpdateSprite();
     }
@@ -172,6 +177,9 @@ public class Plot : MonoBehaviour
 
     public void UpdateSprite()
     {
+
+        compostEffect.enabled = composted;
+
         // 1. Ground
         groundRenderer.sprite = isWatered ? wetGroundSprite : dryGroundSprite;
 

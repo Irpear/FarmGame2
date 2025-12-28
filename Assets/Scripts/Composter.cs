@@ -95,6 +95,7 @@ public class Composter : MonoBehaviour
     {
         // Tool geven
         SeedSelectionUI.ActiveSelectedTool = "compost";
+        SeedSelectionUI.ActiveSelectedPlant = null;
 
         // composter wordt leeg
         isFull = false;
@@ -108,6 +109,7 @@ public class Composter : MonoBehaviour
     {
         // Tool geven
         SeedSelectionUI.ActiveSelectedTool = "compost";
+        SeedSelectionUI.ActiveSelectedPlant = null;
 
         // composter gaat weer aan
         isReady = false;

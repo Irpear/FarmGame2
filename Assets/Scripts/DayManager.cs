@@ -138,6 +138,8 @@ public class DayManager : MonoBehaviour
                     if (string.IsNullOrEmpty(state.plantType))
                     {
                         plot.SetEmpty();
+                        plot.composted = state.composted;  // ← Voeg toe!
+                        plot.UpdateSprite();
                         continue;
                     }
 
