@@ -11,6 +11,11 @@ public class DayManager : MonoBehaviour
     public int currentDay = 1;
     public TextMeshProUGUI dayButtonText;
 
+    private int startCoins = 0;
+    private int endCoins = 0;
+    private int earnedCoins;
+    public TextMeshProUGUI profitSummary;
+
     //// Event: scripts kunnen hiernaar luisteren
     //public event Action OnDayEnded;
 
@@ -60,8 +65,11 @@ public class DayManager : MonoBehaviour
         if (dayButtonText == null)
         dayButtonText = GameObject.Find("DayButtonText")?.GetComponent<TextMeshProUGUI>();
 
-    // Zoek de button
-    var btn = GameObject.Find("DayButton")?.GetComponent<UnityEngine.UI.Button>();
+        if (profitSummary == null)
+            profitSummary = GameObject.Find("ProfitSummary")?.GetComponent<TextMeshProUGUI>();
+
+        // Zoek de button
+        var btn = GameObject.Find("DayButton")?.GetComponent<UnityEngine.UI.Button>();
 
 
     if (btn != null)
@@ -168,6 +176,8 @@ public class DayManager : MonoBehaviour
 
         currentDay++;
 
+        CalculateProfit();
+        profitSummary.text = $"You earned {earnedCoins} coins today";
 
         StartCoroutine(DelayedUIUpdate());
 
@@ -202,6 +212,15 @@ public class DayManager : MonoBehaviour
         FindAnyObjectByType<Composter>()?.ProcessNewDay();
 
         UpdateUI();
+    }
+
+    private void CalculateProfit()
+    {
+        endCoins = CoinManager.Instance.coins;
+
+        earnedCoins = endCoins - startCoins;
+
+        startCoins = CoinManager.Instance.coins;
     }
 
     private void UpdateUI()
