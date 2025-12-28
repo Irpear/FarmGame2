@@ -19,6 +19,9 @@ public class PlotUnlockBarrier : MonoBehaviour
 
     private void OnMouseDown()
     {
+
+        if (NotificationManager.Instance.IsShowing()) return;
+
         if (CoinManager.Instance.coins >= unlockCost)
         {
             CoinManager.Instance.AddCoins(-unlockCost);
@@ -31,8 +34,7 @@ public class PlotUnlockBarrier : MonoBehaviour
         }
         else
         {
-            // eventueel: rode flash / error sound
-            Debug.Log("Not enough money!");
+            NotificationManager.Instance.ShowNotification("You don't have enough coins!");
         }
     }
 }
