@@ -35,6 +35,10 @@ public class SeedSelectionUI : MonoBehaviour
 
     public static string ActiveSelectedTool = null;
 
+    public Image wateringCanImage;
+    public Sprite WateringCan;
+    public Sprite WateringCanGlow;
+
 
     void Awake()
     {
@@ -81,6 +85,9 @@ public class SeedSelectionUI : MonoBehaviour
     {
         ActiveSelectedPlant = plant;   // Onthoud de gekozen plant
         ActiveSelectedTool = null;
+
+        ReturnWateringCan();
+
         closeButton.gameObject.SetActive(false);
         selectionPanel.SetActive(false);
         
@@ -121,9 +128,26 @@ public class SeedSelectionUI : MonoBehaviour
 
     public void SelectWateringCan()
     {
-        if (ActiveSelectedTool == "wateringCan") ActiveSelectedTool = null;
-        else ActiveSelectedTool = "wateringCan";
+        if (ActiveSelectedTool == "wateringCan")
+        {
+            ActiveSelectedTool = null;
+            ReturnWateringCan();
+        }
+        else
+        {
+            ActiveSelectedTool = "wateringCan";
+            TakeWateringCan();
+        }
         ActiveSelectedPlant = null;
     }
 
+    public void TakeWateringCan()
+    {
+        wateringCanImage.sprite = WateringCanGlow;
+    }
+
+    public void ReturnWateringCan()
+    {
+        wateringCanImage.sprite = WateringCan;
+    }
 }

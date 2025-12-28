@@ -1182,6 +1182,9 @@ MonoBehaviour:
   cornData: {fileID: 11400000, guid: 7181b751b84875a47a8fe5f67cc6f3e6, type: 2}
   grapeData: {fileID: 11400000, guid: 5b9ea38a96413d144ab925c3964d044f, type: 2}
   potatoData: {fileID: 11400000, guid: de3f142bf3736264b9d2eb9666b18a60, type: 2}
+  wateringCanImage: {fileID: 1100085765}
+  WateringCan: {fileID: 1914849043038913832, guid: 4e32de647ba414f418c595b28bb3ec7c, type: 3}
+  WateringCanGlow: {fileID: -2973250991471431281, guid: 52861af27b6e10a46ab4fd156f5be915, type: 3}
 --- !u!1001 &669222981
 PrefabInstance:
   m_ObjectHideFlags: 0

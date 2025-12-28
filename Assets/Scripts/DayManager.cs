@@ -42,6 +42,8 @@ public class DayManager : MonoBehaviour
     private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
 {
         SeedSelectionUI.ActiveSelectedPlant = null;
+        SeedSelectionUI.ActiveSelectedTool = null;
+        SeedSelectionUI.Instance.ReturnWateringCan();
 
         // Zoek de UI
         if (dayButtonText == null)
@@ -175,6 +177,7 @@ public class DayManager : MonoBehaviour
         yield return new WaitForSeconds(0.5f);
         SeedSelectionUI.ActiveSelectedPlant = null;
         SeedSelectionUI.ActiveSelectedTool = null;
+        SeedSelectionUI.Instance.ReturnWateringCan();
         UpdateUI();
     }
 
