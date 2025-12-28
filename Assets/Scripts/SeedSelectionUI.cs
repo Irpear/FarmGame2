@@ -97,12 +97,35 @@ public class SeedSelectionUI : MonoBehaviour
 
     private void UpdateSeedCounts()
     {
-        carrotText.text = $"Carrot ({SeedManager.Instance.GetSeeds("carrot")})";
-        tomatoText.text = $"Tomato ({SeedManager.Instance.GetSeeds("tomato")})";
-        wheatText.text = $"Wheat ({SeedManager.Instance.GetSeeds("wheat")})";
-        cornText.text = $"Corn ({SeedManager.Instance.GetSeeds("corn")})";
-        grapeText.text = $"Grape ({SeedManager.Instance.GetSeeds("grape")})";
-        potatoText.text = $"Potato ({SeedManager.Instance.GetSeeds("potato")})";
+        // Carrot
+        int carrotCount = SeedManager.Instance.GetSeeds("carrot");
+        carrotText.text = carrotCount > 0 ? $"Carrot ({carrotCount})" : "";
+        carrotButton.interactable = carrotCount > 0;
+
+        // Tomato
+        int tomatoCount = SeedManager.Instance.GetSeeds("tomato");
+        tomatoText.text = tomatoCount > 0 ? $"Tomato ({tomatoCount})" : "";
+        tomatoButton.interactable = tomatoCount > 0;
+
+        // Wheat
+        int wheatCount = SeedManager.Instance.GetSeeds("wheat");
+        wheatText.text = wheatCount > 0 ? $"Wheat ({wheatCount})" : "";
+        wheatButton.interactable = wheatCount > 0;
+
+        // Corn
+        int cornCount = SeedManager.Instance.GetSeeds("corn");
+        cornText.text = cornCount > 0 ? $"Corn ({cornCount})" : "";
+        cornButton.interactable = cornCount > 0;
+
+        // Grape
+        int grapeCount = SeedManager.Instance.GetSeeds("grape");
+        grapeText.text = grapeCount > 0 ? $"Grape ({grapeCount})" : "";
+        grapeButton.interactable = grapeCount > 0;
+
+        // Potato
+        int potatoCount = SeedManager.Instance.GetSeeds("potato");
+        potatoText.text = potatoCount > 0 ? $"Potato ({potatoCount})" : "";
+        potatoButton.interactable = potatoCount > 0;
     }
 
     public bool IsMenuOpen()
