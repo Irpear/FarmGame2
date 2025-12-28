@@ -143,11 +143,17 @@ public class SeedSelectionUI : MonoBehaviour
 
     public void TakeWateringCan()
     {
-        wateringCanImage.sprite = WateringCanGlow;
+        if (wateringCanImage != null)
+        {
+            wateringCanImage.sprite = WateringCanGlow;
+        }
     }
 
     public void ReturnWateringCan()
     {
-        wateringCanImage.sprite = WateringCan;
+        if (wateringCanImage != null)
+        {
+            wateringCanImage.sprite = WateringCan;
+        }
     }
 }
