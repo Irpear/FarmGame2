@@ -1,4 +1,4 @@
-using UnityEngine;
+﻿using UnityEngine;
 
 public class Plot : MonoBehaviour
 {
@@ -6,6 +6,8 @@ public class Plot : MonoBehaviour
     public int maxGrowthStage => plantedPlant.growthSprites.Length;
 
     public bool isWatered = false;
+
+    public bool dead = false;
 
     public Sprite emptySprite;
 
@@ -16,6 +18,8 @@ public class Plot : MonoBehaviour
 
     public Sprite dryGroundSprite;
     public Sprite wetGroundSprite;
+
+    public Sprite deadPlant;
 
     public HarvestPopup popupPrefab;
 
@@ -35,7 +39,7 @@ public class Plot : MonoBehaviour
             return;
         }
 
-        if (SeedSelectionUI.ActiveSelectedTool != null)
+        if (SeedSelectionUI.ActiveSelectedTool != null) // oogst dus ook niet met een deadplant of andere tools in je hand
         {
             if (SeedSelectionUI.ActiveSelectedTool == "wateringCan")
             {
@@ -43,7 +47,8 @@ public class Plot : MonoBehaviour
             }
         }
 
-        else if (plantedPlant != null && growthStage >= maxGrowthStage && SeedSelectionUI.ActiveSelectedPlant == null)
+        else if (plantedPlant != null && SeedSelectionUI.ActiveSelectedPlant == null &&
+        (dead || growthStage >= maxGrowthStage))
         {
             // Oogsten
             HarvestPlant();
@@ -54,32 +59,44 @@ public class Plot : MonoBehaviour
     {
         if (plantedPlant != null)
         {
-            int coins = plantedPlant.harvestCoins;
 
-            // --- POPUP AANMAKEN ---
-            if (popupPrefab != null)
+            if (dead)
             {
-                // Zoek canvas
-                Canvas canvas = FindFirstObjectByType<Canvas>();
-
-                if (canvas != null)
-                {
-                    var popup = Instantiate(popupPrefab, canvas.transform);
-
-                    // Popup positie = boven de plot
-                    Vector3 screenPos = Camera.main.WorldToScreenPoint(transform.position);
-
-                    popup.Show(coins, screenPos);
-                }
+                // Dead plant → in hand
+                SeedSelectionUI.ActiveSelectedTool = "deadPlant";
             }
 
-            // Voeg coins toe
-            CoinManager.Instance.AddCoins(coins);
+            else
+            {
+                int coins = plantedPlant.harvestCoins;
+
+
+                // --- POPUP AANMAKEN ---
+                if (popupPrefab != null)
+                {
+                    // Zoek canvas
+                    Canvas canvas = FindFirstObjectByType<Canvas>();
+
+                    if (canvas != null)
+                    {
+                        var popup = Instantiate(popupPrefab, canvas.transform);
+
+                        // Popup positie = boven de plot
+                        Vector3 screenPos = Camera.main.WorldToScreenPoint(transform.position);
+
+                        popup.Show(coins, screenPos);
+                    }
+                }
+
+                // Voeg coins toe
+                CoinManager.Instance.AddCoins(coins);
+            }
         }
 
         // Reset plot
         plantedPlant = null;
         growthStage = 0;
+        dead = false;
         isWatered = false;
 
         UpdateSprite();
@@ -111,10 +128,18 @@ public class Plot : MonoBehaviour
     // Dag wissel
     public void AdvanceDay()
     {
-        
-        if (plantedPlant != null && growthStage > 0 && growthStage < maxGrowthStage && isWatered == true)
+        if (plantedPlant != null && growthStage > 0 && !dead)
         {
-            growthStage++;
+            // Als niet water → dood
+            if (!isWatered && growthStage < maxGrowthStage)
+            {
+                dead = true;
+            }
+            // Als wel water → groeien
+            else if (isWatered && growthStage < maxGrowthStage)
+            {
+                growthStage++;
+            }
         }
 
         isWatered = false;
@@ -127,15 +152,22 @@ public class Plot : MonoBehaviour
         // 1. Ground
         groundRenderer.sprite = isWatered ? wetGroundSprite : dryGroundSprite;
 
-        // 2. Plant
+        // 2. Plant ja of nee
         if (growthStage == 0 || plantedPlant == null)
         {
             plantRenderer.sprite = null;
+            return;
         }
-        else
+
+        // 3. Plant is dood? Toon dood
+        if (dead)
         {
-            plantRenderer.sprite = plantedPlant.growthSprites[growthStage - 1];
+            plantRenderer.sprite = deadPlant;
+            return;
         }
+
+        // 4. Normale groei
+        plantRenderer.sprite = plantedPlant.growthSprites[growthStage - 1];
     }
 
 

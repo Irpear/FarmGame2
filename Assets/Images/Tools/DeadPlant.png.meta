@@ -1,0 +1,288 @@
+fileFormatVersion: 2
+guid: d5149e69895ec1c498ddd97b949ebb94
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -1695433325088696955
+    second: DeadPlant_0
+  - first:
+      213: -1832688560146642183
+    second: DeadPlant_1
+  - first:
+      213: -5594707906789348467
+    second: DeadPlant_2
+  - first:
+      213: 5535262390457338830
+    second: DeadPlant_3
+  - first:
+      213: 8115807687515341342
+    second: DeadPlant_4
+  - first:
+      213: -531629529906149449
+    second: DeadPlant_5
+  - first:
+      213: -5914136193598956853
+    second: DeadPlant_6
+  - first:
+      213: 7112329982185638823
+    second: DeadPlant_7
+  - first:
+      213: 3752779691113833101
+    second: DeadPlant_8
+  - first:
+      213: -7097652527008835155
+    second: DeadPlant_9
+  - first:
+      213: -4419593501682666970
+    second: DeadPlant_10
+  - first:
+      213: -2404994795966759219
+    second: DeadPlant_11
+  - first:
+      213: 5616244473360093707
+    second: DeadPlant_12
+  - first:
+      213: -6328569831102689866
+    second: DeadPlant_13
+  - first:
+      213: -5811963386330439396
+    second: DeadPlant_14
+  - first:
+      213: 7902894996251804861
+    second: DeadPlant_15
+  - first:
+      213: -1457378003855025618
+    second: DeadPlant_16
+  - first:
+      213: -4497666293946355165
+    second: DeadPlant_17
+  - first:
+      213: 4650788979216478937
+    second: DeadPlant_18
+  - first:
+      213: 8229679315019214164
+    second: DeadPlant_19
+  - first:
+      213: -5170532084453247173
+    second: DeadPlant_20
+  - first:
+      213: 7112684637841748297
+    second: DeadPlant_21
+  - first:
+      213: 4348829561440775824
+    second: DeadPlant_22
+  - first:
+      213: 148944139837735856
+    second: DeadPlant_23
+  - first:
+      213: 2453642947921616065
+    second: DeadPlant_24
+  - first:
+      213: -670059372663643198
+    second: DeadPlant_25
+  - first:
+      213: 895508844692069397
+    second: DeadPlant_26
+  - first:
+      213: -4425999140656939257
+    second: DeadPlant_27
+  - first:
+      213: 3629319098572081993
+    second: DeadPlant_28
+  - first:
+      213: 8980837963863617302
+    second: DeadPlant_29
+  - first:
+      213: -7764701242980373599
+    second: DeadPlant_30
+  - first:
+      213: -3534483798793717153
+    second: DeadPlant_31
+  - first:
+      213: 1062599377558747206
+    second: DeadPlant_32
+  - first:
+      213: 224550137627271176
+    second: DeadPlant_33
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: DeadPlant_0
+      rect:
+        serializedVersion: 2
+        x: 932
+        y: 383
+        width: 240
+        height: 173
+      alignment: 9
+      pivot: {x: 0.5072704, y: 0.51043355}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5859ab5af5c9878e0800000000000000
+      internalID: -1695433325088696955
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      DeadPlant_0: -1695433325088696955
+      DeadPlant_1: -1832688560146642183
+      DeadPlant_10: -4419593501682666970
+      DeadPlant_11: -2404994795966759219
+      DeadPlant_12: 5616244473360093707
+      DeadPlant_13: -6328569831102689866
+      DeadPlant_14: -5811963386330439396
+      DeadPlant_15: 7902894996251804861
+      DeadPlant_16: -1457378003855025618
+      DeadPlant_17: -4497666293946355165
+      DeadPlant_18: 4650788979216478937
+      DeadPlant_19: 8229679315019214164
+      DeadPlant_2: -5594707906789348467
+      DeadPlant_20: -5170532084453247173
+      DeadPlant_21: 7112684637841748297
+      DeadPlant_22: 4348829561440775824
+      DeadPlant_23: 148944139837735856
+      DeadPlant_24: 2453642947921616065
+      DeadPlant_25: -670059372663643198
+      DeadPlant_26: 895508844692069397
+      DeadPlant_27: -4425999140656939257
+      DeadPlant_28: 3629319098572081993
+      DeadPlant_29: 8980837963863617302
+      DeadPlant_3: 5535262390457338830
+      DeadPlant_30: -7764701242980373599
+      DeadPlant_31: -3534483798793717153
+      DeadPlant_32: 1062599377558747206
+      DeadPlant_33: 224550137627271176
+      DeadPlant_4: 8115807687515341342
+      DeadPlant_5: -531629529906149449
+      DeadPlant_6: -5914136193598956853
+      DeadPlant_7: 7112329982185638823
+      DeadPlant_8: 3752779691113833101
+      DeadPlant_9: -7097652527008835155
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

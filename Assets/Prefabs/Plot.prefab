@@ -54,11 +54,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: '::'
   growthStage: 0
   isWatered: 0
+  dead: 0
   emptySprite: {fileID: 21300000, guid: ed4a8a224b78dd241b68c8713d323c66, type: 3}
   groundRenderer: {fileID: 1529228334866393523}
   plantRenderer: {fileID: 4177051592404811067}
   dryGroundSprite: {fileID: 21300000, guid: ed4a8a224b78dd241b68c8713d323c66, type: 3}
   wetGroundSprite: {fileID: 21300000, guid: c8954fc8f53271a449273c041405976d, type: 3}
+  deadPlant: {fileID: 21300000, guid: bd4e7f16100c48d40bf05b5d6b94bf97, type: 3}
   popupPrefab: {fileID: 7453106165801772673, guid: 0e05bbb114af2d647bf6f019c77d1da3, type: 3}
 --- !u!212 &-8430854158643945971
 SpriteRenderer:

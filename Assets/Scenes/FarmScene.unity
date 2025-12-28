@@ -3947,6 +3947,8 @@ MonoBehaviour:
     sprite: {fileID: -3249959671106504510, guid: 7d22aff641f6e304b8068b886cdafedd, type: 3}
   - toolName: wateringCan
     sprite: {fileID: 1914849043038913832, guid: 4e32de647ba414f418c595b28bb3ec7c, type: 3}
+  - toolName: deadPlant
+    sprite: {fileID: -1695433325088696955, guid: d5149e69895ec1c498ddd97b949ebb94, type: 3}
 --- !u!1 &1682127032
 GameObject:
   m_ObjectHideFlags: 0
