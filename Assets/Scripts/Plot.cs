@@ -9,6 +9,8 @@ public class Plot : MonoBehaviour
 
     public bool dead = false;
 
+    public bool composted = false;
+
     public Sprite emptySprite;
 
     private PlantData plantedPlant = null;
@@ -45,6 +47,12 @@ public class Plot : MonoBehaviour
             {
                 WaterPlant();
             }
+
+            if (SeedSelectionUI.ActiveSelectedTool == "compost" && growthStage == 0)
+            {
+                composted = true;
+                SeedSelectionUI.ActiveSelectedTool = null;
+            }
         }
 
         else if (plantedPlant != null && SeedSelectionUI.ActiveSelectedPlant == null &&
@@ -72,6 +80,10 @@ public class Plot : MonoBehaviour
             {
                 int coins = plantedPlant.harvestCoins;
 
+                if (composted == true)
+                {
+                    coins = plantedPlant.harvestCoins + plantedPlant.harvestCoins;
+                }
 
                 // --- POPUP AANMAKEN ---
                 if (popupPrefab != null)
