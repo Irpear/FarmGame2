@@ -18,8 +18,8 @@ public class DayManager : MonoBehaviour
 
     public Plot[] allPlots;
 
-    private Dictionary<string, (string plantType, int growthStage, bool isWatered)> plotStates
-    = new Dictionary<string, (string, int, bool)>();
+    private Dictionary<string, (string plantType, int growthStage, bool isWatered, bool dead)> plotStates
+    = new Dictionary<string, (string, int, bool, bool)>();
 
 
 
@@ -95,7 +95,7 @@ public class DayManager : MonoBehaviour
                     string key = $"{plot.transform.position.x}_{plot.transform.position.y}"; 
                     string plantType = plot.GetPlantedPlant() != null ? plot.GetPlantedPlant().seedType : "";
 
-                    plotStates[key] = (plantType, plot.growthStage, plot.isWatered);
+                    plotStates[key] = (plantType, plot.growthStage, plot.isWatered, plot.dead);
 
                 }
             }

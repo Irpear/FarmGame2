@@ -133,7 +133,16 @@ public class Plot : MonoBehaviour
             // Als niet water → dood
             if (!isWatered && growthStage < maxGrowthStage)
             {
-                dead = true;
+                if (growthStage == 1)
+                {
+                    plantedPlant = null;
+                    growthStage = 0;
+                }
+                else
+                {
+                    dead = true;
+                }
+                    
             }
             // Als wel water → groeien
             else if (isWatered && growthStage < maxGrowthStage)
