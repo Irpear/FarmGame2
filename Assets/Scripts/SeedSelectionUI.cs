@@ -83,6 +83,7 @@ public class SeedSelectionUI : MonoBehaviour
 
     private void SelectSeed(PlantData plant)
     {
+
         ActiveSelectedPlant = plant;   // Onthoud de gekozen plant
         ActiveSelectedTool = null;
 

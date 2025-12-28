@@ -64,6 +64,8 @@ public class Plot : MonoBehaviour
             {
                 // Dead plant → in hand
                 SeedSelectionUI.ActiveSelectedTool = "deadPlant";
+                FindAnyObjectByType<Composter>()?.ShowDeadPlantHighlight();
+
             }
 
             else

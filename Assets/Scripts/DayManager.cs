@@ -21,7 +21,14 @@ public class DayManager : MonoBehaviour
     private Dictionary<string, (string plantType, int growthStage, bool isWatered, bool dead)> plotStates
     = new Dictionary<string, (string, int, bool, bool)>();
 
+    private ComposterState composterState;
 
+    [System.Serializable]
+    private struct ComposterState
+    {
+        public bool isFull;
+        public bool isReady;
+    }
 
     private void Awake()
     {
@@ -44,6 +51,10 @@ public class DayManager : MonoBehaviour
         SeedSelectionUI.ActiveSelectedPlant = null;
         SeedSelectionUI.ActiveSelectedTool = null;
         SeedSelectionUI.Instance.ReturnWateringCan();
+
+        var comp = FindFirstObjectByType<Composter>();
+        RestoreComposterState(comp);
+
 
         // Zoek de UI
         if (dayButtonText == null)
@@ -121,6 +132,7 @@ public class DayManager : MonoBehaviour
                     var state = plotStates[key];
 
                     plot.isWatered = state.isWatered;
+                    
 
                     // Als er geen plant in zat → skip
                     if (string.IsNullOrEmpty(state.plantType))
@@ -133,6 +145,10 @@ public class DayManager : MonoBehaviour
                     PlantData plant = SeedSelectionUI.Instance.GetPlantDataByType(state.plantType);
 
                     plot.ForcePlantState(plant, state.growthStage);
+                    
+                    plot.dead = state.dead;
+
+                    plot.UpdateSprite();
 
                     restored++;
                 }
@@ -178,6 +194,9 @@ public class DayManager : MonoBehaviour
         SeedSelectionUI.ActiveSelectedPlant = null;
         SeedSelectionUI.ActiveSelectedTool = null;
         SeedSelectionUI.Instance.ReturnWateringCan();
+
+        FindAnyObjectByType<Composter>()?.ProcessNewDay();
+
         UpdateUI();
     }
 
@@ -185,6 +204,26 @@ public class DayManager : MonoBehaviour
     {
         if (dayButtonText != null)
             dayButtonText.text = $"End Day {currentDay}";
+    }
+
+    public void SaveComposterState(Composter comp)
+    {
+        if (comp == null) return;
+
+        composterState = new ComposterState
+        {
+            isFull = comp.isFull,
+            isReady = comp.isReady
+        };
+    }
+
+    public void RestoreComposterState(Composter comp)
+    {
+        if (comp == null) return;
+
+        comp.isFull = composterState.isFull;
+        comp.isReady = composterState.isReady;
+        comp.UpdateVisual();
     }
 
 
