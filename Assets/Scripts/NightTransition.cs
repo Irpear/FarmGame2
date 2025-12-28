@@ -39,7 +39,7 @@ public class NightTransition : MonoBehaviour
         profitSummary.color = Color.white;
 
         // Eventueel korte pause
-        yield return new WaitForSeconds(5f);
+        yield return new WaitForSeconds(3f);
 
         // Fade out
         t = 0f;

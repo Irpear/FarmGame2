@@ -26,6 +26,8 @@ public class DayManager : MonoBehaviour
     private Dictionary<string, (string plantType, int growthStage, bool isWatered, bool dead, bool composted)> plotStates
     = new Dictionary<string, (string, int, bool, bool, bool)>();
 
+    public int rainChance = 20;
+
     private ComposterState composterState;
 
     [System.Serializable]
@@ -189,6 +191,10 @@ public class DayManager : MonoBehaviour
 
         StartCoroutine(DelayedGrowth());
 
+        if (Random.Range(1, rainChance + 1) == 1)
+        {
+            StartCoroutine(DelayedRain());
+        }
     }
 
     private IEnumerator DelayedGrowth()
@@ -199,6 +205,18 @@ public class DayManager : MonoBehaviour
             plot.AdvanceDay();
         }
 
+        SavePlotStates();
+    }
+
+    private IEnumerator DelayedRain()
+    {
+        yield return new WaitForSeconds(3f);
+        foreach (var plot in allPlots)
+        {
+            plot.WaterPlant();
+        }
+        yield return new WaitForSeconds(1f);
+        NotificationManager.Instance.ShowNotification("It rained last night!");
         SavePlotStates();
     }
 
