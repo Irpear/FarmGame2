@@ -39,8 +39,17 @@ public class Composter : MonoBehaviour
         // 2. Als VOL & KLAAR → speler krijgt compost
         if (isFull && isReady)
         {
-            GiveCompostToPlayer();
-            return;
+            if (SeedSelectionUI.ActiveSelectedTool == "deadPlant")
+            {
+                SwitchDeadPlantAndCompost();
+                return;
+            } 
+            else
+            {
+                GiveCompostToPlayer();
+                return;
+            }
+                
         }
 
         // 3. Als LEEG + speler probeert compost terug te leggen
@@ -89,6 +98,18 @@ public class Composter : MonoBehaviour
 
         // composter wordt leeg
         isFull = false;
+        isReady = false;
+
+        UpdateVisual();
+        DayManager.Instance?.SaveComposterState(this);
+    }
+
+    private void SwitchDeadPlantAndCompost()
+    {
+        // Tool geven
+        SeedSelectionUI.ActiveSelectedTool = "compost";
+
+        // composter gaat weer aan
         isReady = false;
 
         UpdateVisual();
