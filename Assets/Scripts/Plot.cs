@@ -135,12 +135,21 @@ public class Plot : MonoBehaviour
             plantedPlant = plant;
             growthStage = 1;
 
+            if (SeedManager.Instance.GetSeeds(plant.seedType) == 0)
+            {
+                SeedSelectionUI.ActiveSelectedPlant = null;
+
+                NotificationManager.Instance.ShowNotification($"You have no {plant.seedType} seeds left!");
+            }
+            
             Debug.Log($"Planted {plant.seedType}. Seeds left: {SeedManager.Instance.GetSeeds(plant.seedType)}");
             UpdateSprite();
         }
         else
         {
-            Debug.Log($"You have no {plant.seedType} seeds left!");
+            SeedSelectionUI.ActiveSelectedPlant = null;
+
+            NotificationManager.Instance.ShowNotification($"You have no {plant.seedType} seeds left!");
         }
     }
 
