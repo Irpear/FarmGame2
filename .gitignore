@@ -193,4 +193,23 @@ Icon?
 *.temp
 *.old
 
+# Unity generated (extra strong)
+[Ll]ibrary/
+[Tt]emp/
+[Oo]bj/
+[Bb]uild/
+[Bb]uilds/
+[Ll]ogs/
+[Uu]serSettings/
+
+# IDE generated
+.vs/
+*.csproj
+*.sln
+*.user
+*.userprefs
+*.pidb
+*.opendb
+
+
 
