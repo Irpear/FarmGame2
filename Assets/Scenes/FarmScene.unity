@@ -3559,8 +3559,8 @@ MonoBehaviour:
   profitSummary: {fileID: 1970362056}
   nightTransition: {fileID: 2017309771}
   allPlots: []
-  rainChance: 100
-  stormChance: 100
+  rainChance: 20
+  stormChance: 50
 --- !u!4 &1080962169
 Transform:
   m_ObjectHideFlags: 0
@@ -6198,6 +6198,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 096f95b6c32b5fb4bb29a46fd685437b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
+  seedsPanel: {fileID: 0}
+  upgradesPanel: {fileID: 0}
+  talismanPanel: {fileID: 0}
 --- !u!1 &2110251350
 GameObject:
   m_ObjectHideFlags: 0

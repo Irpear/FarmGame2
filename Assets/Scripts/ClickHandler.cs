@@ -8,6 +8,7 @@ public class ClickHandler : MonoBehaviour
     public GameObject seedsPanel;
     public GameObject upgradesPanel;
     public GameObject talismanPanel;
+    public GameObject animalPanel;
 
 
     public void LoadStore()
@@ -33,6 +34,7 @@ public class ClickHandler : MonoBehaviour
         seedsPanel.SetActive(true);
         upgradesPanel.SetActive(false);
         talismanPanel.SetActive(false);
+        animalPanel.SetActive(false);
     }
 
     public void ShowUpgrades()
@@ -40,6 +42,7 @@ public class ClickHandler : MonoBehaviour
         seedsPanel.SetActive(false);
         upgradesPanel.SetActive(true);
         talismanPanel.SetActive(false);
+        animalPanel.SetActive(false);
     }
 
     public void ShowTalisman()
@@ -47,6 +50,15 @@ public class ClickHandler : MonoBehaviour
         seedsPanel.SetActive(false);
         upgradesPanel.SetActive(false);
         talismanPanel.SetActive(true);
+        animalPanel.SetActive(false);
+    }
+
+    public void ShowAnimals()
+    {
+        seedsPanel.SetActive(false);
+        upgradesPanel.SetActive(false);
+        talismanPanel.SetActive(false);
+        animalPanel.SetActive(true);
     }
 
     public void ShowShopHub()
@@ -54,6 +66,7 @@ public class ClickHandler : MonoBehaviour
         seedsPanel.SetActive(false);
         upgradesPanel.SetActive(false);
         talismanPanel.SetActive(false);
+        animalPanel.SetActive(false);
     }
 
 
