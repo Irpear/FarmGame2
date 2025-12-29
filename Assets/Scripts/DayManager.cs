@@ -26,8 +26,8 @@ public class DayManager : MonoBehaviour
     private Dictionary<string, (string plantType, int growthStage, bool isWatered, bool dead, bool composted)> plotStates
     = new Dictionary<string, (string, int, bool, bool, bool)>();
 
-    public int rainChance = 20;
-    public int stormChance = 100;
+    public float rainChancePercent = 0;
+    public int stormChance = 20;
 
     private ComposterState composterState;
 
@@ -44,6 +44,7 @@ public class DayManager : MonoBehaviour
         {
             Instance = this;
             DontDestroyOnLoad(gameObject);
+            rainChancePercent = PlayerPrefs.GetFloat("RainChancePercent", 0f);
             SceneManager.sceneLoaded += OnSceneLoaded;
         }
         else
@@ -193,7 +194,7 @@ public class DayManager : MonoBehaviour
         StartCoroutine(DelayedGrowth());
 
         //events
-        if (Random.Range(1, rainChance + 1) == 1)
+        if (Random.value <= (rainChancePercent / 100f))
         {
             StartCoroutine(DelayedRain());
         }

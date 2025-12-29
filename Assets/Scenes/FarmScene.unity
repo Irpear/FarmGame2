@@ -1185,7 +1185,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 866e4644bb48d724d87051641499a598, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  coins: 49
+  coins: 20000
   coinText: {fileID: 1885195563}
 --- !u!4 &470562997
 Transform:
@@ -3559,7 +3559,7 @@ MonoBehaviour:
   profitSummary: {fileID: 1970362056}
   nightTransition: {fileID: 2017309771}
   allPlots: []
-  rainChance: 20
+  rainChancePercent: 0
   stormChance: 50
 --- !u!4 &1080962169
 Transform:
@@ -6201,6 +6201,7 @@ MonoBehaviour:
   seedsPanel: {fileID: 0}
   upgradesPanel: {fileID: 0}
   talismanPanel: {fileID: 0}
+  animalPanel: {fileID: 0}
 --- !u!1 &2110251350
 GameObject:
   m_ObjectHideFlags: 0
