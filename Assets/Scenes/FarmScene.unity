@@ -1186,6 +1186,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: '::'
   coins: 20000
+  profit: 0
   coinText: {fileID: 1885195563}
 --- !u!4 &470562997
 Transform:
@@ -1513,7 +1514,7 @@ MonoBehaviour:
   grapeData: {fileID: 11400000, guid: 5b9ea38a96413d144ab925c3964d044f, type: 2}
   potatoData: {fileID: 11400000, guid: de3f142bf3736264b9d2eb9666b18a60, type: 2}
   wateringCanImage: {fileID: 1100085765}
-  WateringCan: {fileID: 1914849043038913832, guid: 4e32de647ba414f418c595b28bb3ec7c, type: 3}
+  WateringCan: {fileID: 1914849043038913832, guid: 162289ffbf20e494d8d6ffedb4ff4693, type: 3}
   WateringCanGlow: {fileID: -2973250991471431281, guid: 52861af27b6e10a46ab4fd156f5be915, type: 3}
 --- !u!1001 &669222981
 PrefabInstance:
@@ -3561,6 +3562,7 @@ MonoBehaviour:
   allPlots: []
   rainChancePercent: 0
   stormChance: 50
+  anyPlantsEaten: 0
 --- !u!4 &1080962169
 Transform:
   m_ObjectHideFlags: 0
@@ -3799,7 +3801,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 1914849043038913832, guid: 4e32de647ba414f418c595b28bb3ec7c, type: 3}
+  m_Sprite: {fileID: 1914849043038913832, guid: 162289ffbf20e494d8d6ffedb4ff4693, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -4468,7 +4470,7 @@ MonoBehaviour:
   - toolName: wheat
     sprite: {fileID: -3249959671106504510, guid: 7d22aff641f6e304b8068b886cdafedd, type: 3}
   - toolName: wateringCan
-    sprite: {fileID: 1914849043038913832, guid: 4e32de647ba414f418c595b28bb3ec7c, type: 3}
+    sprite: {fileID: 1914849043038913832, guid: 162289ffbf20e494d8d6ffedb4ff4693, type: 3}
   - toolName: deadPlant
     sprite: {fileID: -1695433325088696955, guid: d5149e69895ec1c498ddd97b949ebb94, type: 3}
   - toolName: compost

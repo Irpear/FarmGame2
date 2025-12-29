@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 162289ffbf20e494d8d6ffedb4ff4693
+guid: faaa4b716ce6ef84d82ee1666f879c34
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 1914849043038913832
-    second: WateringCan_0
+      213: -8869803075014161843
+    second: Sack_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -113,23 +113,23 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: WateringCan_0
+      name: Sack_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 1080
-        height: 1080
+        x: 158
+        y: 49
+        width: 753
+        height: 848
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 825c4d03f09e29a10800000000000000
-      internalID: 1914849043038913832
+      spriteID: d4a0d16f81128e480800000000000000
+      internalID: -8869803075014161843
       vertices: []
       indices: 
       edges: []
@@ -138,7 +138,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: afaa999a2303d674db1cb5931137991b
+    spriteID: 
     internalID: 0
     vertices: []
     indices: 
@@ -148,7 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      WateringCan_0: 1914849043038913832
+      Sack_0: -8869803075014161843
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
