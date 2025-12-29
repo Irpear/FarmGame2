@@ -37,6 +37,21 @@ public class Plot : MonoBehaviour
     {
         if (SeedSelectionUI.Instance.IsMenuOpen()) return;
 
+        if (SeedSelectionUI.ActiveSelectedPlant != null && dead == true)
+        {
+            Composter comp = FindAnyObjectByType<Composter>();
+            if (comp != null && comp.isFull)
+            {
+                NotificationManager.Instance.ShowNotification("Can't pick up, the composter is full!");
+                return; // Stop hier, pak plant NIET op
+            }
+
+            SeedSelectionUI.ActiveSelectedPlant = null; 
+            SeedSelectionUI.ActiveSelectedTool = "deadPlant";
+            HarvestPlant();
+            return;
+        }
+
         if (SeedSelectionUI.ActiveSelectedPlant != null && growthStage == 0)
         {
             PlantSeed(SeedSelectionUI.ActiveSelectedPlant);
@@ -50,17 +65,34 @@ public class Plot : MonoBehaviour
                 WaterPlant();
             }
 
-            if (SeedSelectionUI.ActiveSelectedTool == "compost" && growthStage == 0)
+            if (SeedSelectionUI.ActiveSelectedTool == "compost")
             {
-                composted = true;
-                compostEffect.enabled = composted;
-                SeedSelectionUI.ActiveSelectedTool = null;
+                if (growthStage == 0)
+                {
+                    composted = true;
+                    compostEffect.enabled = composted;
+                    SeedSelectionUI.ActiveSelectedTool = null;
+                }
+                else
+                {
+                    NotificationManager.Instance.ShowNotification("Place compost on an empty plot.");
+                }
+                
             }
         }
 
         else if (plantedPlant != null && SeedSelectionUI.ActiveSelectedPlant == null &&
         (dead || growthStage >= maxGrowthStage))
         {
+            if (dead)
+            {
+                Composter comp = FindAnyObjectByType<Composter>();
+                if (comp != null && comp.isFull)
+                {
+                    NotificationManager.Instance.ShowNotification("Can't pick up, the composter is full!");
+                    return;
+                }
+            }
             // Oogsten
             HarvestPlant();
         }
