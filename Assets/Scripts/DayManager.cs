@@ -11,9 +11,6 @@ public class DayManager : MonoBehaviour
     public int currentDay = 1;
     public TextMeshProUGUI dayButtonText;
 
-    private int startCoins = 0;
-    private int endCoins = 0;
-    private int earnedCoins;
     public TextMeshProUGUI profitSummary;
 
     //// Event: scripts kunnen hiernaar luisteren
@@ -180,8 +177,8 @@ public class DayManager : MonoBehaviour
 
         currentDay++;
 
-        CalculateProfit();
-        profitSummary.text = $"You earned {earnedCoins} coins today";
+        profitSummary.text = $"You earned {CoinManager.Instance.profit} coins today";
+        ResetProfit();
 
         StartCoroutine(DelayedUIUpdate());
 
@@ -255,13 +252,9 @@ public class DayManager : MonoBehaviour
         UpdateUI();
     }
 
-    private void CalculateProfit()
+    private void ResetProfit()
     {
-        endCoins = CoinManager.Instance.coins;
-
-        earnedCoins = endCoins - startCoins;
-
-        startCoins = CoinManager.Instance.coins;
+        CoinManager.Instance.profit = 0;
     }
 
     private void UpdateUI()

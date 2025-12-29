@@ -7,6 +7,7 @@ public class CoinManager : MonoBehaviour
     public static CoinManager Instance;
 
     public int coins = 5;
+    public int profit = 0;
     public TextMeshProUGUI coinText;
 
     private void Awake()
@@ -38,6 +39,7 @@ public class CoinManager : MonoBehaviour
 
     public void AddCoins(int amount)
     {
+        if (amount > 0) profit += amount;
         coins += amount;
         UpdateUI();
     }
