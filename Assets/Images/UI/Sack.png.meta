@@ -116,12 +116,12 @@ TextureImporter:
       name: Sack_0
       rect:
         serializedVersion: 2
-        x: 891
-        y: 328
-        width: 348
-        height: 405
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 0
+        y: 0
+        width: 1080
+        height: 1080
+      alignment: 9
+      pivot: {x: 0.508667, y: 0.3881955}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -138,7 +138,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: e17ba86dcfe36eb4d96a3ce58d9c2ff2
     internalID: 0
     vertices: []
     indices: 
