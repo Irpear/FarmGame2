@@ -27,6 +27,10 @@ public class Plot : MonoBehaviour
 
     public SpriteRenderer compostEffect;
 
+    public SpriteRenderer shinyEffect;
+    public float shinyChancePercent = 1;
+    public bool isShiny = false;
+
     void Awake()
     {
         
@@ -108,7 +112,6 @@ public class Plot : MonoBehaviour
                 // Dead plant → in hand
                 SeedSelectionUI.ActiveSelectedTool = "deadPlant";
                 FindAnyObjectByType<Composter>()?.ShowDeadPlantHighlight();
-
             }
 
             else
@@ -117,7 +120,12 @@ public class Plot : MonoBehaviour
 
                 if (composted == true)
                 {
-                    coins = plantedPlant.harvestCoins + plantedPlant.harvestCoins;
+                    coins = coins + coins;
+                }
+
+                if (isShiny == true)
+                {
+                    coins = coins * 5;
                 }
 
                 // --- POPUP AANMAKEN ---
@@ -169,6 +177,8 @@ public class Plot : MonoBehaviour
             plantedPlant = plant;
             growthStage = 1;
 
+            ShinyRoll();
+
             if (SeedManager.Instance.GetSeeds(plant.seedType) == 0)
             {
                 SeedSelectionUI.ActiveSelectedPlant = null;
@@ -197,8 +207,7 @@ public class Plot : MonoBehaviour
             {
                 if (growthStage == 1)
                 {
-                    plantedPlant = null;
-                    growthStage = 0;
+                    ResetPlant();
                 }
                 else
                 {
@@ -207,7 +216,7 @@ public class Plot : MonoBehaviour
                     
             }
 
-            if (growthStage == maxGrowthStage)
+            if (plantedPlant != null && growthStage == maxGrowthStage)
             {
                 ResetPlant();
                 DayManager.Instance.anyPlantsEaten = true;
@@ -231,6 +240,7 @@ public class Plot : MonoBehaviour
     {
 
         compostEffect.enabled = composted;
+        shinyEffect.enabled = isShiny;
 
         // 1. Ground
         groundRenderer.sprite = isWatered ? wetGroundSprite : dryGroundSprite;
@@ -287,6 +297,21 @@ public class Plot : MonoBehaviour
         dead = false;
         composted = false;
         compostEffect.enabled = composted;
+        isShiny = false;
+        shinyEffect.enabled = isShiny;
     }
+
+    public void ShinyRoll()
+    {
+        if (plantedPlant.seedType == "tomato")
+        {
+            if (Random.value <= (shinyChancePercent / 50f)) { isShiny = true; }
+        }
+        else if (Random.value <= (shinyChancePercent / 100f))
+        {
+            isShiny = true;
+        }
+    }
+
 
 }
