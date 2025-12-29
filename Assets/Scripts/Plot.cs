@@ -142,13 +142,15 @@ public class Plot : MonoBehaviour
             }
         }
 
-        // Reset plot
-        plantedPlant = null;
-        growthStage = 0;
-        dead = false;
+        //// Reset plot
+        //plantedPlant = null;
+        //growthStage = 0;
+        //dead = false;
         isWatered = false;
-        composted = false;
-        compostEffect.enabled = composted;
+        //composted = false;
+        //compostEffect.enabled = composted;
+
+        ResetPlant();
 
         UpdateSprite();
     }
@@ -204,11 +206,20 @@ public class Plot : MonoBehaviour
                 }
                     
             }
+
+            if (growthStage == maxGrowthStage)
+            {
+                ResetPlant();
+                DayManager.Instance.anyPlantsEaten = true;
+            }
+
             // Als wel water → groeien
             else if (isWatered && growthStage < maxGrowthStage)
             {
                 growthStage++;
             }
+
+            
         }
 
         isWatered = false;
@@ -269,5 +280,13 @@ public class Plot : MonoBehaviour
         UpdateSprite();
     }
 
+    public void ResetPlant()
+    {
+        plantedPlant = null;
+        growthStage = 0;
+        dead = false;
+        composted = false;
+        compostEffect.enabled = composted;
+    }
 
 }

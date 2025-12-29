@@ -26,6 +26,8 @@ public class DayManager : MonoBehaviour
     public float rainChancePercent = 0;
     public int stormChance = 20;
 
+    public bool anyPlantsEaten = false;
+
     private ComposterState composterState;
 
     [System.Serializable]
@@ -211,6 +213,13 @@ public class DayManager : MonoBehaviour
         }
 
         SavePlotStates();
+
+        yield return new WaitForSeconds(3f);
+        if (anyPlantsEaten == true)
+        {
+            NotificationManager.Instance.ShowNotification("You left your crops unharvested, the wild animals ate them!", 3f);
+        }
+        anyPlantsEaten = false;
     }
 
     private IEnumerator DelayedRain()
