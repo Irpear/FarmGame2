@@ -3559,7 +3559,8 @@ MonoBehaviour:
   profitSummary: {fileID: 1970362056}
   nightTransition: {fileID: 2017309771}
   allPlots: []
-  rainChance: 1
+  rainChance: 100
+  stormChance: 100
 --- !u!4 &1080962169
 Transform:
   m_ObjectHideFlags: 0
