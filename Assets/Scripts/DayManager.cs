@@ -165,6 +165,8 @@ public class DayManager : MonoBehaviour
 
                     plot.isShiny = state.isShiny;
 
+                    plot.chosenVariant = Random.Range(0, 4);
+
                     plot.UpdateSprite();
 
                     restored++;

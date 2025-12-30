@@ -32,7 +32,7 @@ public class Plot : MonoBehaviour
     public float shinyChancePercent = 1;
     public bool isShiny = false;
 
-    private int chosenVariant = 0;
+    public int chosenVariant = 0;
 
     void Awake()
     {
