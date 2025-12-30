@@ -45,6 +45,11 @@ public class DayManager : MonoBehaviour
             Instance = this;
             DontDestroyOnLoad(gameObject);
             rainChancePercent = PlayerPrefs.GetFloat("RainChancePercent", 0f);
+            bool bought = PlayerPrefs.GetInt("StormTalismanPurchased", 0) == 1;
+            if (bought)
+            {
+                stormChanceBasePercent += -1;  
+            }
             SceneManager.sceneLoaded += OnSceneLoaded;
         }
         else

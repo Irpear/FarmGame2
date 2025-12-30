@@ -72,7 +72,7 @@ public class RainTalisman : MonoBehaviour
         if (Level >= maxLevel)
         {
             costText.text = "MAX";
-            percentageInfoText.text = $"(50%)";
+            percentageInfoText.text = $"Rain chance = 50%";
             btn.interactable = false;
         }
         else
