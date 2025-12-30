@@ -61,7 +61,6 @@ public class Plot : MonoBehaviour
     void OnMouseUp()
     {
         if (SeedSelectionUI.Instance.IsMenuOpen()) return;
-        if (NotificationManager.Instance.IsShowing()) return;
         if (forceCompostScreen != null && forceCompostScreen.activeSelf) return;
         if (nightOverlay != null && nightOverlay.activeInHierarchy && nightOverlayImage != null && nightOverlayImage.raycastTarget)
             return;
@@ -173,6 +172,7 @@ public class Plot : MonoBehaviour
                 if (isShiny == true)
                 {
                     coins = coins * 5;
+                    ShopManager.UnlockSeed("tomato");
                 }
 
                 // --- POPUP AANMAKEN ---
@@ -405,6 +405,23 @@ public class Plot : MonoBehaviour
             case 2: coins = 3; break;
             case 3: coins = 4; break;
             case 4: coins = 5; break;
+        }
+        
+        if (composted == true)
+        {
+            switch (grapeHarvestsDone)
+            {
+                case 1: coins = 4; break;
+                case 2: coins = 5; break;
+                case 3: coins = 6; break;
+                case 4: coins = 8; break;
+            }
+        }
+
+        if (isShiny == true)
+        {
+            coins = coins * 5;
+            ShopManager.UnlockSeed("tomato");
         }
 
         // Popup

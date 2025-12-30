@@ -1052,8 +1052,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -353, y: 218}
-  m_SizeDelta: {x: 156.07, y: 146.39}
+  m_AnchoredPosition: {x: -371.6, y: 291.6}
+  m_SizeDelta: {x: 216.26, y: 202.84}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &337408032
 MonoBehaviour:
@@ -1068,10 +1068,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: '::'
   composterImage: {fileID: 337408034}
-  defaultSprite: {fileID: -7195670771605767126, guid: 16f52faf3e221ad4eb86a3c9cca1613e, type: 3}
-  whiteSprite: {fileID: -4919575789178353776, guid: a359393d44803b34387c14e538ef3546, type: 3}
-  redSprite: {fileID: 8937754162444671240, guid: c5cbb69ca8bfc684496f311c94c57b4d, type: 3}
-  greenSprite: {fileID: 3290019985059019460, guid: 88f5930b5d19bb84196b611f88d8bd0f, type: 3}
+  defaultSprite: {fileID: 21300000, guid: 16f52faf3e221ad4eb86a3c9cca1613e, type: 3}
+  whiteSprite: {fileID: 21300000, guid: a359393d44803b34387c14e538ef3546, type: 3}
+  redSprite: {fileID: 21300000, guid: c5cbb69ca8bfc684496f311c94c57b4d, type: 3}
+  greenSprite: {fileID: 21300000, guid: 88f5930b5d19bb84196b611f88d8bd0f, type: 3}
   isFull: 0
   isReady: 0
   forceCompostScreen: {fileID: 1183972507}
@@ -1139,7 +1139,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -7195670771605767126, guid: 16f52faf3e221ad4eb86a3c9cca1613e, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 16f52faf3e221ad4eb86a3c9cca1613e, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
