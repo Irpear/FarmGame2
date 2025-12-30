@@ -1,16 +1,17 @@
 using TMPro;
 using UnityEngine;
 using UnityEngine.Rendering.Universal;
+using UnityEngine.UI;
 
 public class ShopManager : MonoBehaviour
 {
     [Header("Seed Prices")]
-    public int carrotPrice = 1;
-    public int tomatoPrice = 2;
-    public int wheatPrice = 1;
-    public int cornPrice = 3;
-    public int grapePrice = 4;
-    public int potatoPrice = 2;
+    public int carrotPrice = 2;
+    public int tomatoPrice = 3;
+    public int wheatPrice = 4;
+    public int cornPrice = 5;
+    public int grapePrice = 3;
+    public int potatoPrice = 3;
 
     [Header("Price Text Fields")]
     public TextMeshProUGUI carrotPriceText;
@@ -28,9 +29,68 @@ public class ShopManager : MonoBehaviour
     public TextMeshProUGUI grapeInventory;
     public TextMeshProUGUI potatoInventory;
 
+    [Header("Seed Buttons")]
+    public Button carrotButton;
+    public Button tomatoButton;
+    public Button wheatButton;
+    public Button cornButton;
+    public Button grapeButton;
+    public Button potatoButton;
+
     void Start()
     {
+        CheckUnlocks();
         UpdateTexts();
+    }
+
+    private void CheckUnlocks()
+    {
+        // Carrot is altijd unlocked (starter seed)
+        SetSeedUnlocked("carrot", true);
+
+    // Check andere seeds
+        SetButtonState(tomatoButton, IsSeedUnlocked("tomato"));
+        SetButtonState(wheatButton, IsSeedUnlocked("wheat"));
+        SetButtonState(cornButton, IsSeedUnlocked("corn"));
+        SetButtonState(grapeButton, IsSeedUnlocked("grape"));
+        SetButtonState(potatoButton, IsSeedUnlocked("potato"));
+    }
+
+    private void SetButtonState(Button button, bool unlocked)
+    {
+        if (button != null)
+        {
+            button.interactable = unlocked;
+            // Optioneel: verberg de button helemaal als niet unlocked
+            // button.gameObject.SetActive(unlocked);
+        }
+    }
+
+    public static bool IsSeedUnlocked(string seedType)
+    {
+        return PlayerPrefs.GetInt($"seed_unlocked_{seedType}", 0) == 1;
+    }
+
+    public static void UnlockSeed(string seedType)
+    {
+        if (!IsSeedUnlocked(seedType))
+        {
+            PlayerPrefs.SetInt($"seed_unlocked_{seedType}", 1);
+            PlayerPrefs.Save();
+            Debug.Log($"{seedType} unlocked!");
+
+            // Optioneel: toon notification
+            if (NotificationManager.Instance != null)
+            {
+                NotificationManager.Instance.ShowNotification($"{seedType} seed unlocked!");
+            }
+        }
+    }
+
+    private static void SetSeedUnlocked(string seedType, bool unlocked)
+    {
+        PlayerPrefs.SetInt($"seed_unlocked_{seedType}", unlocked ? 1 : 0);
+        PlayerPrefs.Save();
     }
 
     public void UpdateTexts()
