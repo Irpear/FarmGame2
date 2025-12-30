@@ -14,7 +14,7 @@ public class Plot : MonoBehaviour
 
     public Sprite emptySprite;
 
-    private PlantData plantedPlant = null;
+    public PlantData plantedPlant = null;
 
     public SpriteRenderer groundRenderer;
     public SpriteRenderer plantRenderer;

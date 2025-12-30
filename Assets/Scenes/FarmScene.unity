@@ -1827,7 +1827,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 4973622818362185939, guid: 45cc04a31cd2657458dc8d7c98c2327a, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 19a0fe766891f234cabbdb7e2e4037ff, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -4010,7 +4010,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 20.730011, y: -5.5699463}
+  m_AnchoredPosition: {x: 20.72998, y: -5.5699463}
   m_SizeDelta: {x: 221.61, y: 119.39}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1183972509
@@ -4640,11 +4640,11 @@ MonoBehaviour:
   - toolName: hand
     sprite: {fileID: 8403215288983880825, guid: ef4bc67ba280e2345be3824fac0a3133, type: 3}
   - toolName: carrot
-    sprite: {fileID: 4973622818362185939, guid: 19a0fe766891f234cabbdb7e2e4037ff, type: 3}
+    sprite: {fileID: 21300000, guid: 19a0fe766891f234cabbdb7e2e4037ff, type: 3}
   - toolName: corn
     sprite: {fileID: -1645834703626371804, guid: 63dca9b6f1e69ce43a6a75aa395ed3ca, type: 3}
   - toolName: grape
-    sprite: {fileID: 5356015235698506183, guid: 6f68361a7894d2b44ab44921383ffbc5, type: 3}
+    sprite: {fileID: 21300000, guid: 6f68361a7894d2b44ab44921383ffbc5, type: 3}
   - toolName: potato
     sprite: {fileID: -9030114208605505708, guid: 0e9e064adbf8a8c478b3de67075df85c, type: 3}
   - toolName: tomato
@@ -6501,7 +6501,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 5356015235698506183, guid: 592cb3571be4d3d40adad8d3066c0af8, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 6f68361a7894d2b44ab44921383ffbc5, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1

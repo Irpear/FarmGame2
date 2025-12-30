@@ -202,6 +202,8 @@ public class DayManager : MonoBehaviour
             StartCoroutine(DelayedRain());
         }
 
+        RecalculateStormChance();
+
         if (Random.value <= (stormChancePercent / 100f))
         {
             StartCoroutine(DelayedStorm());
@@ -237,6 +239,23 @@ public class DayManager : MonoBehaviour
         NotificationManager.Instance.ShowNotification("Nice, it rained last night!");
         SavePlotStates();
     }
+
+    private void RecalculateStormChance()
+    {
+        stormChancePercent = 5; // basis kans
+
+        foreach (var plot in allPlots)
+        {
+            var plant = plot.GetPlantedPlant();
+            if (plant != null && plant.seedType == "corn" && plot.dead == false)
+            {
+                stormChancePercent += 1;
+            }
+        }
+
+        Debug.Log("Storm chance recalculated: " + stormChancePercent + "%");
+    }
+
     private IEnumerator DelayedStorm()
     {
         yield return new WaitForSeconds(3f);
