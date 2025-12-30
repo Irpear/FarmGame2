@@ -236,6 +236,7 @@ public class DayManager : MonoBehaviour
         if (anyPlantsEaten == true)
         {
             NotificationManager.Instance.ShowNotification("You left your crops unharvested, the wild animals ate them!", 3f);
+            ShopManager.UnlockSeed("grape");
         }
         anyPlantsEaten = false;
     }
