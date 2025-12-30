@@ -4510,12 +4510,12 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_MaskInteraction: 0
-  m_Sprite: {fileID: 5979145366989942967, guid: bfefa9a84616ef04abeafff78874b3a0, type: 3}
+  m_Sprite: {fileID: 21300000, guid: bfefa9a84616ef04abeafff78874b3a0, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1440, y: 3120.762}
+  m_Size: {x: 36.920002, y: 80.01287}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -4651,7 +4651,7 @@ MonoBehaviour:
   - toolName: tomato
     sprite: {fileID: 21300000, guid: d097d1f6c23528c43bfcab0ee8dd7da3, type: 3}
   - toolName: wheat
-    sprite: {fileID: -3249959671106504510, guid: 7d22aff641f6e304b8068b886cdafedd, type: 3}
+    sprite: {fileID: 21300000, guid: 7d22aff641f6e304b8068b886cdafedd, type: 3}
   - toolName: wateringCan
     sprite: {fileID: 1914849043038913832, guid: 162289ffbf20e494d8d6ffedb4ff4693, type: 3}
   - toolName: deadPlant
@@ -6045,7 +6045,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -3249959671106504510, guid: e49d24e5e7e94634dbe6eb4d588ea5e4, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 7d22aff641f6e304b8068b886cdafedd, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
