@@ -20,11 +20,12 @@ public class DayManager : MonoBehaviour
 
     public Plot[] allPlots;
 
-    private Dictionary<string, (string plantType, int growthStage, bool isWatered, bool dead, bool composted, bool isShiny)> plotStates
-    = new Dictionary<string, (string, int, bool, bool, bool, bool)>();
+    private Dictionary<string, (string plantType, int growthStage, bool isWatered, bool dead, bool composted, bool isShiny, bool isGrape, int grapeMaxHarvests, int grapeHarvestsDone)> plotStates
+    = new Dictionary<string, (string, int, bool, bool, bool, bool, bool, int, int)>();
 
     public float rainChancePercent = 0;
-    public float stormChancePercent = 5;
+    public float stormChanceBasePercent = 2;
+    public float stormChancePercent = 2;
 
     public bool anyPlantsEaten = false;
 
@@ -117,7 +118,7 @@ public class DayManager : MonoBehaviour
                     string key = $"{plot.transform.position.x}_{plot.transform.position.y}"; 
                     string plantType = plot.GetPlantedPlant() != null ? plot.GetPlantedPlant().seedType : "";
 
-                    plotStates[key] = (plantType, plot.growthStage, plot.isWatered, plot.dead, plot.composted, plot.isShiny);
+                    plotStates[key] = (plantType, plot.growthStage, plot.isWatered, plot.dead, plot.composted, plot.isShiny, plot.isGrape, plot.grapeMaxHarvests, plot.grapeHarvestsDone);
 
                 }
             }
@@ -166,6 +167,12 @@ public class DayManager : MonoBehaviour
                     plot.isShiny = state.isShiny;
 
                     plot.chosenVariant = Random.Range(0, 4);
+
+                    plot.isGrape = state.isGrape;
+
+                    plot.grapeMaxHarvests = state.grapeMaxHarvests;
+
+                    plot.grapeHarvestsDone = state.grapeHarvestsDone;
 
                     plot.UpdateSprite();
 
@@ -242,7 +249,7 @@ public class DayManager : MonoBehaviour
 
     private void RecalculateStormChance()
     {
-        stormChancePercent = 5; // basis kans
+        stormChancePercent = stormChanceBasePercent; // basis kans
 
         foreach (var plot in allPlots)
         {

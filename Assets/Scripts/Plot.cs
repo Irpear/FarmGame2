@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using Unity.VisualScripting;
+using UnityEngine;
 using static Unity.Burst.Intrinsics.X86.Avx;
 
 public class Plot : MonoBehaviour
@@ -33,6 +34,12 @@ public class Plot : MonoBehaviour
     public bool isShiny = false;
 
     public int chosenVariant = 0;
+
+    // ---- GRAPE SYSTEEM ----
+    public bool isGrape = false;
+    public int grapeMaxHarvests = 0;   // bepaald bij planten
+    public int grapeHarvestsDone = 0;  // teller
+
 
     void Awake()
     {
@@ -107,6 +114,14 @@ public class Plot : MonoBehaviour
 
     private void HarvestPlant()
     {
+
+        if (isGrape)
+        {
+            HarvestGrape();
+            return;
+        }
+
+
         if (plantedPlant != null)
         {
 
@@ -203,6 +218,22 @@ public class Plot : MonoBehaviour
             }
             
             Debug.Log($"Planted {plant.seedType}. Seeds left: {SeedManager.Instance.GetSeeds(plant.seedType)}");
+
+            if (plant.seedType == "grape")
+            {
+                isGrape = true;
+                grapeHarvestsDone = 0;
+
+                // 25% kans op 1–4 harvests
+                grapeMaxHarvests = Random.Range(1, 5);
+
+                Debug.Log($"Grape planted: {grapeMaxHarvests} harvests possible.");
+            }
+            else
+            {
+                isGrape = false;
+            }
+
             UpdateSprite();
         }
         else
@@ -327,6 +358,9 @@ public class Plot : MonoBehaviour
         compostEffect.enabled = composted;
         isShiny = false;
         shinyEffect.enabled = isShiny;
+        isGrape = false;
+        grapeMaxHarvests = 0;
+        grapeHarvestsDone = 0;
     }
 
     public void ShinyRoll()
@@ -339,6 +373,58 @@ public class Plot : MonoBehaviour
         {
             isShiny = true;
         }
+    }
+
+    private void HarvestGrape()
+    {
+        grapeHarvestsDone++;
+
+        int coins = 0;
+
+        // Avond-per-dag winst
+        switch (grapeHarvestsDone)
+        {
+            case 1: coins = 3; break;
+            case 2: coins = 3; break;
+            case 3: coins = 4; break;
+            case 4: coins = 5; break;
+        }
+
+        // Popup
+        if (popupPrefab != null)
+        {
+            Canvas canvas = FindFirstObjectByType<Canvas>();
+            if (canvas != null)
+            {
+                var popup = Instantiate(popupPrefab, canvas.transform);
+                Vector3 screenPos = Camera.main.WorldToScreenPoint(transform.position);
+                popup.Show(coins, screenPos);
+            }
+        }
+
+        // Coins toevoegen
+        CoinManager.Instance.AddCoins(coins);
+
+        // Check einde
+        if (grapeHarvestsDone >= grapeMaxHarvests)
+        {
+            // Druif is klaar → reset
+            ResetPlant();
+            UpdateSprite();
+            return;
+        }
+
+        // Nog harvests te gaan → growthStage -1 zodat hij morgen weer harvestbaar is
+        if (growthStage > 1)
+        {
+            growthStage--;
+        }
+
+        // Maar hij moet nog steeds een druif zijn
+        dead = false;
+        isWatered = false;
+
+        UpdateSprite();
     }
 
 

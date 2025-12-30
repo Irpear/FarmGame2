@@ -3193,7 +3193,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -1645834703626371804, guid: 30762b24aed4de0488f45ce2b0653e6a, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 63dca9b6f1e69ce43a6a75aa395ed3ca, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -3667,7 +3667,8 @@ MonoBehaviour:
   nightTransition: {fileID: 2017309771}
   allPlots: []
   rainChancePercent: 0
-  stormChancePercent: 5
+  stormChanceBasePercent: 2
+  stormChancePercent: 2
   anyPlantsEaten: 0
 --- !u!4 &1080962169
 Transform:
@@ -4642,11 +4643,11 @@ MonoBehaviour:
   - toolName: carrot
     sprite: {fileID: 21300000, guid: 19a0fe766891f234cabbdb7e2e4037ff, type: 3}
   - toolName: corn
-    sprite: {fileID: -1645834703626371804, guid: 63dca9b6f1e69ce43a6a75aa395ed3ca, type: 3}
+    sprite: {fileID: 21300000, guid: 63dca9b6f1e69ce43a6a75aa395ed3ca, type: 3}
   - toolName: grape
     sprite: {fileID: 21300000, guid: 6f68361a7894d2b44ab44921383ffbc5, type: 3}
   - toolName: potato
-    sprite: {fileID: -9030114208605505708, guid: 0e9e064adbf8a8c478b3de67075df85c, type: 3}
+    sprite: {fileID: 21300000, guid: 0e9e064adbf8a8c478b3de67075df85c, type: 3}
   - toolName: tomato
     sprite: {fileID: 7416226517632442867, guid: d097d1f6c23528c43bfcab0ee8dd7da3, type: 3}
   - toolName: wheat
@@ -4892,7 +4893,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -9030114208605505708, guid: a084ea5b8b992374596df118cd38f1af, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 0e9e064adbf8a8c478b3de67075df85c, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
