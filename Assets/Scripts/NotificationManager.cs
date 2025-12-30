@@ -1,6 +1,7 @@
 using UnityEngine;
 using TMPro;
 using System.Collections;
+using System.Collections.Generic;
 
 // zo aanroepen:
 // NotificationManager.Instance.ShowNotification("Not enough coins!");
@@ -14,10 +15,17 @@ public class NotificationManager : MonoBehaviour
     public TextMeshProUGUI notificationText;
     public CanvasGroup canvasGroup;  // Voeg dit toe aan je panel!
 
-    public float displayDuration = 2f;
-    public float fadeDuration = 0.3f;
+    public float displayDuration = 3f;
+    public float fadeDuration = 0.4f;
 
-    private Coroutine currentCoroutine;
+    private Queue<NotificationData> notificationQueue = new Queue<NotificationData>();
+    private bool isShowingNotification = false;
+
+    private struct NotificationData
+    {
+        public string message;
+        public float duration;
+    }
 
     void Awake()
     {
@@ -43,11 +51,25 @@ public class NotificationManager : MonoBehaviour
         // Als geen duration gegeven, gebruik default
         if (duration < 0) duration = displayDuration;
 
-        // Stop oude animatie als die nog loopt
-        if (currentCoroutine != null)
-            StopCoroutine(currentCoroutine);
+        notificationQueue.Enqueue(new NotificationData { message = message, duration = duration });
 
-        currentCoroutine = StartCoroutine(ShowNotificationCoroutine(message, duration));
+        if (!isShowingNotification)
+        {
+            StartCoroutine(ProcessQueue());
+        }
+    }
+
+    private IEnumerator ProcessQueue()
+    {
+        isShowingNotification = true;
+
+        while (notificationQueue.Count > 0)
+        {
+            NotificationData data = notificationQueue.Dequeue();
+            yield return StartCoroutine(ShowNotificationCoroutine(data.message, data.duration));
+        }
+
+        isShowingNotification = false;
     }
 
     private IEnumerator ShowNotificationCoroutine(string message, float duration)

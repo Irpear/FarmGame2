@@ -282,7 +282,6 @@ public class DayManager : MonoBehaviour
         }
         yield return new WaitForSeconds(1f);
         NotificationManager.Instance.ShowNotification("Oh no! It stormed last night!");
-        yield return new WaitForSeconds(3f);
         ShopManager.UnlockSeed("corn");
         SavePlotStates();
     }
