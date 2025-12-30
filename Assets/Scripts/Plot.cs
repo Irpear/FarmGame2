@@ -120,7 +120,14 @@ public class Plot : MonoBehaviour
 
                 if (composted == true)
                 {
-                    coins = coins + coins;
+                    if (plantedPlant.seedType == "potato")
+                    {
+                        coins = coins + coins;
+                    }
+                    else
+                    {
+                        coins = coins + (coins / 2);
+                    }   
                 }
 
                 if (isShiny == true)
