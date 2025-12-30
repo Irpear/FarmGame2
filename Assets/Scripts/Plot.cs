@@ -1,5 +1,7 @@
-﻿using Unity.VisualScripting;
+﻿using System.Threading;
+using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.UI;
 using static Unity.Burst.Intrinsics.X86.Avx;
 
 public class Plot : MonoBehaviour
@@ -40,16 +42,30 @@ public class Plot : MonoBehaviour
     public int grapeMaxHarvests = 0;   // bepaald bij planten
     public int grapeHarvestsDone = 0;  // teller
 
+    private GameObject forceCompostScreen;
+    private GameObject nightOverlay;
+    private Image nightOverlayImage;
 
     void Awake()
     {
-        
+        nightOverlay = GameObject.Find("NightOverlay");
+        if (nightOverlay != null)
+        {
+            nightOverlayImage = nightOverlay.GetComponent<Image>();
+        }
+        forceCompostScreen = GameObject.Find("ForceCompostScreen");
+
         //UpdateSprite();
     }
 
     void OnMouseUp()
     {
         if (SeedSelectionUI.Instance.IsMenuOpen()) return;
+        if (NotificationManager.Instance.IsShowing()) return;
+        if (forceCompostScreen != null && forceCompostScreen.activeSelf) return;
+        if (nightOverlay != null && nightOverlay.activeInHierarchy && nightOverlayImage != null && nightOverlayImage.raycastTarget)
+            return;
+
 
         if (SeedSelectionUI.ActiveSelectedPlant != null && dead == true)
         {
@@ -106,6 +122,7 @@ public class Plot : MonoBehaviour
                     NotificationManager.Instance.ShowNotification("Can't pick up more dead plants, the composter is already full!");
                     return;
                 }
+                isGrape = false;
             }
             // Oogsten
             HarvestPlant();

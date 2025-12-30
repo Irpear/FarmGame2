@@ -1795,7 +1795,7 @@ MonoBehaviour:
     m_HighlightedSprite: {fileID: 0}
     m_PressedSprite: {fileID: 0}
     m_SelectedSprite: {fileID: 0}
-    m_DisabledSprite: {fileID: -7582945622924870309, guid: 5be1c6b8419ac2a45a95e8adb43b2c01, type: 3}
+    m_DisabledSprite: {fileID: 21300000, guid: 71b435276bcfbea41828a539f5f14cf4, type: 3}
   m_AnimationTriggers:
     m_NormalTrigger: Normal
     m_HighlightedTrigger: Highlighted
@@ -2850,7 +2850,7 @@ MonoBehaviour:
     m_HighlightedSprite: {fileID: 0}
     m_PressedSprite: {fileID: 0}
     m_SelectedSprite: {fileID: 0}
-    m_DisabledSprite: {fileID: -7582945622924870309, guid: 5be1c6b8419ac2a45a95e8adb43b2c01, type: 3}
+    m_DisabledSprite: {fileID: 21300000, guid: 71b435276bcfbea41828a539f5f14cf4, type: 3}
   m_AnimationTriggers:
     m_NormalTrigger: Normal
     m_HighlightedTrigger: Highlighted
@@ -2882,7 +2882,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 7416226517632442867, guid: 51aaaf2ddff51b541bfe02f048519762, type: 3}
+  m_Sprite: {fileID: 21300000, guid: d097d1f6c23528c43bfcab0ee8dd7da3, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -3161,7 +3161,7 @@ MonoBehaviour:
     m_HighlightedSprite: {fileID: 0}
     m_PressedSprite: {fileID: 0}
     m_SelectedSprite: {fileID: 0}
-    m_DisabledSprite: {fileID: -7582945622924870309, guid: 5be1c6b8419ac2a45a95e8adb43b2c01, type: 3}
+    m_DisabledSprite: {fileID: 21300000, guid: 71b435276bcfbea41828a539f5f14cf4, type: 3}
   m_AnimationTriggers:
     m_NormalTrigger: Normal
     m_HighlightedTrigger: Highlighted
@@ -4649,7 +4649,7 @@ MonoBehaviour:
   - toolName: potato
     sprite: {fileID: 21300000, guid: 0e9e064adbf8a8c478b3de67075df85c, type: 3}
   - toolName: tomato
-    sprite: {fileID: 7416226517632442867, guid: d097d1f6c23528c43bfcab0ee8dd7da3, type: 3}
+    sprite: {fileID: 21300000, guid: d097d1f6c23528c43bfcab0ee8dd7da3, type: 3}
   - toolName: wheat
     sprite: {fileID: -3249959671106504510, guid: 7d22aff641f6e304b8068b886cdafedd, type: 3}
   - toolName: wateringCan
@@ -4861,7 +4861,7 @@ MonoBehaviour:
     m_HighlightedSprite: {fileID: 0}
     m_PressedSprite: {fileID: 0}
     m_SelectedSprite: {fileID: 0}
-    m_DisabledSprite: {fileID: -7582945622924870309, guid: 5be1c6b8419ac2a45a95e8adb43b2c01, type: 3}
+    m_DisabledSprite: {fileID: 21300000, guid: 71b435276bcfbea41828a539f5f14cf4, type: 3}
   m_AnimationTriggers:
     m_NormalTrigger: Normal
     m_HighlightedTrigger: Highlighted
@@ -6013,7 +6013,7 @@ MonoBehaviour:
     m_HighlightedSprite: {fileID: 0}
     m_PressedSprite: {fileID: 0}
     m_SelectedSprite: {fileID: 0}
-    m_DisabledSprite: {fileID: -7582945622924870309, guid: 5be1c6b8419ac2a45a95e8adb43b2c01, type: 3}
+    m_DisabledSprite: {fileID: 21300000, guid: 71b435276bcfbea41828a539f5f14cf4, type: 3}
   m_AnimationTriggers:
     m_NormalTrigger: Normal
     m_HighlightedTrigger: Highlighted
@@ -6470,7 +6470,7 @@ MonoBehaviour:
     m_HighlightedSprite: {fileID: 0}
     m_PressedSprite: {fileID: 0}
     m_SelectedSprite: {fileID: 0}
-    m_DisabledSprite: {fileID: -7582945622924870309, guid: 5be1c6b8419ac2a45a95e8adb43b2c01, type: 3}
+    m_DisabledSprite: {fileID: 21300000, guid: 71b435276bcfbea41828a539f5f14cf4, type: 3}
   m_AnimationTriggers:
     m_NormalTrigger: Normal
     m_HighlightedTrigger: Highlighted
