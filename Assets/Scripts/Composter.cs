@@ -101,6 +101,8 @@ public class Composter : MonoBehaviour
         SeedSelectionUI.ActiveSelectedTool = "compost";
         SeedSelectionUI.ActiveSelectedPlant = null;
 
+        SeedSelectionUI.Instance.ReturnWateringCan();
+
         // composter wordt leeg
         isFull = false;
         isReady = false;
