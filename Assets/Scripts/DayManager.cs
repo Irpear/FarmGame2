@@ -24,7 +24,7 @@ public class DayManager : MonoBehaviour
     = new Dictionary<string, (string, int, bool, bool, bool, bool)>();
 
     public float rainChancePercent = 0;
-    public int stormChance = 20;
+    public float stormChancePercent = 5;
 
     public bool anyPlantsEaten = false;
 
@@ -200,7 +200,7 @@ public class DayManager : MonoBehaviour
             StartCoroutine(DelayedRain());
         }
 
-        if (Random.Range(1, stormChance + 1) == 1)
+        if (Random.value <= (stormChancePercent / 100f))
         {
             StartCoroutine(DelayedStorm());
         }

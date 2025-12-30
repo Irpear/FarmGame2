@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using static Unity.Burst.Intrinsics.X86.Avx;
 
 public class Plot : MonoBehaviour
 {
@@ -111,6 +112,11 @@ public class Plot : MonoBehaviour
             {
                 // Dead plant → in hand
                 SeedSelectionUI.ActiveSelectedTool = "deadPlant";
+                Composter comp = FindAnyObjectByType<Composter>();
+                if (comp != null)
+                {
+                    comp.ForceCompostScreenOn();
+                }
                 FindAnyObjectByType<Composter>()?.ShowDeadPlantHighlight();
             }
 
@@ -218,7 +224,10 @@ public class Plot : MonoBehaviour
                 }
                 else
                 {
-                    dead = true;
+                    if (plantedPlant.seedType != "carrot")
+                    {
+                        dead = true;
+                    }
                 }
                     
             }
@@ -235,6 +244,10 @@ public class Plot : MonoBehaviour
                 growthStage++;
             }
 
+            else if (plantedPlant.seedType == "carrot" && !isWatered && growthStage < maxGrowthStage)
+            {
+                growthStage++;
+            }
             
         }
 

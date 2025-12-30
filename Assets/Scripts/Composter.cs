@@ -3,6 +3,7 @@ using UnityEngine.UI;
 
 public class Composter : MonoBehaviour
 {
+
     [Header("UI")]
     public Image composterImage;
 
@@ -17,6 +18,8 @@ public class Composter : MonoBehaviour
     public bool isReady = false;  // Kan alleen true zijn als isFull == true
 
     private Button button;
+
+    public GameObject forceCompostScreen;
 
     void Awake()
     {
@@ -33,6 +36,7 @@ public class Composter : MonoBehaviour
         {
             InsertDeadPlant();
             SeedSelectionUI.ActiveSelectedTool = null; // hand lege maken
+            ForceCompostScreenOff();
             return;
         }
 
@@ -151,5 +155,17 @@ public class Composter : MonoBehaviour
 
     }
 
+    public void ForceCompostScreenOn()
+    {
+        if (SeedSelectionUI.ActiveSelectedTool == "deadPlant")
+        {
+            forceCompostScreen.gameObject.SetActive(true);
+        }
+    }
+
+    public void ForceCompostScreenOff()
+    {
+        forceCompostScreen.gameObject.SetActive(false);
+    }
 
 }
