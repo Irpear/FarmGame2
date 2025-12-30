@@ -1,0 +1,832 @@
+fileFormatVersion: 2
+guid: e5c0aafec8ed64c41b010d4f2a6625cd
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 807218746979887918
+    second: PlotSeeded2_0
+  - first:
+      213: 5643370062620282150
+    second: PlotSeeded2_1
+  - first:
+      213: -3543510882532326653
+    second: PlotSeeded2_2
+  - first:
+      213: -3873502191092387216
+    second: PlotSeeded2_3
+  - first:
+      213: 4428742234647455416
+    second: PlotSeeded2_4
+  - first:
+      213: -2021707274929332180
+    second: PlotSeeded2_5
+  - first:
+      213: 6201848014739108094
+    second: PlotSeeded2_6
+  - first:
+      213: -3305612891685898945
+    second: PlotSeeded2_7
+  - first:
+      213: 555538355364093215
+    second: PlotSeeded2_8
+  - first:
+      213: 5487292965336138387
+    second: PlotSeeded2_9
+  - first:
+      213: 2600092136101510612
+    second: PlotSeeded2_10
+  - first:
+      213: 2321638092289441073
+    second: PlotSeeded2_11
+  - first:
+      213: -3619767929578653893
+    second: PlotSeeded2_12
+  - first:
+      213: 4448674745049598453
+    second: PlotSeeded2_13
+  - first:
+      213: -627295230213003634
+    second: PlotSeeded2_14
+  - first:
+      213: -7062430197748401604
+    second: PlotSeeded2_15
+  - first:
+      213: 7569262087027986449
+    second: PlotSeeded2_16
+  - first:
+      213: 6450646079662757400
+    second: PlotSeeded2_17
+  - first:
+      213: 5298480705889097153
+    second: PlotSeeded2_18
+  - first:
+      213: 8142601129713244761
+    second: PlotSeeded2_19
+  - first:
+      213: 1175492510946515
+    second: PlotSeeded2_20
+  - first:
+      213: 4254157065744100576
+    second: PlotSeeded2_21
+  - first:
+      213: 273726703296121116
+    second: PlotSeeded2_22
+  - first:
+      213: 8600994687910059501
+    second: PlotSeeded2_23
+  - first:
+      213: -5617623550701143065
+    second: PlotSeeded2_24
+  - first:
+      213: 6276852424167056022
+    second: PlotSeeded2_25
+  - first:
+      213: -3536685105722238896
+    second: PlotSeeded2_26
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 1
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 600
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: PlotSeeded2_0
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 807
+        width: 120
+        height: 126
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e2ba5cd6c21d33b00800000000000000
+      internalID: 807218746979887918
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlotSeeded2_1
+      rect:
+        serializedVersion: 2
+        x: 209
+        y: 905
+        width: 118
+        height: 123
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 62d4e8e0c27415e40800000000000000
+      internalID: 5643370062620282150
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlotSeeded2_2
+      rect:
+        serializedVersion: 2
+        x: 386
+        y: 848
+        width: 152
+        height: 149
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3030eec60abe2dec0800000000000000
+      internalID: -3543510882532326653
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlotSeeded2_3
+      rect:
+        serializedVersion: 2
+        x: 647
+        y: 870
+        width: 120
+        height: 125
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 072bd37a74e8e3ac0800000000000000
+      internalID: -3873502191092387216
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlotSeeded2_4
+      rect:
+        serializedVersion: 2
+        x: 802
+        y: 818
+        width: 118
+        height: 119
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8b66ee1199d067d30800000000000000
+      internalID: 4428742234647455416
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlotSeeded2_5
+      rect:
+        serializedVersion: 2
+        x: 179
+        y: 624
+        width: 127
+        height: 227
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c20a306e1f371f3e0800000000000000
+      internalID: -2021707274929332180
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlotSeeded2_6
+      rect:
+        serializedVersion: 2
+        x: 421
+        y: 687
+        width: 117
+        height: 122
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ef07c7d19e3611650800000000000000
+      internalID: 6201848014739108094
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlotSeeded2_7
+      rect:
+        serializedVersion: 2
+        x: 531
+        y: 622
+        width: 122
+        height: 119
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f353c12c69a1022d0800000000000000
+      internalID: -3305612891685898945
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlotSeeded2_8
+      rect:
+        serializedVersion: 2
+        x: 665
+        y: 719
+        width: 118
+        height: 118
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f1dd49ad03ba5b700800000000000000
+      internalID: 555538355364093215
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlotSeeded2_9
+      rect:
+        serializedVersion: 2
+        x: 774
+        y: 600
+        width: 191
+        height: 191
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3924c5901e7c62c40800000000000000
+      internalID: 5487292965336138387
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlotSeeded2_10
+      rect:
+        serializedVersion: 2
+        x: 349
+        y: 573
+        width: 122
+        height: 119
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4ddfd9b9502651420800000000000000
+      internalID: 2600092136101510612
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlotSeeded2_11
+      rect:
+        serializedVersion: 2
+        x: 649
+        y: 462
+        width: 122
+        height: 125
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 13d7deb5b8d183020800000000000000
+      internalID: 2321638092289441073
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlotSeeded2_12
+      rect:
+        serializedVersion: 2
+        x: 924
+        y: 563
+        width: 118
+        height: 120
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b37fc141f3004cdc0800000000000000
+      internalID: -3619767929578653893
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlotSeeded2_13
+      rect:
+        serializedVersion: 2
+        x: 65
+        y: 442
+        width: 123
+        height: 121
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5f9ceeb4c1edcbd30800000000000000
+      internalID: 4448674745049598453
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlotSeeded2_14
+      rect:
+        serializedVersion: 2
+        x: 291
+        y: 411
+        width: 116
+        height: 115
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e866bd9cf466b47f0800000000000000
+      internalID: -627295230213003634
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlotSeeded2_15
+      rect:
+        serializedVersion: 2
+        x: 451
+        y: 407
+        width: 162
+        height: 141
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c3af63c47253dfd90800000000000000
+      internalID: -7062430197748401604
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlotSeeded2_16
+      rect:
+        serializedVersion: 2
+        x: 823
+        y: 371
+        width: 143
+        height: 143
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1109225b3cb6b0960800000000000000
+      internalID: 7569262087027986449
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlotSeeded2_17
+      rect:
+        serializedVersion: 2
+        x: 70
+        y: 252
+        width: 166
+        height: 142
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8169016be6c458950800000000000000
+      internalID: 6450646079662757400
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlotSeeded2_18
+      rect:
+        serializedVersion: 2
+        x: 277
+        y: 200
+        width: 115
+        height: 112
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1c5d7c3212cf78940800000000000000
+      internalID: 5298480705889097153
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlotSeeded2_19
+      rect:
+        serializedVersion: 2
+        x: 436
+        y: 209
+        width: 121
+        height: 118
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 95a904c0694500170800000000000000
+      internalID: 8142601129713244761
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlotSeeded2_20
+      rect:
+        serializedVersion: 2
+        x: 588
+        y: 312
+        width: 115
+        height: 114
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3d41d8daa1d240000800000000000000
+      internalID: 1175492510946515
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlotSeeded2_21
+      rect:
+        serializedVersion: 2
+        x: 779
+        y: 237
+        width: 115
+        height: 114
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0ec2562df4dc90b30800000000000000
+      internalID: 4254157065744100576
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlotSeeded2_22
+      rect:
+        serializedVersion: 2
+        x: 146
+        y: 68
+        width: 123
+        height: 118
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c1901838cf87cc300800000000000000
+      internalID: 273726703296121116
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlotSeeded2_23
+      rect:
+        serializedVersion: 2
+        x: 579
+        y: 85
+        width: 118
+        height: 116
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ded96ef391fdc5770800000000000000
+      internalID: 8600994687910059501
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlotSeeded2_24
+      rect:
+        serializedVersion: 2
+        x: 698
+        y: 47
+        width: 134
+        height: 116
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7ebf692e4213a02b0800000000000000
+      internalID: -5617623550701143065
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlotSeeded2_25
+      rect:
+        serializedVersion: 2
+        x: 863
+        y: 149
+        width: 117
+        height: 118
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 692e60a060cdb1750800000000000000
+      internalID: 6276852424167056022
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlotSeeded2_26
+      rect:
+        serializedVersion: 2
+        x: 403
+        y: 31
+        width: 114
+        height: 113
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 058d20f62ab2beec0800000000000000
+      internalID: -3536685105722238896
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      PlotSeeded2_0: 807218746979887918
+      PlotSeeded2_1: 5643370062620282150
+      PlotSeeded2_10: 2600092136101510612
+      PlotSeeded2_11: 2321638092289441073
+      PlotSeeded2_12: -3619767929578653893
+      PlotSeeded2_13: 4448674745049598453
+      PlotSeeded2_14: -627295230213003634
+      PlotSeeded2_15: -7062430197748401604
+      PlotSeeded2_16: 7569262087027986449
+      PlotSeeded2_17: 6450646079662757400
+      PlotSeeded2_18: 5298480705889097153
+      PlotSeeded2_19: 8142601129713244761
+      PlotSeeded2_2: -3543510882532326653
+      PlotSeeded2_20: 1175492510946515
+      PlotSeeded2_21: 4254157065744100576
+      PlotSeeded2_22: 273726703296121116
+      PlotSeeded2_23: 8600994687910059501
+      PlotSeeded2_24: -5617623550701143065
+      PlotSeeded2_25: 6276852424167056022
+      PlotSeeded2_26: -3536685105722238896
+      PlotSeeded2_3: -3873502191092387216
+      PlotSeeded2_4: 4428742234647455416
+      PlotSeeded2_5: -2021707274929332180
+      PlotSeeded2_6: 6201848014739108094
+      PlotSeeded2_7: -3305612891685898945
+      PlotSeeded2_8: 555538355364093215
+      PlotSeeded2_9: 5487292965336138387
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

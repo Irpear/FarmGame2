@@ -8,6 +8,7 @@ public class PlantData : ScriptableObject
 
     [Header("Sprites per groeistage")]
     public Sprite[] growthSprites;   // bijv. 4 sprites: stage 1-4
+    public Sprite[] seedVariants;
 
     [Header("Sprites van de aarde")]
     public Sprite groundDrySprite;

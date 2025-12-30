@@ -3667,7 +3667,7 @@ MonoBehaviour:
   nightTransition: {fileID: 2017309771}
   allPlots: []
   rainChancePercent: 0
-  stormChance: 1
+  stormChancePercent: 5
   anyPlantsEaten: 0
 --- !u!4 &1080962169
 Transform:
@@ -4026,7 +4026,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 0, b: 0, a: 1}
+  m_Color: {r: 1, g: 0, b: 0, a: 0}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1

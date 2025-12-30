@@ -32,6 +32,8 @@ public class Plot : MonoBehaviour
     public float shinyChancePercent = 1;
     public bool isShiny = false;
 
+    private int chosenVariant = 0;
+
     void Awake()
     {
         
@@ -47,7 +49,7 @@ public class Plot : MonoBehaviour
             Composter comp = FindAnyObjectByType<Composter>();
             if (comp != null && comp.isFull)
             {
-                NotificationManager.Instance.ShowNotification("Can't pick up, the composter is full!");
+                NotificationManager.Instance.ShowNotification("Can't pick up more dead plants, the composter is already full!");
                 return; // Stop hier, pak plant NIET op
             }
 
@@ -94,7 +96,7 @@ public class Plot : MonoBehaviour
                 Composter comp = FindAnyObjectByType<Composter>();
                 if (comp != null && comp.isFull)
                 {
-                    NotificationManager.Instance.ShowNotification("Can't pick up, the composter is full!");
+                    NotificationManager.Instance.ShowNotification("Can't pick up more dead plants, the composter is already full!");
                     return;
                 }
             }
@@ -189,6 +191,7 @@ public class Plot : MonoBehaviour
         {
             plantedPlant = plant;
             growthStage = 1;
+            chosenVariant = Random.Range(0, 4);
 
             ShinyRoll();
 
@@ -244,11 +247,11 @@ public class Plot : MonoBehaviour
                 growthStage++;
             }
 
-            else if (plantedPlant.seedType == "carrot" && !isWatered && growthStage < maxGrowthStage)
+            else if (plantedPlant != null && plantedPlant.seedType == "carrot" && !isWatered && growthStage < maxGrowthStage)
             {
                 growthStage++;
             }
-            
+
         }
 
         isWatered = false;
@@ -281,6 +284,11 @@ public class Plot : MonoBehaviour
 
         // 4. Normale groei
         plantRenderer.sprite = plantedPlant.growthSprites[growthStage - 1];
+
+        if (growthStage == 1)
+        {
+            plantRenderer.sprite = plantedPlant.seedVariants[chosenVariant];
+        }
     }
 
 
