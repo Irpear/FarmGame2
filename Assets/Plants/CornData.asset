@@ -17,6 +17,8 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 393a4fbd52c3b1a458f8b59f1a269ed8, type: 3}
   - {fileID: 21300000, guid: d5301d3faca33294bb7c3927f27ecf23, type: 3}
   - {fileID: 21300000, guid: 1858ff3ae448a314f8205e799659226a, type: 3}
+  - {fileID: 21300000, guid: fcc1b1cae5e891345981b76b1e3aab88, type: 3}
+  - {fileID: 21300000, guid: 5289364631ebcd44da35acd6ee5a8431, type: 3}
   - {fileID: 21300000, guid: 97161c42d9f872149ace5d512973c8c5, type: 3}
   seedVariants:
   - {fileID: 21300000, guid: 393a4fbd52c3b1a458f8b59f1a269ed8, type: 3}
@@ -25,4 +27,4 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 072b9f369a9fe7940b17b7b70a99c5d0, type: 3}
   groundDrySprite: {fileID: 21300000, guid: ed4a8a224b78dd241b68c8713d323c66, type: 3}
   groundWetSprite: {fileID: 21300000, guid: c8954fc8f53271a449273c041405976d, type: 3}
-  harvestCoins: 4
+  harvestCoins: 14

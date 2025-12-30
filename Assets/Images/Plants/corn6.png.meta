@@ -1,10 +1,16 @@
 fileFormatVersion: 2
-guid: fcc1b1cae5e891345981b76b1e3aab88
+guid: 97161c42d9f872149ace5d512973c8c5
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 612600066695323494
-    second: corn3_0
+      213: -5990693705936971341
+    second: corn4_0
+  - first:
+      213: -2076411406148282141
+    second: corn4_1
+  - first:
+      213: 2163315688832735560
+    second: corn4_2
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -113,13 +119,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: corn3_0
+      name: corn4_0
       rect:
         serializedVersion: 2
-        x: 879
-        y: 344
-        width: 269
-        height: 276
+        x: 935
+        y: 520
+        width: 11
+        height: 48
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +134,52 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 66f51c4d384608800800000000000000
-      internalID: 612600066695323494
+      spriteID: 3b9557380d7ccdca0800000000000000
+      internalID: -5990693705936971341
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: corn4_1
+      rect:
+        serializedVersion: 2
+        x: 946
+        y: 344
+        width: 192
+        height: 264
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3e856f0d3da1f23e0800000000000000
+      internalID: -2076411406148282141
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: corn4_2
+      rect:
+        serializedVersion: 2
+        x: 879
+        y: 428
+        width: 66
+        height: 90
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 84997e14824a50e10800000000000000
+      internalID: 2163315688832735560
       vertices: []
       indices: 
       edges: []
@@ -148,7 +198,9 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      corn3_0: 612600066695323494
+      corn4_0: -5990693705936971341
+      corn4_1: -2076411406148282141
+      corn4_2: 2163315688832735560
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

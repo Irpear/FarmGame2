@@ -1,10 +1,16 @@
 fileFormatVersion: 2
-guid: fcc1b1cae5e891345981b76b1e3aab88
+guid: 52ccb0ff70f19894d9065474e2b5ab5f
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 612600066695323494
-    second: corn3_0
+      213: -7538716985650955513
+    second: wheat4_0
+  - first:
+      213: 3786137311789655011
+    second: wheat4_1
+  - first:
+      213: 7182946942622835304
+    second: wheat4_2
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -113,13 +119,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: corn3_0
+      name: wheat4_0
       rect:
         serializedVersion: 2
-        x: 879
-        y: 344
-        width: 269
-        height: 276
+        x: 935
+        y: 520
+        width: 11
+        height: 48
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +134,52 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 66f51c4d384608800800000000000000
-      internalID: 612600066695323494
+      spriteID: 70b3218e7d8116790800000000000000
+      internalID: -7538716985650955513
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: wheat4_1
+      rect:
+        serializedVersion: 2
+        x: 946
+        y: 344
+        width: 192
+        height: 264
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3e3231443df0b8430800000000000000
+      internalID: 3786137311789655011
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: wheat4_2
+      rect:
+        serializedVersion: 2
+        x: 879
+        y: 428
+        width: 66
+        height: 90
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 862238bff24fea360800000000000000
+      internalID: 7182946942622835304
       vertices: []
       indices: 
       edges: []
@@ -148,7 +198,9 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      corn3_0: 612600066695323494
+      wheat4_0: -7538716985650955513
+      wheat4_1: 3786137311789655011
+      wheat4_2: 7182946942622835304
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
