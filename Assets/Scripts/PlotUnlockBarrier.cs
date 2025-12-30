@@ -33,7 +33,7 @@ public class PlotUnlockBarrier : MonoBehaviour
     private void OnMouseDown()
     {
         
-        if (EventSystem.current.IsPointerOverGameObject()) return;
+        //if (EventSystem.current.IsPointerOverGameObject()) return;
 
         // UI checks die erboven kliks moeten blokkeren
         if (NotificationManager.Instance.IsShowing()) return;
