@@ -13,9 +13,16 @@ public class Composter : MonoBehaviour
     public Sprite redSprite;     // vol + niet klaar
     public Sprite greenSprite;   // vol + klaar
 
+    [Header("Trashcan Sprites")]
+    public Sprite defaultTrashcanSprite;
+    public Sprite whiteTrashcanSprite;
+    public Sprite redTrashcanSprite;
+
     [Header("State")]
     public bool isFull = false;
     public bool isReady = false;  // Kan alleen true zijn als isFull == true
+
+    public bool isTrashcan = true;
 
     private Button button;
 
@@ -26,7 +33,12 @@ public class Composter : MonoBehaviour
         button = GetComponent<Button>();
         button.onClick.AddListener(OnClicked);
 
-        //UpdateVisual();
+        if (PlayerPrefs.GetInt("composter_unlocked", 0) == 1)
+        {
+            isTrashcan = false;
+        }
+
+        UpdateVisual();
     }
 
     private void OnClicked()
@@ -43,17 +55,8 @@ public class Composter : MonoBehaviour
         // 2. Als VOL & KLAAR → speler krijgt compost
         if (isFull && isReady)
         {
-            if (SeedSelectionUI.ActiveSelectedTool == "deadPlant")
-            {
-                SwitchDeadPlantAndCompost();
-                return;
-            } 
-            else
-            {
-                GiveCompostToPlayer();
-                return;
-            }
-                
+            GiveCompostToPlayer();
+            return; 
         }
 
         // 3. Als LEEG + speler probeert compost terug te leggen
@@ -68,7 +71,11 @@ public class Composter : MonoBehaviour
     public void ShowDeadPlantHighlight()
     {
         if (!isFull)
-            composterImage.sprite = whiteSprite;
+        {
+            if (isTrashcan) composterImage.sprite = whiteTrashcanSprite;
+            else composterImage.sprite = whiteSprite;
+        }
+            
     }
 
     public void ClearHighlight()
@@ -81,7 +88,8 @@ public class Composter : MonoBehaviour
         // Alleen transformeren als hij vol & niet klaar is → wordt nu klaar
         if (isFull && !isReady)
         {
-            isReady = true;
+            if (isTrashcan) isFull = false;
+            else isReady = true;
             UpdateVisual();
         }
         DayManager.Instance?.SaveComposterState(this);
@@ -140,13 +148,15 @@ public class Composter : MonoBehaviour
     {
         if (!isFull)
         {
-            composterImage.sprite = defaultSprite;
+            if (isTrashcan) composterImage.sprite = defaultTrashcanSprite;
+            else composterImage.sprite = defaultSprite;
         }
 
         // vol + niet klaar = rood
         else if (isFull && !isReady)
         {
-            composterImage.sprite = redSprite;
+            if (isTrashcan) composterImage.sprite = redTrashcanSprite;
+            else composterImage.sprite = redSprite;
         }
 
         // vol + klaar = groen

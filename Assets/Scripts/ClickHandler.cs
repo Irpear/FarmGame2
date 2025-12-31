@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 
 public class ClickHandler : MonoBehaviour
@@ -68,6 +69,5 @@ public class ClickHandler : MonoBehaviour
         talismanPanel.SetActive(false);
         animalPanel.SetActive(false);
     }
-
 
 }

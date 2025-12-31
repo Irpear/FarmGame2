@@ -51,6 +51,14 @@ public class NotificationManager : MonoBehaviour
         // Als geen duration gegeven, gebruik default
         if (duration < 0) duration = displayDuration;
 
+        foreach (var notification in notificationQueue)
+        {
+            if (notification.message == message)
+            {
+                return; // Skip, zit er al in
+            }
+        }
+
         notificationQueue.Enqueue(new NotificationData { message = message, duration = duration });
 
         if (!isShowingNotification)

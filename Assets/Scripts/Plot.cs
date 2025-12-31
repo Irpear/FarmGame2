@@ -71,7 +71,8 @@ public class Plot : MonoBehaviour
             Composter comp = FindAnyObjectByType<Composter>();
             if (comp != null && comp.isFull)
             {
-                NotificationManager.Instance.ShowNotification("Can't pick up more dead plants, the composter is already full!");
+                if (comp.isTrashcan) NotificationManager.Instance.ShowNotification("Can't pick up more dead plants, the trashcan is already full!");
+                else NotificationManager.Instance.ShowNotification("Can't pick up more dead plants, the composter is already full!");
                 return; // Stop hier, pak plant NIET op
             }
 
@@ -118,7 +119,8 @@ public class Plot : MonoBehaviour
                 Composter comp = FindAnyObjectByType<Composter>();
                 if (comp != null && comp.isFull)
                 {
-                    NotificationManager.Instance.ShowNotification("Can't pick up more dead plants, the composter is already full!");
+                    if (comp.isTrashcan) NotificationManager.Instance.ShowNotification("Can't pick up more dead plants, the trashcan is already full!");
+                    else NotificationManager.Instance.ShowNotification("Can't pick up more dead plants, the composter is already full!");
                     return;
                 }
                 isGrape = false;

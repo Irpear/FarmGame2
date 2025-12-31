@@ -36,6 +36,7 @@ public class DayManager : MonoBehaviour
     {
         public bool isFull;
         public bool isReady;
+        public bool isTrashcan;
     }
 
     private void Awake()
@@ -316,7 +317,8 @@ public class DayManager : MonoBehaviour
         composterState = new ComposterState
         {
             isFull = comp.isFull,
-            isReady = comp.isReady
+            isReady = comp.isReady,
+            isTrashcan = comp.isTrashcan
         };
     }
 
