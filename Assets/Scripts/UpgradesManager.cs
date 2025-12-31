@@ -34,7 +34,7 @@ public class UpgradesManager : MonoBehaviour
         UpdateUI();
 
         NotificationManager.Instance.ShowNotification("Composter unlocked!");
-        Debug.Log("Composter purchased!");
+        ShopManager.UnlockSeed("potato");
     }
 
     private void UpdateUI()

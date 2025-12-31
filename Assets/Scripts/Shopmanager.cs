@@ -43,7 +43,7 @@ public class ShopManager : MonoBehaviour
         UpdateTexts();
     }
 
-    private void CheckUnlocks()
+    public void CheckUnlocks()
     {
         // Carrot is altijd unlocked (starter seed)
         SetSeedUnlocked("carrot", true);
@@ -61,8 +61,11 @@ public class ShopManager : MonoBehaviour
         if (button != null)
         {
             button.interactable = unlocked;
-            // Optioneel: verberg de button helemaal als niet unlocked
-            // button.gameObject.SetActive(unlocked);
+
+            foreach (Transform child in button.transform)
+            {
+                child.gameObject.SetActive(unlocked);
+            }
         }
     }
 
