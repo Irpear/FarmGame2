@@ -1077,7 +1077,7 @@ MonoBehaviour:
   redTrashcanSprite: {fileID: -1363694008565060985, guid: f7c56405484e97b40a3eea23d2ffef3c, type: 3}
   isFull: 0
   isReady: 0
-  isThrashcan: 1
+  isTrashcan: 1
   forceCompostScreen: {fileID: 1183972507}
 --- !u!114 &337408033
 MonoBehaviour:
@@ -4674,6 +4674,7 @@ GameObject:
   - component: {fileID: 1682127036}
   - component: {fileID: 1682127035}
   - component: {fileID: 1682127034}
+  - component: {fileID: 1682127037}
   m_Layer: 5
   m_Name: BarnButton (barn)
   m_TagString: Untagged
@@ -4697,8 +4698,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -195, y: 640}
-  m_SizeDelta: {x: 231.28, y: 235.11}
+  m_AnchoredPosition: {x: -270, y: 672}
+  m_SizeDelta: {x: 400, y: 235.11}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1682127034
 MonoBehaviour:
@@ -4725,7 +4726,7 @@ MonoBehaviour:
     m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
     m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
     m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_DisabledColor: {r: 0.645283, g: 0.25202557, b: 0.25743252, a: 0.5019608}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
   m_SpriteState:
@@ -4744,9 +4745,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2099814497}
-        m_TargetAssemblyTypeName: ClickHandler, Assembly-CSharp
-        m_MethodName: LoadBarn
+      - m_Target: {fileID: 1682127037}
+        m_TargetAssemblyTypeName: BarnButton, Assembly-CSharp
+        m_MethodName: ClickBarn
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -4769,14 +4770,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
   m_Material: {fileID: 0}
-  m_Color: {r: 0.7207546, g: 0, b: 0, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: -9132518384313571126, guid: cb3056e208a29aa4ba0ec6fa9aa5e256, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -4794,6 +4795,23 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1682127032}
   m_CullTransparentMesh: 1
+--- !u!114 &1682127037
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1682127032}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: da0f158e2e96600429910427448a1490, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: '::'
+  barnButton: {fileID: 1682127034}
+  barnButtonImage: {fileID: 1682127035}
+  barnLockedSprite: {fileID: -6226801709251932408, guid: 80e7cdaa6858a784fb5780461b371cee, type: 3}
+  barnSprite: {fileID: -9132518384313571126, guid: cb3056e208a29aa4ba0ec6fa9aa5e256, type: 3}
+  barnCost: 500
 --- !u!1 &1741549491
 GameObject:
   m_ObjectHideFlags: 0
