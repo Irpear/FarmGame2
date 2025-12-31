@@ -44,6 +44,7 @@ public class BarnButton : MonoBehaviour
             UpdateUI();
 
             NotificationManager.Instance.ShowNotification("Barn unlocked!");
+            ShopManager.UnlockSeed("wheat");
             NotificationManager.Instance.ShowNotification("More items have been unlocked at the store");
         }
     }
