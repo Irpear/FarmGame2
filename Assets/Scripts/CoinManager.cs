@@ -10,6 +10,10 @@ public class CoinManager : MonoBehaviour
     public int profit = 0;
     public TextMeshProUGUI coinText;
 
+    public int wheatResource = 0;
+    public TextMeshProUGUI wheatResourceText;
+    public GameObject wheatResourceUI;
+
     private void Awake()
     {
         //Singleton
@@ -34,6 +38,14 @@ public class CoinManager : MonoBehaviour
         if (coinText == null)
             coinText = GameObject.Find("CoinText")?.GetComponent<TextMeshProUGUI>();
 
+        if (SceneManager.GetActiveScene().name == "BarnScene")
+        {
+            if (wheatResourceText == null)
+                wheatResourceText = GameObject.Find("WheatResourceText")?.GetComponent<TextMeshProUGUI>();
+            wheatResourceUI.SetActive(true);
+        }
+        else wheatResourceUI.SetActive(false);
+
         UpdateUI();
     }
 
@@ -48,5 +60,7 @@ public class CoinManager : MonoBehaviour
     {
         if (coinText != null)
             coinText.text = coins.ToString();
+        if (wheatResourceText != null)
+            wheatResourceText.text = wheatResource.ToString();
     }
 }
