@@ -1849,6 +1849,9 @@ MonoBehaviour:
   wateringCanImage: {fileID: 1100085765}
   WateringCan: {fileID: 1914849043038913832, guid: 162289ffbf20e494d8d6ffedb4ff4693, type: 3}
   WateringCanGlow: {fileID: -2973250991471431281, guid: 52861af27b6e10a46ab4fd156f5be915, type: 3}
+  ScytheImage: {fileID: 2105233200}
+  ScytheDefault: {fileID: -8702967748025807226, guid: f44c6ccf9afbd2241ab84c395c0ae5c8, type: 3}
+  ScytheGlow: {fileID: 3190349355989008818, guid: fd9c63dc1e626f3479a17f9bffcddda4, type: 3}
 --- !u!1001 &669222981
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4341,6 +4344,7 @@ RectTransform:
   - {fileID: 1638622498}
   - {fileID: 1837622913}
   - {fileID: 1100085763}
+  - {fileID: 2105233198}
   - {fileID: 2110251351}
   - {fileID: 1183972508}
   - {fileID: 337408031}
@@ -5780,6 +5784,8 @@ MonoBehaviour:
     sprite: {fileID: -1695433325088696955, guid: d5149e69895ec1c498ddd97b949ebb94, type: 3}
   - toolName: compost
     sprite: {fileID: 5520406542960741612, guid: 701591461bbdbde4a915edddb01909f7, type: 3}
+  - toolName: scythe
+    sprite: {fileID: -8702967748025807226, guid: f44c6ccf9afbd2241ab84c395c0ae5c8, type: 3}
 --- !u!1 &1682127032
 GameObject:
   m_ObjectHideFlags: 0
@@ -7746,6 +7752,152 @@ MonoBehaviour:
   upgradesPanel: {fileID: 0}
   talismanPanel: {fileID: 0}
   animalPanel: {fileID: 0}
+--- !u!1 &2105233197
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2105233198}
+  - component: {fileID: 2105233201}
+  - component: {fileID: 2105233200}
+  - component: {fileID: 2105233199}
+  - component: {fileID: 2105233202}
+  m_Layer: 5
+  m_Name: ScytheButton
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &2105233198
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2105233197}
+  m_LocalRotation: {x: -0, y: -0, z: 0.98103887, w: -0.1938114}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1091615683}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -157.649}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -37.5, y: 216.4}
+  m_SizeDelta: {x: 177.44, y: 194.75}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &2105233199
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2105233197}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Button
+  m_Navigation:
+    m_Mode: 3
+    m_WrapAround: 0
+    m_SelectOnUp: {fileID: 0}
+    m_SelectOnDown: {fileID: 0}
+    m_SelectOnLeft: {fileID: 0}
+    m_SelectOnRight: {fileID: 0}
+  m_Transition: 1
+  m_Colors:
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0}
+    m_ColorMultiplier: 1
+    m_FadeDuration: 0.1
+  m_SpriteState:
+    m_HighlightedSprite: {fileID: 0}
+    m_PressedSprite: {fileID: 0}
+    m_SelectedSprite: {fileID: 0}
+    m_DisabledSprite: {fileID: 0}
+  m_AnimationTriggers:
+    m_NormalTrigger: Normal
+    m_HighlightedTrigger: Highlighted
+    m_PressedTrigger: Pressed
+    m_SelectedTrigger: Selected
+    m_DisabledTrigger: Disabled
+  m_Interactable: 1
+  m_TargetGraphic: {fileID: 2105233200}
+  m_OnClick:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 603133462}
+        m_TargetAssemblyTypeName: SeedSelectionUI, Assembly-CSharp
+        m_MethodName: SelectScythe
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &2105233200
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2105233197}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: -8702967748025807226, guid: f44c6ccf9afbd2241ab84c395c0ae5c8, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &2105233201
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2105233197}
+  m_CullTransparentMesh: 1
+--- !u!114 &2105233202
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2105233197}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d5234bb26395d76458835f5b8a9f38ec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: '::'
+  ScytheButton: {fileID: 2105233199}
 --- !u!1 &2110251350
 GameObject:
   m_ObjectHideFlags: 0

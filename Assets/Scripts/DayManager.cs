@@ -66,6 +66,7 @@ public class DayManager : MonoBehaviour
         SeedSelectionUI.ActiveSelectedPlant = null;
         SeedSelectionUI.ActiveSelectedTool = null;
         SeedSelectionUI.Instance.ReturnWateringCan();
+        SeedSelectionUI.Instance.ReturnScythe();
 
         var comp = FindFirstObjectByType<Composter>();
         RestoreComposterState(comp);
@@ -293,6 +294,7 @@ public class DayManager : MonoBehaviour
         SeedSelectionUI.ActiveSelectedPlant = null;
         SeedSelectionUI.ActiveSelectedTool = null;
         SeedSelectionUI.Instance.ReturnWateringCan();
+        SeedSelectionUI.Instance.ReturnScythe();
 
         FindAnyObjectByType<Composter>()?.ProcessNewDay();
 

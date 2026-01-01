@@ -110,6 +110,7 @@ public class Composter : MonoBehaviour
         SeedSelectionUI.ActiveSelectedPlant = null;
 
         SeedSelectionUI.Instance.ReturnWateringCan();
+        SeedSelectionUI.Instance.ReturnScythe();
 
         // composter wordt leeg
         isFull = false;

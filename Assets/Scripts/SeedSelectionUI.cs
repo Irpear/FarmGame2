@@ -39,6 +39,10 @@ public class SeedSelectionUI : MonoBehaviour
     public Sprite WateringCan;
     public Sprite WateringCanGlow;
 
+    public Image ScytheImage;
+    public Sprite ScytheDefault;
+    public Sprite ScytheGlow;
+
 
     void Awake()
     {
@@ -88,6 +92,7 @@ public class SeedSelectionUI : MonoBehaviour
         ActiveSelectedTool = null;
 
         ReturnWateringCan();
+        ReturnScythe();
 
         closeButton.gameObject.SetActive(false);
         selectionPanel.SetActive(false);
@@ -150,6 +155,9 @@ public class SeedSelectionUI : MonoBehaviour
         return null;
     }
 
+
+    //TOOLMANAGER DOWN HERE
+
     public void SelectWateringCan()
     {
         if (ActiveSelectedTool == "wateringCan")
@@ -161,6 +169,7 @@ public class SeedSelectionUI : MonoBehaviour
         {
             ActiveSelectedTool = "wateringCan";
             TakeWateringCan();
+            ReturnScythe();
         }
         ActiveSelectedPlant = null;
     }
@@ -178,6 +187,38 @@ public class SeedSelectionUI : MonoBehaviour
         if (wateringCanImage != null)
         {
             wateringCanImage.sprite = WateringCan;
+        }
+    }
+
+    public void SelectScythe()
+    {
+        if (ActiveSelectedTool == "scythe")
+        {
+            ActiveSelectedTool = null;
+            ReturnScythe();
+        }
+        else
+        {
+            ActiveSelectedTool = "scythe";
+            TakeScythe();
+            ReturnWateringCan();
+        }
+        ActiveSelectedPlant = null;
+    }
+
+    public void TakeScythe()
+    {
+        if (ScytheImage != null)
+        {
+            ScytheImage.sprite = ScytheGlow;
+        }
+    }
+
+    public void ReturnScythe()
+    {
+        if (ScytheImage != null)
+        {
+            ScytheImage.sprite = ScytheDefault;
         }
     }
 }
