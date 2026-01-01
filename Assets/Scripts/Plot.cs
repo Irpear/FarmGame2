@@ -28,6 +28,7 @@ public class Plot : MonoBehaviour
     public Sprite deadPlant;
 
     public HarvestPopup popupPrefab;
+    public HarvestPopup wheatPopupPrefab;
 
     public SpriteRenderer compostEffect;
 
@@ -88,7 +89,7 @@ public class Plot : MonoBehaviour
             return;
         }
 
-        if (SeedSelectionUI.ActiveSelectedTool != null) // oogst dus ook niet met een deadplant of andere tools in je hand
+        if (SeedSelectionUI.ActiveSelectedTool != null && SeedSelectionUI.ActiveSelectedTool != "scythe") // oogst dus ook niet met een deadplant of andere tools in je hand
         {
             if (SeedSelectionUI.ActiveSelectedTool == "wateringCan")
             {
@@ -177,25 +178,49 @@ public class Plot : MonoBehaviour
                     ShopManager.UnlockSeed("tomato");
                 }
 
-                // --- POPUP AANMAKEN ---
-                if (popupPrefab != null)
+                if (SeedSelectionUI.ActiveSelectedTool == "scythe" && plantedPlant.seedType == "wheat")
                 {
-                    // Zoek canvas
-                    Canvas canvas = FindFirstObjectByType<Canvas>();
-
-                    if (canvas != null)
+                    // --- POPUP AANMAKEN ---
+                    if (wheatPopupPrefab != null)
                     {
-                        var popup = Instantiate(popupPrefab, canvas.transform);
+                        // Zoek canvas
+                        Canvas canvas = FindFirstObjectByType<Canvas>();
 
-                        // Popup positie = boven de plot
-                        Vector3 screenPos = Camera.main.WorldToScreenPoint(transform.position);
+                        if (canvas != null)
+                        {
+                            var popup = Instantiate(wheatPopupPrefab, canvas.transform);
 
-                        popup.Show(coins, screenPos);
+                            // Popup positie = boven de plot
+                            Vector3 screenPos = Camera.main.WorldToScreenPoint(transform.position);
+
+                            popup.Show(2, screenPos);
+                        }
                     }
-                }
 
-                // Voeg coins toe
-                CoinManager.Instance.AddCoins(coins);
+                    CoinManager.Instance.AddWheat(2);
+                }
+                else
+                {
+                    // --- POPUP AANMAKEN ---
+                    if (popupPrefab != null)
+                    {
+                        // Zoek canvas
+                        Canvas canvas = FindFirstObjectByType<Canvas>();
+
+                        if (canvas != null)
+                        {
+                            var popup = Instantiate(popupPrefab, canvas.transform);
+
+                            // Popup positie = boven de plot
+                            Vector3 screenPos = Camera.main.WorldToScreenPoint(transform.position);
+
+                            popup.Show(coins, screenPos);
+                        }
+                    }
+
+                    // Voeg coins toe
+                    CoinManager.Instance.AddCoins(coins);
+                }
             }
         }
 

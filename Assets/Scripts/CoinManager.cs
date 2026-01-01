@@ -56,6 +56,12 @@ public class CoinManager : MonoBehaviour
         UpdateUI();
     }
 
+    public void AddWheat(int amount)
+    {
+        wheatResource += amount;
+        UpdateUI();
+    }
+
     private void UpdateUI()
     {
         if (coinText != null)
