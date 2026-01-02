@@ -1174,9 +1174,9 @@ MonoBehaviour:
   whiteSprite: {fileID: 21300000, guid: a359393d44803b34387c14e538ef3546, type: 3}
   redSprite: {fileID: 21300000, guid: c5cbb69ca8bfc684496f311c94c57b4d, type: 3}
   greenSprite: {fileID: 21300000, guid: 88f5930b5d19bb84196b611f88d8bd0f, type: 3}
-  defaultTrashcanSprite: {fileID: -6300527540722236834, guid: 16f8bdb46972cbd4895d0eaa6117cc71, type: 3}
-  whiteTrashcanSprite: {fileID: -619875131018339347, guid: cc07cbd20ac5d42469f58a3c15af9fa8, type: 3}
-  redTrashcanSprite: {fileID: -1363694008565060985, guid: f7c56405484e97b40a3eea23d2ffef3c, type: 3}
+  defaultTrashcanSprite: {fileID: 21300000, guid: 16f8bdb46972cbd4895d0eaa6117cc71, type: 3}
+  whiteTrashcanSprite: {fileID: 21300000, guid: cc07cbd20ac5d42469f58a3c15af9fa8, type: 3}
+  redTrashcanSprite: {fileID: 21300000, guid: f7c56405484e97b40a3eea23d2ffef3c, type: 3}
   isFull: 0
   isReady: 0
   isTrashcan: 1
@@ -1296,9 +1296,9 @@ MonoBehaviour:
   profit: 0
   coinText: {fileID: 1885195563}
   wheatResource: 0
-  wheatResourceText: {fileID: 0}
-  wheatResourceUI: {fileID: 0}
+  cornResource: 0
   animalFood: 0
+  animalFood2: 0
 --- !u!4 &470562997
 Transform:
   m_ObjectHideFlags: 0
@@ -1852,7 +1852,7 @@ MonoBehaviour:
   potatoData: {fileID: 11400000, guid: de3f142bf3736264b9d2eb9666b18a60, type: 2}
   wateringCanImage: {fileID: 1100085765}
   WateringCan: {fileID: 1914849043038913832, guid: 162289ffbf20e494d8d6ffedb4ff4693, type: 3}
-  WateringCanGlow: {fileID: -2973250991471431281, guid: 52861af27b6e10a46ab4fd156f5be915, type: 3}
+  WateringCanGlow: {fileID: 21300000, guid: 52861af27b6e10a46ab4fd156f5be915, type: 3}
   ScytheImage: {fileID: 2105233200}
   ScytheDefault: {fileID: -8702967748025807226, guid: f44c6ccf9afbd2241ab84c395c0ae5c8, type: 3}
   ScytheGlow: {fileID: 3190349355989008818, guid: fd9c63dc1e626f3479a17f9bffcddda4, type: 3}
