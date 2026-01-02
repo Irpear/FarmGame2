@@ -198,6 +198,13 @@ public class Plot : MonoBehaviour
                     }
 
                     CoinManager.Instance.AddWheat(2);
+
+                    if (PlayerPrefs.GetInt("animal_shop_unlocked", 0) == 0)
+                    {
+                        PlayerPrefs.SetInt("animal_shop_unlocked", 1);
+                        PlayerPrefs.Save();
+                        NotificationManager.Instance.ShowNotification("The shopkeeper has expanded his store");
+                    }
                 }
                 else
                 {

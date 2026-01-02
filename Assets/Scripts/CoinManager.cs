@@ -14,6 +14,8 @@ public class CoinManager : MonoBehaviour
     public TextMeshProUGUI wheatResourceText;
     public GameObject wheatResourceUI;
 
+    public int animalFood = 0;
+
     private void Awake()
     {
         //Singleton
@@ -59,6 +61,12 @@ public class CoinManager : MonoBehaviour
     public void AddWheat(int amount)
     {
         wheatResource += amount;
+        UpdateUI();
+    }
+
+    public void AddAnimalFood(int amount)
+    {
+        animalFood += amount;
         UpdateUI();
     }
 
