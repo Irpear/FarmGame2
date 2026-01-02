@@ -11,6 +11,7 @@ public class ChickenCoop : MonoBehaviour
     public Sprite ChickenCoopSprite;
 
     public GameObject ChickenCoopPanel;
+    public GameObject foodSelectionPanel;
 
     public int coopCost = 200;
 
@@ -53,6 +54,7 @@ public class ChickenCoop : MonoBehaviour
     public void ShowChickenCoop()
     {
         ChickenCoopPanel.SetActive(true);
+        foodSelectionPanel.SetActive(false);
     }
 
     public void ShowBarn()

@@ -14,9 +14,13 @@ public class ChickenManager : MonoBehaviour
 
     public Button wheatButton;
     public Button animalFoodButton;
+    public Button cornButton;
+    public Button animalFood2Button;
 
     public TextMeshProUGUI wheatText;
     public TextMeshProUGUI animalFoodText;
+    public TextMeshProUGUI cornText;
+    public TextMeshProUGUI animalFood2Text;
 
     private const string PREF_KEY = "Feeder1_full";
 
@@ -62,6 +66,26 @@ public class ChickenManager : MonoBehaviour
         closeButton.gameObject.SetActive(false);
     }
 
+    public void SelectCorn()
+    {
+        CoinManager.Instance.AddCorn(-1);
+        full = true;
+
+        UpdateUI();
+        foodSelectionPanel.SetActive(false);
+        closeButton.gameObject.SetActive(false);
+    }
+
+    public void SelectAnimalFood2()
+    {
+        CoinManager.Instance.AddAnimalFood2(-1);
+        full = true;
+
+        UpdateUI();
+        foodSelectionPanel.SetActive(false);
+        closeButton.gameObject.SetActive(false);
+    }
+
     public void CloseFoodSelectionPanel() 
     {
         foodSelectionPanel.SetActive(false);
@@ -80,6 +104,16 @@ public class ChickenManager : MonoBehaviour
         int wheatCount = CoinManager.Instance.wheatResource;
         wheatText.text = wheatCount > 0 ? $"Wheat ({wheatCount})" : "";
         wheatButton.interactable = wheatCount > 0;
+
+        // Animal Food 2
+        int animalFood2Count = CoinManager.Instance.animalFood2;
+        animalFood2Text.text = animalFood2Count > 0 ? $"Animal food 2 ({animalFood2Count})" : "";
+        animalFood2Button.interactable = animalFood2Count > 0;
+
+        // Corn
+        int cornCount = CoinManager.Instance.cornResource;
+        cornText.text = cornCount > 0 ? $"Corn ({cornCount})" : "";
+        cornButton.interactable = cornCount > 0;
     }
 
     private void UpdateUI()
