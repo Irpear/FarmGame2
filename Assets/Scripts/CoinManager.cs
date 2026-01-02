@@ -55,10 +55,20 @@ public class CoinManager : MonoBehaviour
         wheatResource += amount;
         UpdateUI();
     }
+    public void AddCorn(int amount)
+    {
+        cornResource += amount;
+        UpdateUI();
+    }
 
     public void AddAnimalFood(int amount)
     {
         animalFood += amount;
+        UpdateUI();
+    }
+    public void AddAnimalFood2(int amount)
+    {
+        animalFood2 += amount;
         UpdateUI();
     }
 

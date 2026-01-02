@@ -29,6 +29,7 @@ public class Plot : MonoBehaviour
 
     public HarvestPopup popupPrefab;
     public HarvestPopup wheatPopupPrefab;
+    public HarvestPopup cornPopupPrefab;
 
     public SpriteRenderer compostEffect;
 
@@ -206,6 +207,29 @@ public class Plot : MonoBehaviour
                         NotificationManager.Instance.ShowNotification("The shopkeeper has expanded his store");
                     }
                 }
+
+                else if (SeedSelectionUI.ActiveSelectedTool == "scythe" && plantedPlant.seedType == "corn")
+                {
+                    // --- POPUP AANMAKEN ---
+                    if (cornPopupPrefab != null)
+                    {
+                        // Zoek canvas
+                        Canvas canvas = FindFirstObjectByType<Canvas>();
+
+                        if (canvas != null)
+                        {
+                            var popup = Instantiate(cornPopupPrefab, canvas.transform);
+
+                            // Popup positie = boven de plot
+                            Vector3 screenPos = Camera.main.WorldToScreenPoint(transform.position);
+
+                            popup.Show(2, screenPos);
+                        }
+                    }
+
+                    CoinManager.Instance.AddCorn(2);
+                }
+
                 else
                 {
                     // --- POPUP AANMAKEN ---
