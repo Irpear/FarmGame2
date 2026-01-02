@@ -5826,8 +5826,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -270, y: 672}
-  m_SizeDelta: {x: 400, y: 235.11}
+  m_AnchoredPosition: {x: -242.92, y: 709}
+  m_SizeDelta: {x: 402.97, y: 313.42}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1682127034
 MonoBehaviour:
@@ -5905,9 +5905,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -9132518384313571126, guid: cb3056e208a29aa4ba0ec6fa9aa5e256, type: 3}
+  m_Sprite: {fileID: 21300000, guid: cb3056e208a29aa4ba0ec6fa9aa5e256, type: 3}
   m_Type: 0
-  m_PreserveAspect: 0
+  m_PreserveAspect: 1
   m_FillCenter: 1
   m_FillMethod: 4
   m_FillAmount: 1
@@ -5937,8 +5937,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: '::'
   barnButton: {fileID: 1682127034}
   barnButtonImage: {fileID: 1682127035}
-  barnLockedSprite: {fileID: -6226801709251932408, guid: 80e7cdaa6858a784fb5780461b371cee, type: 3}
-  barnSprite: {fileID: -9132518384313571126, guid: cb3056e208a29aa4ba0ec6fa9aa5e256, type: 3}
+  barnLockedSprite: {fileID: 21300000, guid: 80e7cdaa6858a784fb5780461b371cee, type: 3}
+  barnSprite: {fileID: 21300000, guid: cb3056e208a29aa4ba0ec6fa9aa5e256, type: 3}
   barnCost: 500
 --- !u!1 &1741549491
 GameObject:
