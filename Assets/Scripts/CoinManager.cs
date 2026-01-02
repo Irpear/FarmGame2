@@ -11,10 +11,10 @@ public class CoinManager : MonoBehaviour
     public TextMeshProUGUI coinText;
 
     public int wheatResource = 0;
-    public TextMeshProUGUI wheatResourceText;
-    public GameObject wheatResourceUI;
+    public int cornResource = 0;
 
     public int animalFood = 0;
+    public int animalFood2 = 0;
 
     private void Awake()
     {
@@ -39,14 +39,6 @@ public class CoinManager : MonoBehaviour
         // Zoek de coin UI in de nieuwe scene als die opnieuw instantiëert
         if (coinText == null)
             coinText = GameObject.Find("CoinText")?.GetComponent<TextMeshProUGUI>();
-
-        if (SceneManager.GetActiveScene().name == "BarnScene")
-        {
-            if (wheatResourceText == null)
-                wheatResourceText = GameObject.Find("WheatResourceText")?.GetComponent<TextMeshProUGUI>();
-            wheatResourceUI.SetActive(true);
-        }
-        else wheatResourceUI.SetActive(false);
 
         UpdateUI();
     }
@@ -74,7 +66,5 @@ public class CoinManager : MonoBehaviour
     {
         if (coinText != null)
             coinText.text = coins.ToString();
-        if (wheatResourceText != null)
-            wheatResourceText.text = wheatResource.ToString();
     }
 }
