@@ -37,6 +37,9 @@ public class ShopManager : MonoBehaviour
     public Button grapeButton;
     public Button potatoButton;
 
+    [Header("Shop Buttons")]
+    public Button animalShopButton;
+
     void Start()
     {
         CheckUnlocks();
@@ -54,6 +57,8 @@ public class ShopManager : MonoBehaviour
         SetButtonState(cornButton, IsSeedUnlocked("corn"));
         SetButtonState(grapeButton, IsSeedUnlocked("grape"));
         SetButtonState(potatoButton, IsSeedUnlocked("potato"));
+
+        SetButtonState(animalShopButton, (PlayerPrefs.GetInt("animal_shop_unlocked", 0) == 1));
     }
 
     private void SetButtonState(Button button, bool unlocked)

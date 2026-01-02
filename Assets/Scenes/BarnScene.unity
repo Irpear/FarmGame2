@@ -1767,7 +1767,6 @@ GameObject:
   - component: {fileID: 1791191483}
   - component: {fileID: 1791191485}
   - component: {fileID: 1791191484}
-  - component: {fileID: 1791191486}
   m_Layer: 0
   m_Name: FoodSelectionPanel
   m_TagString: Untagged
@@ -1835,22 +1834,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1791191482}
   m_CullTransparentMesh: 1
---- !u!114 &1791191486
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1791191482}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 03135f2db6231a24995c513cfdc067ff, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: '::'
-  wheatButton: {fileID: 0}
-  animalFoodButton: {fileID: 0}
-  wheatText: {fileID: 0}
-  animalFoodText: {fileID: 0}
 --- !u!1 &2034862804
 GameObject:
   m_ObjectHideFlags: 0

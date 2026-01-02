@@ -4623,6 +4623,7 @@ MonoBehaviour:
   cornButton: {fileID: 1400903894}
   grapeButton: {fileID: 204220282}
   potatoButton: {fileID: 406531230}
+  animalShopButton: {fileID: 174054360}
 --- !u!1 &1100022445
 GameObject:
   m_ObjectHideFlags: 0
