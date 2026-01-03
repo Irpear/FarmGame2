@@ -1,4 +1,5 @@
 using TMPro;
+using Unity.VectorGraphics;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
@@ -22,9 +23,27 @@ public class FoodProcessor : MonoBehaviour
     public TextMeshProUGUI wheatResourceText;
     public TextMeshProUGUI cornResourceText;
 
-    public bool full = false;
-    public bool done = false;
-    public bool wheat = true;
+    private const string PREF_FULL = "Processor_full";
+    private const string PREF_DONE = "Processor_done";
+    private const string PREF_WHEAT = "Processor_wheat";
+
+    public bool full
+    {
+        get => PlayerPrefs.GetInt(PREF_FULL, 0) == 1;
+        set { PlayerPrefs.SetInt(PREF_FULL, value ? 1 : 0); PlayerPrefs.Save(); }
+    }
+
+    public bool done
+    {
+        get => PlayerPrefs.GetInt(PREF_DONE, 0) == 1;
+        set { PlayerPrefs.SetInt(PREF_DONE, value ? 1 : 0); PlayerPrefs.Save(); }
+    }
+
+    public bool wheat
+    {
+        get => PlayerPrefs.GetInt(PREF_WHEAT, 1) == 1; // Default = true (wheat)
+        set { PlayerPrefs.SetInt(PREF_WHEAT, value ? 1 : 0); PlayerPrefs.Save(); }
+    }
 
 
     void Awake()

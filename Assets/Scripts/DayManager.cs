@@ -297,6 +297,7 @@ public class DayManager : MonoBehaviour
         SeedSelectionUI.Instance.ReturnScythe();
 
         FindAnyObjectByType<Composter>()?.ProcessNewDay();
+        ProcessFoodProcessor();
 
         UpdateUI();
     }
@@ -333,5 +334,16 @@ public class DayManager : MonoBehaviour
         comp.UpdateVisual();
     }
 
+    private void ProcessFoodProcessor()
+    {
+        bool full = PlayerPrefs.GetInt("Processor_full", 0) == 1;
+
+        if (full)
+        {
+            PlayerPrefs.SetInt("Processor_done", 1);
+            PlayerPrefs.SetInt("Processor_full", 0);
+            PlayerPrefs.Save();
+        }
+    }
 
 }
