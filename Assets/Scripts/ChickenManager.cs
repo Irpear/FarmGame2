@@ -1,4 +1,4 @@
-using TMPro;
+﻿using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -23,11 +23,18 @@ public class ChickenManager : MonoBehaviour
     public TextMeshProUGUI animalFood2Text;
 
     private const string PREF_KEY = "Feeder1_full";
+    private const string PREF_CONTENT_KEY = "Feeder1_content";  // ← Nieuw
 
     private bool full
     {
         get => PlayerPrefs.GetInt(PREF_KEY, 0) == 1;
         set { PlayerPrefs.SetInt(PREF_KEY, value ? 1 : 0); PlayerPrefs.Save(); }
+    }
+
+    private string feederContent  // ← Nieuw
+    {
+        get => PlayerPrefs.GetString(PREF_CONTENT_KEY, "");
+        set { PlayerPrefs.SetString(PREF_CONTENT_KEY, value); PlayerPrefs.Save(); }
     }
 
     void Awake()
@@ -50,7 +57,7 @@ public class ChickenManager : MonoBehaviour
     {
         CoinManager.Instance.AddWheat(-1);
         full = true;
-
+        feederContent = "wheat";
         UpdateUI();
         foodSelectionPanel.SetActive(false);
         closeButton.gameObject.SetActive(false);
@@ -60,7 +67,7 @@ public class ChickenManager : MonoBehaviour
     {
         CoinManager.Instance.AddAnimalFood(-1);
         full = true;
-
+        feederContent = "animalFood";
         UpdateUI();
         foodSelectionPanel.SetActive(false);
         closeButton.gameObject.SetActive(false);
@@ -70,7 +77,7 @@ public class ChickenManager : MonoBehaviour
     {
         CoinManager.Instance.AddCorn(-1);
         full = true;
-
+        feederContent = "corn";
         UpdateUI();
         foodSelectionPanel.SetActive(false);
         closeButton.gameObject.SetActive(false);
@@ -80,7 +87,7 @@ public class ChickenManager : MonoBehaviour
     {
         CoinManager.Instance.AddAnimalFood2(-1);
         full = true;
-
+        feederContent = "animalFood2";
         UpdateUI();
         foodSelectionPanel.SetActive(false);
         closeButton.gameObject.SetActive(false);
