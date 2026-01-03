@@ -5,10 +5,12 @@ using UnityEngine.UI;
 public class UpgradesManager : MonoBehaviour
 {
     public int composterCost = 400;
-    public int scytheCost = 400;
+    public int scytheCost = 100;
+    public int processorCost = 400;
 
     public Button buyComposterButton;
     public Button buyScytheButton;
+    public Button buyProcessorButton;
 
     public TextMeshProUGUI costTextComposter;
     public TextMeshProUGUI infoTextComposter;
@@ -17,6 +19,10 @@ public class UpgradesManager : MonoBehaviour
     public TextMeshProUGUI costTextScythe;
     public TextMeshProUGUI infoTextScythe;
     public Image coinImageScythe;
+
+    public TextMeshProUGUI costTextProcessor;
+    public TextMeshProUGUI infoTextProcessor;
+    public Image coinImageProcessor;
 
 
     void Awake()
@@ -63,6 +69,25 @@ public class UpgradesManager : MonoBehaviour
         NotificationManager.Instance.ShowNotification("Scythe unlocked!");
     }
 
+    public void BuyProcessor()
+    {
+
+        if (CoinManager.Instance.coins < processorCost)
+        {
+            NotificationManager.Instance.ShowNotification("Not enough coins!");
+            return;
+        }
+
+        // pay
+        CoinManager.Instance.AddCoins(-processorCost);
+        PlayerPrefs.SetInt("processor_unlocked", 1);
+        PlayerPrefs.Save();
+
+        UpdateUI();
+
+        NotificationManager.Instance.ShowNotification("Food Processor unlocked!");
+    }
+
     private void UpdateUI()
     {
 
@@ -80,6 +105,14 @@ public class UpgradesManager : MonoBehaviour
             costTextScythe.gameObject.SetActive(false);
             infoTextScythe.gameObject.SetActive(false);
             coinImageScythe.gameObject.SetActive(false);
+        }
+
+        if (PlayerPrefs.GetInt("processor_unlocked", 0) == 1 || PlayerPrefs.GetInt("processor_available", 0) == 0)
+        {
+            buyProcessorButton.interactable = false;
+            costTextProcessor.gameObject.SetActive(false);
+            infoTextProcessor.gameObject.SetActive(false);
+            coinImageProcessor.gameObject.SetActive(false);
         }
     }
 }

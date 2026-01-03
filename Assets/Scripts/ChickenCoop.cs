@@ -35,7 +35,7 @@ public class ChickenCoop : MonoBehaviour
             // pay
             CoinManager.Instance.AddCoins(-coopCost);
             PlayerPrefs.SetInt("coop_unlocked", 1);
-            PlayerPrefs.SetInt("scythe_available", 1);
+            PlayerPrefs.SetInt("processor_available", 1);
             PlayerPrefs.Save();
             NotificationManager.Instance.ShowNotification("Chicken coop unlocked!");
             NotificationManager.Instance.ShowNotification("More items have been unlocked at the store");
