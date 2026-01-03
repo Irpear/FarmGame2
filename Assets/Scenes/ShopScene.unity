@@ -2308,7 +2308,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1039485604}
         m_TargetAssemblyTypeName: UpgradesManager, Assembly-CSharp
-        m_MethodName: BuyScytheUpgrade
+        m_MethodName: BuyProcessor
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

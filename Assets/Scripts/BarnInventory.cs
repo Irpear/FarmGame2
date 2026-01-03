@@ -18,6 +18,15 @@ public class BarnInventory : MonoBehaviour
     public TextMeshProUGUI animalFoodText;
     public TextMeshProUGUI animalFood2Text;
 
+    public Button foodProcessorButton;
+
+
+    void Awake()
+    {
+        UpdateProcessorUI();
+    }
+
+
     public void ClickInventory()
     {
         inventoryPanel.SetActive(true);
@@ -50,5 +59,11 @@ public class BarnInventory : MonoBehaviour
         animalFood2Text.text = animalFood2Count > 0 ? $"Animal food 2 ({animalFood2Count})" : "";
         animalFood2Button.interactable = animalFood2Count > 0;
 
+    }
+
+    private void UpdateProcessorUI()
+    {
+        if (PlayerPrefs.GetInt("processor_unlocked", 0) == 1) foodProcessorButton.interactable = true;
+        else foodProcessorButton.interactable = false;
     }
 }
