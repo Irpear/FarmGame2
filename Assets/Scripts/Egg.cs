@@ -13,12 +13,7 @@ public class Egg : MonoBehaviour
         rectTransform = GetComponent<RectTransform>();
     }
 
-    void OnMouseDown()
-    {
-        CollectEgg();
-    }
-
-    private void CollectEgg()
+    public void CollectEgg()
     {
         // Verkoop ei
         int value = eggType switch
@@ -35,7 +30,13 @@ public class Egg : MonoBehaviour
         int count = PlayerPrefs.GetInt("eggs_to_spawn_count", 0);
         if (count > 0) count--;
         PlayerPrefs.SetInt("eggs_to_spawn_count", count);
-        PlayerPrefs.Save();
+
+        if (PlayerPrefs.GetInt("feeder2_available", 0) == 0)
+        {
+            PlayerPrefs.SetInt("feeder2_available", 1);
+            NotificationManager.Instance.ShowNotification("More items have been unlocked at the store");
+        }
+            PlayerPrefs.Save();
 
         Destroy(gameObject);
     }

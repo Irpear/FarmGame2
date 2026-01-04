@@ -203,6 +203,7 @@ public class Plot : MonoBehaviour
                     if (PlayerPrefs.GetInt("animal_shop_unlocked", 0) == 0)
                     {
                         PlayerPrefs.SetInt("animal_shop_unlocked", 1);
+                        PlayerPrefs.SetInt("chicken1_available", 1);
                         PlayerPrefs.Save();
                         NotificationManager.Instance.ShowNotification("The shopkeeper has expanded his store");
                     }

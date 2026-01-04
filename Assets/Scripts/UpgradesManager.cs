@@ -7,10 +7,12 @@ public class UpgradesManager : MonoBehaviour
     public int composterCost = 400;
     public int scytheCost = 100;
     public int processorCost = 400;
+    public int feeder2Cost = 200;
 
     public Button buyComposterButton;
     public Button buyScytheButton;
     public Button buyProcessorButton;
+    public Button buyFeeder2Button;
 
     public TextMeshProUGUI costTextComposter;
     public TextMeshProUGUI infoTextComposter;
@@ -23,6 +25,10 @@ public class UpgradesManager : MonoBehaviour
     public TextMeshProUGUI costTextProcessor;
     public TextMeshProUGUI infoTextProcessor;
     public Image coinImageProcessor;
+
+    public TextMeshProUGUI costTextFeeder2;
+    public TextMeshProUGUI infoTextFeeder2;
+    public Image coinImageFeeder2;
 
 
     void Awake()
@@ -88,6 +94,25 @@ public class UpgradesManager : MonoBehaviour
         NotificationManager.Instance.ShowNotification("Food Processor unlocked!");
     }
 
+    public void BuyFeeder2()
+    {
+
+        if (CoinManager.Instance.coins < feeder2Cost)
+        {
+            NotificationManager.Instance.ShowNotification("Not enough coins!");
+            return;
+        }
+
+        // pay
+        CoinManager.Instance.AddCoins(-feeder2Cost);
+        PlayerPrefs.SetInt("feeder2_unlocked", 1);
+        PlayerPrefs.Save();
+
+        UpdateUI();
+
+        NotificationManager.Instance.ShowNotification("A second feeder unlocked!");
+    }
+
     private void UpdateUI()
     {
 
@@ -113,6 +138,14 @@ public class UpgradesManager : MonoBehaviour
             costTextProcessor.gameObject.SetActive(false);
             infoTextProcessor.gameObject.SetActive(false);
             coinImageProcessor.gameObject.SetActive(false);
+        }
+
+        if (PlayerPrefs.GetInt("feeder2_unlocked", 0) == 1 || PlayerPrefs.GetInt("feeder2_available", 0) == 0)
+        {
+            buyFeeder2Button.interactable = false;
+            costTextFeeder2.gameObject.SetActive(false);
+            infoTextFeeder2.gameObject.SetActive(false);
+            coinImageFeeder2.gameObject.SetActive(false);
         }
     }
 }
