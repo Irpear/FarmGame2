@@ -23,7 +23,7 @@ public class ChickenManager : MonoBehaviour
     public TextMeshProUGUI animalFood2Text;
 
     private const string PREF_KEY = "Feeder1_full";
-    private const string PREF_CONTENT_KEY = "Feeder1_content";  // ← Nieuw
+    private const string PREF_CONTENT_KEY = "Feeder1_content";
 
     private bool full
     {
@@ -31,7 +31,7 @@ public class ChickenManager : MonoBehaviour
         set { PlayerPrefs.SetInt(PREF_KEY, value ? 1 : 0); PlayerPrefs.Save(); }
     }
 
-    private string feederContent  // ← Nieuw
+    private string feederContent
     {
         get => PlayerPrefs.GetString(PREF_CONTENT_KEY, "");
         set { PlayerPrefs.SetString(PREF_CONTENT_KEY, value); PlayerPrefs.Save(); }

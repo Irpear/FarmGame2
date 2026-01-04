@@ -298,6 +298,7 @@ public class DayManager : MonoBehaviour
 
         FindAnyObjectByType<Composter>()?.ProcessNewDay();
         ProcessFoodProcessor();
+        ProcessChickens();
 
         UpdateUI();
     }
@@ -344,6 +345,12 @@ public class DayManager : MonoBehaviour
             PlayerPrefs.SetInt("Processor_full", 0);
             PlayerPrefs.Save();
         }
+    }
+
+    private void ProcessChickens()
+    {
+        Chicken.ProcessChickenDay(1);
+        Chicken.ProcessChickenDay(2);
     }
 
 }

@@ -1279,6 +1279,114 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 440656238}
   m_CullTransparentMesh: 1
+--- !u!1 &445767309
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 445767310}
+  - component: {fileID: 445767312}
+  - component: {fileID: 445767311}
+  - component: {fileID: 445767313}
+  m_Layer: 5
+  m_Name: Chicken1
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!224 &445767310
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 445767309}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1168125512}
+  m_Father: {fileID: 1441772650}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 1, y: 12}
+  m_SizeDelta: {x: 306.45, y: 306.45}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &445767311
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 445767309}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 5336855417275088078, guid: 96c7f849bb49540499b70b148ab827e4, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &445767312
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 445767309}
+  m_CullTransparentMesh: 1
+--- !u!114 &445767313
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 445767309}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0dfe06d4481ec8d4e8d9f95250515579, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: '::'
+  minX: -350
+  maxX: 235
+  minY: -450
+  maxY: 850
+  happinessBar: {fileID: 1168125513}
+  happinessSprites:
+  - {fileID: 222975351270911752, guid: da4ce8a663473e64099a2b2b32097897, type: 3}
+  - {fileID: 744380779735389563, guid: 899a1b0218032ff41afe248c46e1f290, type: 3}
+  - {fileID: 606325591495383754, guid: a92734afc56815644acb9e17c19717d3, type: 3}
+  - {fileID: 2220962161512765070, guid: d18b60a48d09f8845910c8e7785076c4, type: 3}
+  - {fileID: -4067672546195481617, guid: 2f8634589b871324a83731d4bd94dc0d, type: 3}
+  - {fileID: 5847598430243755393, guid: 3fcb8dbf0b34a4e4eb2876a9c26a07b5, type: 3}
+  - {fileID: -5873582304061332920, guid: aed8266ab7f9e534295c8dfcb93f7d1c, type: 3}
+  - {fileID: -6705648679267183621, guid: 55ec213862d413b4b80419e0f7a6c6b8, type: 3}
+  - {fileID: -8333184253461344241, guid: a92e19f9810d84e4293dfa99d9834f71, type: 3}
+  eggPrefab: {fileID: 6205073218782207270, guid: c5650099eea4e6e47a6e88f00ede702d, type: 3}
+  eggContainer: {fileID: 1441772650}
+  minIdleTime: 3
+  maxIdleTime: 8
 --- !u!1 &556567192
 GameObject:
   m_ObjectHideFlags: 0
@@ -1776,6 +1884,81 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 705484922}
   m_CullTransparentMesh: 1
+--- !u!1 &718781072
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 718781073}
+  - component: {fileID: 718781075}
+  - component: {fileID: 718781074}
+  m_Layer: 5
+  m_Name: HappinessBar
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &718781073
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 718781072}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1386955144}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -3.32, y: 174.92}
+  m_SizeDelta: {x: 270.24, y: 53.83}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &718781074
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 718781072}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 222975351270911752, guid: da4ce8a663473e64099a2b2b32097897, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &718781075
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 718781072}
+  m_CullTransparentMesh: 1
 --- !u!1 &755238282
 GameObject:
   m_ObjectHideFlags: 0
@@ -1909,6 +2092,58 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 755238282}
   m_CullTransparentMesh: 1
+--- !u!1 &770210375
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 770210376}
+  - component: {fileID: 770210377}
+  m_Layer: 5
+  m_Name: EggSpawner
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &770210376
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 770210375}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1441772650}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &770210377
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 770210375}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa63d1b46f79b87418b8502ed60a930d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: '::'
+  normalEggPrefab: {fileID: 6205073218782207270, guid: c5650099eea4e6e47a6e88f00ede702d, type: 3}
+  largeEggPrefab: {fileID: 6205073218782207270, guid: e8c377531dd95ec4bbfb6179687d13e6, type: 3}
+  goldenEggPrefab: {fileID: 6205073218782207270, guid: f69dc737cccfe0c4888d9ed4cb261b77, type: 3}
+  eggContainer: {fileID: 1441772650}
 --- !u!1 &787128838
 GameObject:
   m_ObjectHideFlags: 0
@@ -2936,6 +3171,81 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!1 &1168125511
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1168125512}
+  - component: {fileID: 1168125514}
+  - component: {fileID: 1168125513}
+  m_Layer: 5
+  m_Name: HappinessBar
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1168125512
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1168125511}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 445767310}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -3.32, y: 174.92}
+  m_SizeDelta: {x: 270.24, y: 53.83}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1168125513
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1168125511}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 222975351270911752, guid: da4ce8a663473e64099a2b2b32097897, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &1168125514
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1168125511}
+  m_CullTransparentMesh: 1
 --- !u!1 &1172167146
 GameObject:
   m_ObjectHideFlags: 0
@@ -3220,6 +3530,114 @@ MonoBehaviour:
   animalFoodText: {fileID: 1785364112}
   cornText: {fileID: 883701546}
   animalFood2Text: {fileID: 427908791}
+--- !u!1 &1386955143
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1386955144}
+  - component: {fileID: 1386955146}
+  - component: {fileID: 1386955145}
+  - component: {fileID: 1386955147}
+  m_Layer: 5
+  m_Name: Chicken2
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!224 &1386955144
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1386955143}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 718781073}
+  m_Father: {fileID: 1441772650}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 1.0000153, y: 11.9999695}
+  m_SizeDelta: {x: 306.45, y: 306.45}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1386955145
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1386955143}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 5336855417275088078, guid: 96c7f849bb49540499b70b148ab827e4, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &1386955146
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1386955143}
+  m_CullTransparentMesh: 1
+--- !u!114 &1386955147
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1386955143}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0dfe06d4481ec8d4e8d9f95250515579, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Chicken
+  minX: -350
+  maxX: 235
+  minY: -450
+  maxY: 850
+  happinessBar: {fileID: 718781074}
+  happinessSprites:
+  - {fileID: 222975351270911752, guid: da4ce8a663473e64099a2b2b32097897, type: 3}
+  - {fileID: 744380779735389563, guid: 899a1b0218032ff41afe248c46e1f290, type: 3}
+  - {fileID: 606325591495383754, guid: a92734afc56815644acb9e17c19717d3, type: 3}
+  - {fileID: 2220962161512765070, guid: d18b60a48d09f8845910c8e7785076c4, type: 3}
+  - {fileID: -4067672546195481617, guid: 2f8634589b871324a83731d4bd94dc0d, type: 3}
+  - {fileID: 5847598430243755393, guid: 3fcb8dbf0b34a4e4eb2876a9c26a07b5, type: 3}
+  - {fileID: -5873582304061332920, guid: aed8266ab7f9e534295c8dfcb93f7d1c, type: 3}
+  - {fileID: -6705648679267183621, guid: 55ec213862d413b4b80419e0f7a6c6b8, type: 3}
+  - {fileID: -8333184253461344241, guid: a92e19f9810d84e4293dfa99d9834f71, type: 3}
+  eggPrefab: {fileID: 6205073218782207270, guid: c5650099eea4e6e47a6e88f00ede702d, type: 3}
+  eggContainer: {fileID: 1441772650}
+  minIdleTime: 3
+  maxIdleTime: 8
 --- !u!1 &1441772649
 GameObject:
   m_ObjectHideFlags: 0
@@ -3252,8 +3670,11 @@ RectTransform:
   m_Children:
   - {fileID: 1172167147}
   - {fileID: 33871819}
+  - {fileID: 445767310}
+  - {fileID: 1386955144}
   - {fileID: 1791191483}
   - {fileID: 1285218749}
+  - {fileID: 770210376}
   m_Father: {fileID: 1091615683}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -4818,6 +5239,8 @@ MonoBehaviour:
   ChickenCoopSprite: {fileID: -3108351172181215582, guid: 39da45af342a6d74abc53981fa4d7c42, type: 3}
   ChickenCoopPanel: {fileID: 1441772649}
   foodSelectionPanel: {fileID: 1791191482}
+  chicken1: {fileID: 445767309}
+  chicken2: {fileID: 1386955143}
   coopCost: 200
 --- !u!1 &2142981562
 GameObject:
