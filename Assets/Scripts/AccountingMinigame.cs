@@ -39,6 +39,7 @@ public class AccountingMinigame : MonoBehaviour
     public GameObject wrongStamp;
     public GameObject correctStamp;
     public bool Correct;
+    public TextMeshProUGUI Timer;
 
     private int calculatedProfit;
     private float timeRemaining;
@@ -58,6 +59,8 @@ public class AccountingMinigame : MonoBehaviour
         if (timeRemaining > 0)
         {
             timeRemaining -= Time.deltaTime;
+
+            Timer.text = timeRemaining.ToString("F1");
 
             if (timeRemaining <= 0 && done == false)
             {
