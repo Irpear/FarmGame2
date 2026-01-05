@@ -8,11 +8,13 @@ public class UpgradesManager : MonoBehaviour
     public int scytheCost = 100;
     public int processorCost = 400;
     public int feeder2Cost = 200;
+    public int plantBookCost = 350;
 
     public Button buyComposterButton;
     public Button buyScytheButton;
     public Button buyProcessorButton;
     public Button buyFeeder2Button;
+    public Button buyPlantBookButton;
 
     public TextMeshProUGUI costTextComposter;
     public TextMeshProUGUI infoTextComposter;
@@ -29,6 +31,10 @@ public class UpgradesManager : MonoBehaviour
     public TextMeshProUGUI costTextFeeder2;
     public TextMeshProUGUI infoTextFeeder2;
     public Image coinImageFeeder2;
+
+    public TextMeshProUGUI costTextPlantBook;
+    public TextMeshProUGUI infoTextPlantBook;
+    public Image coinImagePlantBook;
 
 
     void Awake()
@@ -115,6 +121,25 @@ public class UpgradesManager : MonoBehaviour
         NotificationManager.Instance.ShowNotification("More items have been unlocked at the store");
     }
 
+    public void BuyPlantBook()
+    {
+
+        if (CoinManager.Instance.coins < plantBookCost)
+        {
+            NotificationManager.Instance.ShowNotification("Not enough coins!");
+            return;
+        }
+
+        // pay
+        CoinManager.Instance.AddCoins(-plantBookCost);
+        PlayerPrefs.SetInt("plantbook_unlocked", 1);
+        PlayerPrefs.Save();
+
+        UpdateUI();
+
+        NotificationManager.Instance.ShowNotification("You bought a book! It can be found in the barn");
+    }
+
     private void UpdateUI()
     {
 
@@ -148,6 +173,14 @@ public class UpgradesManager : MonoBehaviour
             costTextFeeder2.gameObject.SetActive(false);
             infoTextFeeder2.gameObject.SetActive(false);
             coinImageFeeder2.gameObject.SetActive(false);
+        }
+
+        if (PlayerPrefs.GetInt("plantbook_unlocked", 0) == 1 || PlayerPrefs.GetInt("plantbook_available", 0) == 0)
+        {
+            buyPlantBookButton.interactable = false;
+            costTextPlantBook.gameObject.SetActive(false);
+            infoTextPlantBook.gameObject.SetActive(false);
+            coinImagePlantBook.gameObject.SetActive(false);
         }
     }
 }

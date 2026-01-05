@@ -29,6 +29,8 @@ public class DayManager : MonoBehaviour
 
     public bool anyPlantsEaten = false;
 
+    public int unlockedPlants = 1;
+
     private ComposterState composterState;
 
     [System.Serializable]
@@ -222,6 +224,8 @@ public class DayManager : MonoBehaviour
         {
             StartCoroutine(DelayedStorm());
         }
+
+        CheckPlantBook();
     }
 
     private IEnumerator DelayedGrowth()
@@ -351,6 +355,16 @@ public class DayManager : MonoBehaviour
     {
         Chicken.ProcessChickenDay(1);
         Chicken.ProcessChickenDay(2);
+    }
+
+    private void CheckPlantBook()
+    {
+        if (PlayerPrefs.GetInt("plantbook_available", 0) == 0 && unlockedPlants == 6)
+        {
+            PlayerPrefs.SetInt("plantbook_available", 1);
+            NotificationManager.Instance.ShowNotification("You discovered all the seeds, a new item can be found in the store!");
+
+        }
     }
 
 }

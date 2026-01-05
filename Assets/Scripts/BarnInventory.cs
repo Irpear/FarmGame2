@@ -19,11 +19,19 @@ public class BarnInventory : MonoBehaviour
     public TextMeshProUGUI animalFood2Text;
 
     public Button foodProcessorButton;
+    public Button plantBookButton;
+    public GameObject PlantBookPanel;
+
+    public Image pageImage;
+    public Button closeBookButton;
+
+    public Sprite page1;
+    public Sprite page2;
 
 
     void Awake()
     {
-        UpdateProcessorUI();
+        UpdateUnlocksUI();
     }
 
 
@@ -61,9 +69,27 @@ public class BarnInventory : MonoBehaviour
 
     }
 
-    private void UpdateProcessorUI()
+    private void UpdateUnlocksUI()
     {
         if (PlayerPrefs.GetInt("processor_unlocked", 0) == 1) foodProcessorButton.interactable = true;
         else foodProcessorButton.interactable = false;
+        if (PlayerPrefs.GetInt("plantbook_unlocked", 0) == 1) plantBookButton.interactable = true;
+        else plantBookButton.interactable = false;
+    }
+
+    public void OpenPlantBook()
+    {
+        pageImage.sprite = page1;
+        PlantBookPanel.SetActive(true);
+        closeBookButton.gameObject.SetActive(false);
+    }
+    public void OpenPlantBookPage2()
+    {
+        pageImage.sprite = page2;
+        closeBookButton.gameObject.SetActive(true);
+    }
+    public void ClosePlantBook()
+    {
+        PlantBookPanel.SetActive(false);
     }
 }

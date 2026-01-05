@@ -92,6 +92,8 @@ public class ShopManager : MonoBehaviour
             {
                 NotificationManager.Instance.ShowNotification($"{seedType} seed unlocked!");
             }
+
+            DayManager.Instance.unlockedPlants++;
         }
     }
 
