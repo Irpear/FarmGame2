@@ -4,6 +4,10 @@ using System.Collections;
 
 public class Chicken : MonoBehaviour
 {
+
+    private Animator animator;
+
+
     [Header("Spawn Area")]
     public float minX = -100f;
     public float maxX = 100f;
@@ -44,6 +48,9 @@ public class Chicken : MonoBehaviour
     void Awake()
     {
         rectTransform = GetComponent<RectTransform>();
+
+        animator = GetComponent<Animator>();
+
 
         // Detecteer chickenID van naam
         if (gameObject.name.Contains("Chicken1")) chickenID = 1;
@@ -113,12 +120,16 @@ public class Chicken : MonoBehaviour
         happinessBar.sprite = happinessSprites[index];
     }
 
-    void OnMouseDown()
+    public void OnChickenClicked()
     {
-        // TODO: Speel click animatie af
-        // Als je later een Animator hebt: GetComponent<Animator>().SetTrigger("Click");
         Debug.Log($"Clicked on Chicken {chickenID}!");
+        if (animator != null)
+        {
+            animator.SetTrigger("Click");
+            Debug.Log($"animatie zou moeten werken!");
+        }
     }
+
 
     private IEnumerator IdleAnimationLoop()
     {
