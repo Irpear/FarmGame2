@@ -34,8 +34,8 @@ public class Plot : MonoBehaviour
     public SpriteRenderer compostEffect;
 
     public SpriteRenderer shinyEffect;
-    public float shinyChancePercent = 1;
     public bool isShiny = false;
+    public float shinyChancePercent;
 
     public int chosenVariant = 0;
 
@@ -56,6 +56,8 @@ public class Plot : MonoBehaviour
             nightOverlayImage = nightOverlay.GetComponent<Image>();
         }
         forceCompostScreen = GameObject.Find("ForceCompostScreen");
+
+        shinyChancePercent = DayManager.Instance.shinyChancePercent;
 
         //UpdateSprite();
     }

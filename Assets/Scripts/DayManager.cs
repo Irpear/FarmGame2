@@ -26,6 +26,7 @@ public class DayManager : MonoBehaviour
     public float rainChancePercent = 0;
     public float stormChanceBasePercent = 2;
     public float stormChancePercent = 2;
+    public float shinyChancePercent = 1;
 
     public bool anyPlantsEaten = false;
 
