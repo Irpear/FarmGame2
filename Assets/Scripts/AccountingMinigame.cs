@@ -41,6 +41,11 @@ public class AccountingMinigame : MonoBehaviour
     public bool Correct;
     public TextMeshProUGUI Timer;
 
+    [Header("Streak Settings")]
+    public int maxStreak = 14;
+    public float timePenaltyPerStreak = 1f;
+    public float minimumTimeLimit = 1f;
+
     private int calculatedProfit;
     private float timeRemaining;
     private bool done = false;
@@ -50,6 +55,15 @@ public class AccountingMinigame : MonoBehaviour
         SetupInputField();
         GenerateNumbers();
         signButton.onClick.AddListener(CheckAnswer);
+
+        int streak = PlayerPrefs.GetInt("AccountingStreak", 0);
+        streak = Mathf.Clamp(streak, 0, maxStreak);
+
+        float adjustedTime = timeLimit - (streak * timePenaltyPerStreak);
+        timeRemaining = Mathf.Max(adjustedTime, minimumTimeLimit);
+
+        Debug.Log($"Accounting streak: {streak}, time limit: {timeRemaining}");
+
         timeRemaining = timeLimit;
     }
 
@@ -148,6 +162,8 @@ public class AccountingMinigame : MonoBehaviour
         wrongStamp.SetActive(true);
         Correct = false;
 
+        PlayerPrefs.SetInt("AccountingStreak", 0);
+
         StartCoroutine(CloseMinigame());
         signButton.interactable = false;
     }
@@ -160,6 +176,12 @@ public class AccountingMinigame : MonoBehaviour
         correctStamp.SetActive(true);
         Correct = true;
 
+        int streak = PlayerPrefs.GetInt("AccountingStreak", 0);
+        streak++;
+        PlayerPrefs.SetInt("AccountingStreak", streak);
+        PlayerPrefs.Save();
+
+
         // Bijvoorbeeld:
         CoinManager.Instance.AddCoins(10);
     }
@@ -171,6 +193,8 @@ public class AccountingMinigame : MonoBehaviour
 
         wrongStamp.SetActive(true);
         Correct = false;
+
+        PlayerPrefs.SetInt("AccountingStreak", 0);
     }
 
     public float GetTimeRemaining()
