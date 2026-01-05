@@ -4236,6 +4236,7 @@ MonoBehaviour:
   shinyChanceBasePercent: 1
   anyPlantsEaten: 0
   unlockedPlants: 1
+  currentHighscore: 1
   taskLeft: 1
 --- !u!4 &1080962169
 Transform:
@@ -7208,7 +7209,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 493.31, y: 499.73}
+  m_SizeDelta: {x: 600, y: 600}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1970362055
 CanvasRenderer:
@@ -7759,7 +7760,6 @@ MonoBehaviour:
   upgradesPanel: {fileID: 0}
   talismanPanel: {fileID: 0}
   animalPanel: {fileID: 0}
-  MinigameButton: {fileID: 0}
 --- !u!1 &2105233197
 GameObject:
   m_ObjectHideFlags: 0

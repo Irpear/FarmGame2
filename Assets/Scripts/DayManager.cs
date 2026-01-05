@@ -32,6 +32,8 @@ public class DayManager : MonoBehaviour
 
     public int unlockedPlants = 1;
 
+    public int currentHighscore = 1;
+
     public bool taskLeft = true;
 
     private ComposterState composterState;
@@ -204,8 +206,7 @@ public class DayManager : MonoBehaviour
 
         taskLeft = true;
 
-        profitSummary.text = $"You earned {CoinManager.Instance.profit} coins today";
-        ResetProfit();
+        ProfitHighscoreCheck();
 
         StartCoroutine(DelayedUIUpdate());
 
@@ -231,6 +232,23 @@ public class DayManager : MonoBehaviour
         }
 
         CheckPlantBook();
+    }
+
+    private void ProfitHighscoreCheck()
+    {
+        currentHighscore = PlayerPrefs.GetInt("myhighscore", 0);
+        if (currentHighscore < CoinManager.Instance.profit)
+        {
+            profitSummary.text = $"You earned {CoinManager.Instance.profit} coins today, which means you achieved your new highscore!";
+            NotificationManager.Instance.ShowNotification("Congratulations on the new highscore", 5f);
+            PlayerPrefs.SetInt("myHighscore", CoinManager.Instance.profit);
+        }
+        else
+        {
+            profitSummary.text = $"You earned {CoinManager.Instance.profit} coins today";
+        }
+            
+        CoinManager.Instance.profit = 0;
     }
 
     private IEnumerator DelayedGrowth()
@@ -310,11 +328,6 @@ public class DayManager : MonoBehaviour
         ProcessChickens();
 
         UpdateUI();
-    }
-
-    private void ResetProfit()
-    {
-        CoinManager.Instance.profit = 0;
     }
 
     private void UpdateUI()
