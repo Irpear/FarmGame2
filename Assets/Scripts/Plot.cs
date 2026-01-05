@@ -56,13 +56,18 @@ public class Plot : MonoBehaviour
             nightOverlayImage = nightOverlay.GetComponent<Image>();
         }
         forceCompostScreen = GameObject.Find("ForceCompostScreen");
-
-        shinyChancePercent = DayManager.Instance.shinyChancePercent;
-
         //UpdateSprite();
     }
 
-    void OnMouseUp()
+    void Start()
+    {
+        if (DayManager.Instance != null)
+        {
+            shinyChancePercent = DayManager.Instance.shinyChanceBasePercent;
+        }
+    }
+
+        void OnMouseUp()
     {
         if (SeedSelectionUI.Instance.IsMenuOpen()) return;
         if (forceCompostScreen != null && forceCompostScreen.activeSelf) return;

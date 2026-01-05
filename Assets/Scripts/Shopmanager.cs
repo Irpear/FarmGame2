@@ -39,11 +39,22 @@ public class ShopManager : MonoBehaviour
 
     [Header("Shop Buttons")]
     public Button animalShopButton;
+    public Button minigameButton;
 
     void Start()
     {
         CheckUnlocks();
         UpdateTexts();
+
+        var minigameButton = GameObject.Find("MinigameButton")?.GetComponent<Button>();
+
+        if (minigameButton == null)
+        {
+            Debug.LogError("MinigameButton not found!");
+            return;
+        }
+
+        minigameButton.interactable = DayManager.Instance.taskLeft;
     }
 
     public void CheckUnlocks()
@@ -59,6 +70,7 @@ public class ShopManager : MonoBehaviour
         SetButtonState(potatoButton, IsSeedUnlocked("potato"));
 
         SetButtonState(animalShopButton, (PlayerPrefs.GetInt("animal_shop_unlocked", 0) == 1));
+        SetButtonState(minigameButton, (DayManager.Instance.taskLeft));
     }
 
     private void SetButtonState(Button button, bool unlocked)

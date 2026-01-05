@@ -48,7 +48,7 @@ public class ShinyTalisman : MonoBehaviour
         CoinManager.Instance.AddCoins(-cost);
 
         // Apply effect once
-        DayManager.Instance.shinyChancePercent += increasePercent;
+        DayManager.Instance.shinyChanceBasePercent += increasePercent;
 
         // mark as purchased
         Purchased = true;
@@ -70,7 +70,7 @@ public class ShinyTalisman : MonoBehaviour
         }
         else
         {
-            float current = DayManager.Instance.shinyChancePercent;
+            float current = DayManager.Instance.shinyChanceBasePercent;
             float next = current + increasePercent;
 
             costText.text = $"{cost}";

@@ -30,6 +30,11 @@ public class ClickHandler : MonoBehaviour
         SceneManager.LoadScene("FarmScene");
     }
 
+    public void LoadMinigames()
+    {
+        SceneManager.LoadScene("MinigameScene");
+    }
+
     public void ShowSeeds()
     {
         seedsPanel.SetActive(true);

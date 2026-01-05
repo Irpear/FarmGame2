@@ -26,11 +26,13 @@ public class DayManager : MonoBehaviour
     public float rainChancePercent = 0;
     public float stormChanceBasePercent = 2;
     public float stormChancePercent = 2;
-    public float shinyChancePercent = 1;
+    public float shinyChanceBasePercent = 1;
 
     public bool anyPlantsEaten = false;
 
     public int unlockedPlants = 1;
+
+    public bool taskLeft = true;
 
     private ComposterState composterState;
 
@@ -199,6 +201,8 @@ public class DayManager : MonoBehaviour
         Debug.Log("Day " + currentDay + " ended.");
 
         currentDay++;
+
+        taskLeft = true;
 
         profitSummary.text = $"You earned {CoinManager.Instance.profit} coins today";
         ResetProfit();

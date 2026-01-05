@@ -4233,7 +4233,10 @@ MonoBehaviour:
   rainChancePercent: 0
   stormChanceBasePercent: 2
   stormChancePercent: 2
+  shinyChanceBasePercent: 1
   anyPlantsEaten: 0
+  unlockedPlants: 1
+  taskLeft: 1
 --- !u!4 &1080962169
 Transform:
   m_ObjectHideFlags: 0
@@ -7756,6 +7759,7 @@ MonoBehaviour:
   upgradesPanel: {fileID: 0}
   talismanPanel: {fileID: 0}
   animalPanel: {fileID: 0}
+  MinigameButton: {fileID: 0}
 --- !u!1 &2105233197
 GameObject:
   m_ObjectHideFlags: 0
@@ -8150,6 +8154,7 @@ SceneRoots:
   m_Roots:
   - {fileID: 1876030981}
   - {fileID: 1390891907}
+  - {fileID: 1080962169}
   - {fileID: 1091615683}
   - {fileID: 987846856}
   - {fileID: 755027830}
@@ -8157,5 +8162,4 @@ SceneRoots:
   - {fileID: 2099814496}
   - {fileID: 470562997}
   - {fileID: 1118608716}
-  - {fileID: 1080962169}
   - {fileID: 1343647749}
