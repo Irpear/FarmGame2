@@ -64,7 +64,7 @@ public class AccountingMinigame : MonoBehaviour
 
         Debug.Log($"Accounting streak: {streak}, time limit: {timeRemaining}");
 
-        timeRemaining = timeLimit;
+        timeLimit = adjustedTime;
     }
 
     void Update()

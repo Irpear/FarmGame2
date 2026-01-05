@@ -1,16 +1,23 @@
+using TMPro;
 using UnityEngine;
 
 public class MinigameController : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+
+    public GameObject AccountingPanel;
+    public TextMeshProUGUI AccountingStreakTime;
+
+
+    private void Start()
     {
-        
+        int streak = PlayerPrefs.GetInt("AccountingStreak", 0);
+        float adjustedTime = 15 - streak;
+        AccountingStreakTime.text = adjustedTime.ToString();
     }
 
-    // Update is called once per frame
-    void Update()
+
+    public void StartAccounting()
     {
-        
+        AccountingPanel.SetActive(true);
     }
 }
