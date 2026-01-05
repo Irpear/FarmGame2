@@ -106,11 +106,13 @@ public class UpgradesManager : MonoBehaviour
         // pay
         CoinManager.Instance.AddCoins(-feeder2Cost);
         PlayerPrefs.SetInt("feeder2_unlocked", 1);
+        PlayerPrefs.SetInt("chicken2_available", 1);
         PlayerPrefs.Save();
 
         UpdateUI();
 
         NotificationManager.Instance.ShowNotification("A second feeder unlocked!");
+        NotificationManager.Instance.ShowNotification("More items have been unlocked at the store");
     }
 
     private void UpdateUI()
