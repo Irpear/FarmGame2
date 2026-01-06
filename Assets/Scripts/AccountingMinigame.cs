@@ -50,10 +50,14 @@ public class AccountingMinigame : MonoBehaviour
     private float timeRemaining;
     private bool done = false;
 
-    private Canvas canvas;
-    private RectTransform canvasRect;
-    private Vector2 originalPosition;
-    private bool isKeyboardOpen = false;
+    //private Canvas canvas;
+    //private RectTransform canvasRect;
+    //private Vector2 originalPosition;
+    //private bool isKeyboardOpen = false;
+
+    private RectTransform panelRect;
+    private Vector2 panelOriginalPos;
+
 
     void Start()
     {
@@ -71,9 +75,16 @@ public class AccountingMinigame : MonoBehaviour
 
         timeLimit = adjustedTime;
 
-        canvas = GetComponentInParent<Canvas>();
-        canvasRect = canvas.GetComponent<RectTransform>();
-        originalPosition = canvasRect.anchoredPosition;
+        //canvas = GetComponentInParent<Canvas>();
+        //canvasRect = canvas.GetComponent<RectTransform>();
+        //originalPosition = canvasRect.anchoredPosition;
+
+        panelRect = minigamePanel.GetComponent<RectTransform>();
+        panelOriginalPos = panelRect.anchoredPosition;
+
+        profitInput.onSelect.AddListener(OnInputSelected);
+        profitInput.onDeselect.AddListener(OnInputDeselected);
+
     }
 
     void Update()
@@ -90,7 +101,7 @@ public class AccountingMinigame : MonoBehaviour
                 TimeUp();
             }
         }
-        HandleKeyboard();
+        //HandleKeyboard();
     }
 
     private void SetupInputField()
@@ -233,32 +244,47 @@ public class AccountingMinigame : MonoBehaviour
 
     }
 
-    private void HandleKeyboard()
+//    private void HandleKeyboard()
+//    {
+//#if UNITY_ANDROID || UNITY_IOS
+//        if (TouchScreenKeyboard.visible && !isKeyboardOpen)
+//        {
+//            // Keyboard net geopend
+//            isKeyboardOpen = true;
+//            float keyboardHeight = GetKeyboardHeight();
+//            canvasRect.anchoredPosition = new Vector2(originalPosition.x, originalPosition.y + keyboardHeight);
+//        }
+//        else if (!TouchScreenKeyboard.visible && isKeyboardOpen)
+//        {
+//            // Keyboard net gesloten
+//            isKeyboardOpen = false;
+//            canvasRect.anchoredPosition = originalPosition;
+//        }
+//#endif
+//    }
+
+//    private float GetKeyboardHeight()
+//    {
+//#if UNITY_ANDROID || UNITY_IOS
+//        // Schat keyboard hoogte (ongeveer 40% van scherm hoogte)
+//        return Screen.height * 0.4f;
+//#else
+//        return 0f;
+//#endif
+//    }
+
+    private void OnInputSelected(string _)
     {
 #if UNITY_ANDROID || UNITY_IOS
-        if (TouchScreenKeyboard.visible && !isKeyboardOpen)
-        {
-            // Keyboard net geopend
-            isKeyboardOpen = true;
-            float keyboardHeight = GetKeyboardHeight();
-            canvasRect.anchoredPosition = new Vector2(originalPosition.x, originalPosition.y + keyboardHeight);
-        }
-        else if (!TouchScreenKeyboard.visible && isKeyboardOpen)
-        {
-            // Keyboard net gesloten
-            isKeyboardOpen = false;
-            canvasRect.anchoredPosition = originalPosition;
-        }
+        panelRect.anchoredPosition = panelOriginalPos + new Vector2(0, 800f);
 #endif
     }
 
-    private float GetKeyboardHeight()
+    private void OnInputDeselected(string _)
     {
 #if UNITY_ANDROID || UNITY_IOS
-        // Schat keyboard hoogte (ongeveer 40% van scherm hoogte)
-        return Screen.height * 0.4f;
-#else
-        return 0f;
+        panelRect.anchoredPosition = panelOriginalPos;
 #endif
     }
+
 }

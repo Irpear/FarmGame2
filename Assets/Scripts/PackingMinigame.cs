@@ -215,7 +215,7 @@ public class PackingMinigame : MonoBehaviour
         {
             NotificationManager.Instance.ShowNotification("You did well! The shopkeeper pays you 10 coins for your time", 3f);
         }
-        else { NotificationManager.Instance.ShowNotification("You messed up! The shopkeeper is dissapointed and will do it himself", 3f); }
+        else { NotificationManager.Instance.ShowNotification("You messed up! The shopkeeper is disappointed and will do it himself", 3f); }
 
     }
 

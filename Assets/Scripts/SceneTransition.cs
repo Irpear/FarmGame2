@@ -7,7 +7,7 @@ public class SceneTransition : MonoBehaviour
 {
     public static SceneTransition Instance;
     public Image fadeImage; // Zwarte Image over hele scherm
-    public float fadeDuration = 0.3f;
+    public float fadeDuration = 0.7f;
 
     void Awake()
     {
