@@ -130,8 +130,8 @@ public class PackingMinigame : MonoBehaviour
             RectTransform rt = mini.GetComponent<RectTransform>();
             if (rt != null)
             {
-                float randomX = Random.Range(-30f, 30f);
-                float randomY = Random.Range(0f, 15f);
+                float randomX = Random.Range(-100f, 100f);
+                float randomY = Random.Range(0f, 50f);
                 rt.anchoredPosition = new Vector2(randomX, randomY);
             }
         }

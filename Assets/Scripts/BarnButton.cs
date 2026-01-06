@@ -60,6 +60,6 @@ public class BarnButton : MonoBehaviour
     public void LoadBarn()
     {
         DayManager.Instance.SavePlotStates();
-        SceneManager.LoadScene("BarnScene");
+        SceneTransition.Instance.LoadSceneWithFade("BarnScene");
     }
 }

@@ -15,24 +15,25 @@ public class ClickHandler : MonoBehaviour
     public void LoadStore()
     {
         DayManager.Instance.SavePlotStates();
-        SceneManager.LoadScene("ShopScene");
+        SceneTransition.Instance.LoadSceneWithFade("ShopScene");
     }
 
     public void LoadBarn()
     {
         DayManager.Instance.SavePlotStates();
-        SceneManager.LoadScene("BarnScene");
+        SceneTransition.Instance.LoadSceneWithFade("BarnScene");
     }
 
     public void LoadFarm()
     {
         DayManager.Instance.SavePlotStates();
-        SceneManager.LoadScene("FarmScene");
+        SceneTransition.Instance.LoadSceneWithFade("FarmScene");
+
     }
 
     public void LoadMinigames()
     {
-        SceneManager.LoadScene("MinigameScene");
+        SceneTransition.Instance.LoadSceneWithFade("MinigameScene");
     }
 
     public void ShowSeeds()
@@ -75,4 +76,12 @@ public class ClickHandler : MonoBehaviour
         animalPanel.SetActive(false);
     }
 
+
+
+    public void RESETALLPROGRESS()
+    {
+        PlayerPrefs.DeleteAll();
+        PlayerPrefs.Save();
+        SceneManager.LoadScene(0); // Herstart game
+    }
 }

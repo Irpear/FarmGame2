@@ -50,6 +50,11 @@ public class AccountingMinigame : MonoBehaviour
     private float timeRemaining;
     private bool done = false;
 
+    private Canvas canvas;
+    private RectTransform canvasRect;
+    private Vector2 originalPosition;
+    private bool isKeyboardOpen = false;
+
     void Start()
     {
         SetupInputField();
@@ -65,6 +70,10 @@ public class AccountingMinigame : MonoBehaviour
         Debug.Log($"Accounting streak: {streak}, time limit: {timeRemaining}");
 
         timeLimit = adjustedTime;
+
+        canvas = GetComponentInParent<Canvas>();
+        canvasRect = canvas.GetComponent<RectTransform>();
+        originalPosition = canvasRect.anchoredPosition;
     }
 
     void Update()
@@ -81,6 +90,7 @@ public class AccountingMinigame : MonoBehaviour
                 TimeUp();
             }
         }
+        HandleKeyboard();
     }
 
     private void SetupInputField()
@@ -221,5 +231,34 @@ public class AccountingMinigame : MonoBehaviour
         }
         else { NotificationManager.Instance.ShowNotification("Wrong answer! The shopkeeper can't count on you and will do it himself", 3f); }
 
+    }
+
+    private void HandleKeyboard()
+    {
+#if UNITY_ANDROID || UNITY_IOS
+        if (TouchScreenKeyboard.visible && !isKeyboardOpen)
+        {
+            // Keyboard net geopend
+            isKeyboardOpen = true;
+            float keyboardHeight = GetKeyboardHeight();
+            canvasRect.anchoredPosition = new Vector2(originalPosition.x, originalPosition.y + keyboardHeight);
+        }
+        else if (!TouchScreenKeyboard.visible && isKeyboardOpen)
+        {
+            // Keyboard net gesloten
+            isKeyboardOpen = false;
+            canvasRect.anchoredPosition = originalPosition;
+        }
+#endif
+    }
+
+    private float GetKeyboardHeight()
+    {
+#if UNITY_ANDROID || UNITY_IOS
+        // Schat keyboard hoogte (ongeveer 40% van scherm hoogte)
+        return Screen.height * 0.4f;
+#else
+        return 0f;
+#endif
     }
 }
