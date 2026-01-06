@@ -236,16 +236,16 @@ public class DayManager : MonoBehaviour
 
     private void ProfitHighscoreCheck()
     {
-        currentHighscore = PlayerPrefs.GetInt("myhighscore", 0);
+        currentHighscore = PlayerPrefs.GetInt("myHighscore", 0);
         if (currentHighscore < CoinManager.Instance.profit)
         {
-            profitSummary.text = $"You earned {CoinManager.Instance.profit} coins today, which means you achieved your new highscore!";
+            profitSummary.text = $"You earned {CoinManager.Instance.profit} coins today, which means you got a new highscore!";
             NotificationManager.Instance.ShowNotification("Congratulations on the new highscore", 5f);
             PlayerPrefs.SetInt("myHighscore", CoinManager.Instance.profit);
         }
         else
         {
-            profitSummary.text = $"You earned {CoinManager.Instance.profit} coins today";
+            profitSummary.text = $"You earned {CoinManager.Instance.profit} coins today, your highscore is {currentHighscore}";
         }
             
         CoinManager.Instance.profit = 0;

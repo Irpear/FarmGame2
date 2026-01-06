@@ -181,8 +181,6 @@ public class AccountingMinigame : MonoBehaviour
         PlayerPrefs.SetInt("AccountingStreak", streak);
         PlayerPrefs.Save();
 
-
-        // Bijvoorbeeld:
         CoinManager.Instance.AddCoins(10);
     }
 
