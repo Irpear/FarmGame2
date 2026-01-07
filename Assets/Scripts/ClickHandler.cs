@@ -38,42 +38,52 @@ public class ClickHandler : MonoBehaviour
 
     public void ShowSeeds()
     {
-        seedsPanel.SetActive(true);
+        SceneTransition.Instance.SwitchPanels(() => {
+            seedsPanel.SetActive(true);
         upgradesPanel.SetActive(false);
         talismanPanel.SetActive(false);
         animalPanel.SetActive(false);
+        });
     }
 
     public void ShowUpgrades()
     {
-        seedsPanel.SetActive(false);
-        upgradesPanel.SetActive(true);
-        talismanPanel.SetActive(false);
-        animalPanel.SetActive(false);
+        SceneTransition.Instance.SwitchPanels(() => {
+            seedsPanel.SetActive(false);
+            upgradesPanel.SetActive(true);
+            talismanPanel.SetActive(false);
+            animalPanel.SetActive(false);
+        });
     }
 
     public void ShowTalisman()
     {
-        seedsPanel.SetActive(false);
+        SceneTransition.Instance.SwitchPanels(() => {
+            seedsPanel.SetActive(false);
         upgradesPanel.SetActive(false);
         talismanPanel.SetActive(true);
         animalPanel.SetActive(false);
+        });
     }
 
     public void ShowAnimals()
     {
-        seedsPanel.SetActive(false);
+        SceneTransition.Instance.SwitchPanels(() => {
+            seedsPanel.SetActive(false);
         upgradesPanel.SetActive(false);
         talismanPanel.SetActive(false);
         animalPanel.SetActive(true);
+        });
     }
 
     public void ShowShopHub()
     {
-        seedsPanel.SetActive(false);
+        SceneTransition.Instance.SwitchPanels(() => {
+            seedsPanel.SetActive(false);
         upgradesPanel.SetActive(false);
         talismanPanel.SetActive(false);
         animalPanel.SetActive(false);
+        });
     }
 
 

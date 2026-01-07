@@ -56,10 +56,12 @@ public class ChickenCoop : MonoBehaviour
 
     public void ShowChickenCoop()
     {
-        ChickenCoopPanel.SetActive(true);
-        foodSelectionPanel.SetActive(false);
-        if (PlayerPrefs.GetInt("chicken1_unlocked", 0) == 1) chicken1.SetActive(true);
-        if (PlayerPrefs.GetInt("chicken2_unlocked", 0) == 1) chicken2.SetActive(true);
+        SceneTransition.Instance.SwitchPanels(() => {
+            ChickenCoopPanel.SetActive(true);
+            foodSelectionPanel.SetActive(false);
+            if (PlayerPrefs.GetInt("chicken1_unlocked", 0) == 1) chicken1.SetActive(true);
+            if (PlayerPrefs.GetInt("chicken2_unlocked", 0) == 1) chicken2.SetActive(true);
+        });
     }
 
     public void ShowBarn()

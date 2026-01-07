@@ -79,9 +79,11 @@ public class BarnInventory : MonoBehaviour
 
     public void OpenPlantBook()
     {
-        pageImage.sprite = page1;
-        PlantBookPanel.SetActive(true);
-        closeBookButton.gameObject.SetActive(false);
+        SceneTransition.Instance.SwitchPanels(() => {
+            pageImage.sprite = page1;
+            PlantBookPanel.SetActive(true);
+            closeBookButton.gameObject.SetActive(false);
+        });
     }
     public void OpenPlantBookPage2()
     {
