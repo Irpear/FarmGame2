@@ -70,8 +70,8 @@ MonoBehaviour:
   cornPopupPrefab: {fileID: 7453106165801772673, guid: ee92530ccf4d63a468ae21ac3f6a7411, type: 3}
   compostEffect: {fileID: 7036640040412311400}
   shinyEffect: {fileID: 7732528581652263541}
-  shinyChancePercent: 1
   isShiny: 0
+  shinyChancePercent: 1
   chosenVariant: 0
   isGrape: 0
   grapeMaxHarvests: 0
@@ -397,8 +397,8 @@ Transform:
   m_GameObject: {fileID: 7365870627011420920}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.756, y: -0.7313, z: 0}
-  m_LocalScale: {x: 0.1022792, y: 0.09556539, z: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 122218302725034294}
@@ -452,7 +452,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 2
   m_MaskInteraction: 0
-  m_Sprite: {fileID: 8482712648628362555, guid: e03e3ada98e56234cb5e2f1e8bc3b90e, type: 3}
+  m_Sprite: {fileID: 21300000, guid: de5df1b71dcfa2b44a3ccd1941ae1fdb, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -488,8 +488,8 @@ Transform:
   m_GameObject: {fileID: 9220868356690701841}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.8089, y: -0.7313, z: 0}
-  m_LocalScale: {x: 0.1022792, y: 0.09556539, z: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 122218302725034294}
@@ -543,7 +543,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 2
   m_MaskInteraction: 0
-  m_Sprite: {fileID: -3035663291710025098, guid: 8f02b2df54ee18745b5e8ea5c382ac2d, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 906dbf24e5430604080ef5cec1273fc8, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
