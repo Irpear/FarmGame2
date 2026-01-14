@@ -1,6 +1,7 @@
 using TMPro;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.Rendering.Universal;
 using UnityEngine.UI;
 
 public class PlotUnlockBarrier : MonoBehaviour
@@ -43,6 +44,9 @@ public class PlotUnlockBarrier : MonoBehaviour
         if (CoinManager.Instance.coins >= unlockCost)
         {
             CoinManager.Instance.AddCoins(-unlockCost);
+
+            int plots = PlayerPrefs.GetInt("totalUnlockedPlots", 6);
+            PlayerPrefs.SetInt("totalUnlockedPlots", plots + 1);
 
             PlayerPrefs.SetInt(barrierID, 1);
             PlayerPrefs.Save();

@@ -59,6 +59,13 @@ public class DayManager : MonoBehaviour
                 stormChanceBasePercent += -1;  
             }
             SceneManager.sceneLoaded += OnSceneLoaded;
+            if (PlayerPrefs.GetInt("first_launch", 1) == 1)
+            {
+                PlayerPrefs.SetInt("totalUnlockedPlots", 6);
+                PlayerPrefs.SetInt("shop_stock_carrot", 6);
+                PlayerPrefs.SetInt("first_launch", 0);
+                PlayerPrefs.Save();
+            }
         }
         else
         {
@@ -232,6 +239,8 @@ public class DayManager : MonoBehaviour
         }
 
         CheckPlantBook();
+
+        ShopManager.ResetDailyStock();
     }
 
     private void ProfitHighscoreCheck()

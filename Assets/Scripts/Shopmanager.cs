@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.Rendering.Universal;
@@ -28,6 +29,14 @@ public class ShopManager : MonoBehaviour
     public TextMeshProUGUI cornInventory;
     public TextMeshProUGUI grapeInventory;
     public TextMeshProUGUI potatoInventory;
+
+    [Header("Stock Text Fields")]
+    public TextMeshProUGUI carrotStock;
+    public TextMeshProUGUI tomatoStock;
+    public TextMeshProUGUI wheatStock;
+    public TextMeshProUGUI cornStock;
+    public TextMeshProUGUI grapeStock;
+    public TextMeshProUGUI potatoStock;
 
     [Header("Seed Buttons")]
     public Button carrotButton;
@@ -124,16 +133,48 @@ public class ShopManager : MonoBehaviour
         if (grapePriceText != null) { grapePriceText.text = grapePrice.ToString(); grapeInventory.text = SeedManager.Instance.GetSeeds("grape").ToString(); }
         if (potatoPriceText != null) { potatoPriceText.text = potatoPrice.ToString(); potatoInventory.text = SeedManager.Instance.GetSeeds("potato").ToString(); }
 
+        UpdateStockTexts();
+    }
+
+    private void UpdateStockTexts()
+    {
+        if (carrotStock != null) carrotStock.text = GetStock("carrot").ToString();
+        if (tomatoStock != null) tomatoStock.text = GetStock("tomato").ToString();
+        if (wheatStock != null) wheatStock.text = GetStock("wheat").ToString();
+        if (cornStock != null) cornStock.text = GetStock("corn").ToString();
+        if (grapeStock != null) grapeStock.text = GetStock("grape").ToString();
+        if (potatoStock != null) potatoStock.text = GetStock("potato").ToString();
+    }
+
+    private int GetStock(string seedType)
+    {
+        return PlayerPrefs.GetInt($"shop_stock_{seedType}", 0);
+    }
+
+    private void SetStock(string seedType, int amount)
+    {
+        PlayerPrefs.SetInt($"shop_stock_{seedType}", amount);
+        PlayerPrefs.Save();
     }
 
     public void BuySeed(string seedType, int price)
     {
+        int stock = GetStock(seedType);
+
+        if (stock <= 0)
+        {
+            // hier miss plaatje rood maken
+            Debug.Log($"No {seedType} stock left!");
+            return;
+        }
+
         if (CoinManager.Instance.coins >= price)
         {
             CoinManager.Instance.AddCoins(-price);
             SeedManager.Instance.AddSeeds(seedType, 1);
+            SetStock(seedType, stock - 1);
             UpdateTexts();
-            Debug.Log($"Bought 1 {seedType} seed for {price} coins");
+            Debug.Log($"Bought 1 {seedType} seed for {price} coins. Stock left: {stock - 1}");
         }
         else
         {
@@ -147,4 +188,56 @@ public class ShopManager : MonoBehaviour
     public void BuyCorn() => BuySeed("corn", cornPrice);
     public void BuyGrape() => BuySeed("grape", grapePrice);
     public void BuyPotato() => BuySeed("potato", potatoPrice);
+
+
+    public static void ResetDailyStock()
+    {
+        int totalPlots = PlayerPrefs.GetInt("totalUnlockedPlots", 6);
+
+        // Verzamel unlocked seeds
+        List<string> unlockedSeeds = new List<string>();
+        string[] allSeeds = { "carrot", "tomato", "wheat", "corn", "grape", "potato" };
+
+        foreach (string seed in allSeeds)
+        {
+            if (IsSeedUnlocked(seed))
+            {
+                unlockedSeeds.Add(seed);
+            }
+        }
+
+        if (unlockedSeeds.Count == 0)
+        {
+            Debug.LogWarning("No seeds unlocked!");
+            return;
+        }
+
+        // Reset alle stocks naar 0
+        foreach (string seed in allSeeds)
+        {
+            PlayerPrefs.SetInt($"shop_stock_{seed}", 0);
+        }
+
+        //// Verdeel stock: minstens 1 per unlocked seed
+        //int remaining = totalPlots - unlockedSeeds.Count;
+
+        //// Geef iedereen eerst 1
+        //foreach (string seed in unlockedSeeds)
+        //{
+        //    PlayerPrefs.SetInt($"shop_stock_{seed}", 1);
+        //}
+
+        // Verdeel de rest random
+        while (totalPlots > 0)
+        {
+            string randomSeed = unlockedSeeds[Random.Range(0, unlockedSeeds.Count)];
+            int current = PlayerPrefs.GetInt($"shop_stock_{randomSeed}", 0);
+            PlayerPrefs.SetInt($"shop_stock_{randomSeed}", current + 1);
+            totalPlots--;
+        }
+
+        PlayerPrefs.Save();
+
+        Debug.Log($"Daily stock reset! Total plots: {totalPlots}, Unlocked seeds: {unlockedSeeds.Count}");
+    }
 }
