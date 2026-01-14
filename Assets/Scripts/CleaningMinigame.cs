@@ -214,6 +214,7 @@ else
 
         wrongYell.SetActive(true);
         Correct = false;
+        audioSource.PlayOneShot(angryMan);
 
         PlayerPrefs.SetInt("CleaningStreak", 0);
 
@@ -236,6 +237,7 @@ else
         if (rewardGiven) return;
         else
         {
+            audioSource.PlayOneShot(happyMan);
             CoinManager.Instance.AddCoins(10);
             rewardGiven = true;
             StartCoroutine(CloseMinigame());
