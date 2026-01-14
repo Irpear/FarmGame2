@@ -36,6 +36,9 @@ public class PackingMinigame : MonoBehaviour
     public GameObject correctYell;
     public bool Correct;
     private bool done = false;
+    public AudioSource audioSource;
+    public AudioClip angryMan;
+    public AudioClip happyMan;
 
     private List<string> correctOrder = new List<string>();
     private List<string> playerOrder = new List<string>();
@@ -185,6 +188,7 @@ public class PackingMinigame : MonoBehaviour
         Debug.Log("Correct!");
 
         correctYell.SetActive(true);
+        audioSource.PlayOneShot(happyMan);
         Correct = true;
 
         int streak = PlayerPrefs.GetInt("PackingStreak", 0);
@@ -200,6 +204,7 @@ public class PackingMinigame : MonoBehaviour
         Debug.Log("Wrong!");
 
         wrongYell.SetActive(true);
+        audioSource.PlayOneShot(angryMan);
         Correct = false;
 
         PlayerPrefs.SetInt("PackingStreak", 0);
