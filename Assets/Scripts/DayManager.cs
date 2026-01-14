@@ -305,13 +305,24 @@ public class DayManager : MonoBehaviour
         {
             if (plot.growthStage > 0)
             {
-                plot.dead = true;
-                plot.UpdateSprite();
+                if (Random.value <= 0.5f) // 50% kans
+                {
+                    plot.dead = true;
+                    plot.UpdateSprite();
+                }
             }
         }
         yield return new WaitForSeconds(1f);
         NotificationManager.Instance.ShowNotification("Oh no! It stormed last night!");
         ShopManager.UnlockSeed("corn");
+
+        if (PlayerPrefs.GetInt("stormTalisman_available", 0) == 0)
+        {
+            PlayerPrefs.SetInt("stormTalisman_available", 1);
+            PlayerPrefs.Save();
+            NotificationManager.Instance.ShowNotification("A new talisman is available in the store", 3f);
+        }
+
         SavePlotStates();
     }
 

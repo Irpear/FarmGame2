@@ -1,6 +1,7 @@
 ﻿using System.Threading;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.Rendering.Universal;
 using UnityEngine.UI;
 using static Unity.Burst.Intrinsics.X86.Avx;
 
@@ -344,6 +345,14 @@ public class Plot : MonoBehaviour
                     if (plantedPlant.seedType != "carrot")
                     {
                         dead = true;
+
+                        if (PlayerPrefs.GetInt("rainTalisman_available", 0) == 0)
+                        {
+                            PlayerPrefs.SetInt("rainTalisman_available", 1);
+                            PlayerPrefs.Save();
+                            NotificationManager.Instance.ShowNotification("You forgot to water your plant! A new talisman is available in the store", 3f);
+                        }
+
                     }
                 }
                     

@@ -12,11 +12,17 @@ public class MinigameController : MonoBehaviour
     public GameObject PackingStartPanel;
     public TextMeshProUGUI PackingStreakSize;
 
+    public int completedTasks = 0;
+
+    private const string CompletedTasksKey = "CompletedMinigameTasks";
+
     public int ChosenMinigame;
 
 
     private void Start()
     {
+        completedTasks = PlayerPrefs.GetInt(CompletedTasksKey, 0);
+
         ChosenMinigame = Random.Range(0, 2);
         if (ChosenMinigame == 0)
         {
@@ -43,5 +49,20 @@ public class MinigameController : MonoBehaviour
     public void StartPacking()
     {
         PackingPanel.SetActive(true);
+    }
+
+    public void TaskCompleted()
+    {
+        completedTasks++;
+
+        PlayerPrefs.SetInt(CompletedTasksKey, completedTasks);
+        PlayerPrefs.Save();
+
+        if (completedTasks == 15)
+        {
+            PlayerPrefs.SetInt("shinyTalisman_available", 1);
+            PlayerPrefs.Save();
+            NotificationManager.Instance.ShowNotification("A new talisman is available in the store", 3f);
+        }
     }
 }

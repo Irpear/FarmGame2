@@ -239,6 +239,7 @@ public class AccountingMinigame : MonoBehaviour
         if (Correct == true)
         {
             NotificationManager.Instance.ShowNotification("You were correct! The shopkeeper pays you 10 coins for your time", 3f);
+            FindAnyObjectByType<MinigameController>()?.TaskCompleted();
         }
         else { NotificationManager.Instance.ShowNotification("Wrong answer! The shopkeeper can't count on you and will do it himself", 3f); }
 

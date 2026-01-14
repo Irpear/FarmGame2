@@ -219,6 +219,7 @@ public class PackingMinigame : MonoBehaviour
         if (Correct == true)
         {
             NotificationManager.Instance.ShowNotification("You did well! The shopkeeper pays you 10 coins for your time", 3f);
+            FindAnyObjectByType<MinigameController>()?.TaskCompleted();
         }
         else { NotificationManager.Instance.ShowNotification("You messed up! The shopkeeper is disappointed and will do it himself", 3f); }
 

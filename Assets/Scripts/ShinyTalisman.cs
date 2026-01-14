@@ -13,6 +13,7 @@ public class ShinyTalisman : MonoBehaviour
     public TextMeshProUGUI percentageInfoText;
     public Sprite purchasedSprite;         // sprite na koop
     public Sprite defaultSprite;           // sprite voor koop
+    public Image coinImage;
 
     private Button btn;
     private Image img;
@@ -59,6 +60,15 @@ public class ShinyTalisman : MonoBehaviour
 
     private void UpdateUI()
     {
+        if (PlayerPrefs.GetInt("shinyTalisman_available", 0) == 0)
+        {
+            btn.interactable = false;
+            costText.gameObject.SetActive(false);
+            percentageInfoText.gameObject.SetActive(false);
+            coinImage.gameObject.SetActive(false);
+            return;
+        }
+
         if (Purchased)
         {
             costText.text = "MAX";

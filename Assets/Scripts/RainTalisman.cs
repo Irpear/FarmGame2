@@ -14,6 +14,7 @@ public class RainTalisman : MonoBehaviour
     public TextMeshProUGUI costText;
     public TextMeshProUGUI percentageInfoText;
     public Sprite[] levelSprites;
+    public UnityEngine.UI.Image coinImage;
 
     private Button btn;
     private UnityEngine.UI.Image img;
@@ -69,6 +70,16 @@ public class RainTalisman : MonoBehaviour
 
     private void UpdateUI()
     {
+
+        if (PlayerPrefs.GetInt("rainTalisman_available", 0) == 0)
+        {
+            btn.interactable = false;
+            costText.gameObject.SetActive(false);
+            percentageInfoText.gameObject.SetActive(false);
+            coinImage.gameObject.SetActive(false);
+            return;
+        }
+
         if (Level >= maxLevel)
         {
             costText.text = "MAX";
