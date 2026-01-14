@@ -28,7 +28,6 @@ public class MinigameController : MonoBehaviour
         completedTasks = PlayerPrefs.GetInt(CompletedTasksKey, 0);
 
         ChosenMinigame = Random.Range(0, 3);
-        ChosenMinigame = 2; ////////////////////////////////////////////////////////////
         if (ChosenMinigame == 0)
         {
             AccountingStartPanel.SetActive(true);
