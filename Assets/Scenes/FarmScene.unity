@@ -5997,7 +5997,7 @@ MonoBehaviour:
   - toolName: wateringCan
     sprite: {fileID: 1914849043038913832, guid: 162289ffbf20e494d8d6ffedb4ff4693, type: 3}
   - toolName: deadPlant
-    sprite: {fileID: -1695433325088696955, guid: d5149e69895ec1c498ddd97b949ebb94, type: 3}
+    sprite: {fileID: 21300000, guid: e512c5602ea6f7e4dba562d6b6fb2cdd, type: 3}
   - toolName: compost
     sprite: {fileID: 5520406542960741612, guid: 701591461bbdbde4a915edddb01909f7, type: 3}
   - toolName: scythe

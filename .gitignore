@@ -235,3 +235,4 @@ UserSettings/
 *.dwlt
 UserSettings/Layouts/default-6000.dwlt
 *.db
+.vsconfig

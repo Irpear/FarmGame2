@@ -64,7 +64,7 @@ MonoBehaviour:
   plantRenderer: {fileID: 4177051592404811067}
   dryGroundSprite: {fileID: 21300000, guid: ed4a8a224b78dd241b68c8713d323c66, type: 3}
   wetGroundSprite: {fileID: 21300000, guid: c8954fc8f53271a449273c041405976d, type: 3}
-  deadPlant: {fileID: 21300000, guid: bd4e7f16100c48d40bf05b5d6b94bf97, type: 3}
+  deadPlant: {fileID: 21300000, guid: e512c5602ea6f7e4dba562d6b6fb2cdd, type: 3}
   popupPrefab: {fileID: 7453106165801772673, guid: 0e05bbb114af2d647bf6f019c77d1da3, type: 3}
   wheatPopupPrefab: {fileID: 7453106165801772673, guid: 0f6512dabd6fc864c9789e06f93adbd2, type: 3}
   cornPopupPrefab: {fileID: 7453106165801772673, guid: ee92530ccf4d63a468ae21ac3f6a7411, type: 3}
