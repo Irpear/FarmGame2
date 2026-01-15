@@ -73,6 +73,7 @@ public class DayManager : MonoBehaviour
             Destroy(gameObject);
             return;
         }
+        SaveManager.Instance.LoadGame();
     }
 
     private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
@@ -241,6 +242,7 @@ public class DayManager : MonoBehaviour
         CheckPlantBook();
 
         ShopManager.ResetDailyStock();
+        SaveManager.Instance.SaveGame();
     }
 
     private void ProfitHighscoreCheck()
@@ -404,5 +406,26 @@ public class DayManager : MonoBehaviour
 
         }
     }
+
+    public void LoadPlotsFromSave(List<PlotSaveData> savedPlots)
+    {
+        plotStates.Clear();
+
+        foreach (var p in savedPlots)
+        {
+            plotStates[p.key] = (
+                p.plantType, p.growthStage, p.isWatered, p.dead, p.composted,
+                p.isShiny, p.isGrape, p.grapeMaxHarvests, p.grapeHarvestsDone
+            );
+        }
+    }
+
+    public void LoadComposterFromSave(bool full, bool ready, bool trash)
+    {
+        composterState.isFull = full;
+        composterState.isReady = ready;
+        composterState.isTrashcan = trash;
+    }
+
 
 }
