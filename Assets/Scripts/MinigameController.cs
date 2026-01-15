@@ -16,6 +16,9 @@ public class MinigameController : MonoBehaviour
     public GameObject CleaningStartPanel;
     public TextMeshProUGUI CleaningStreakTime;
 
+    public GameObject CatPanel;
+    public GameObject CatStartPanel;
+
     public int completedTasks = 0;
 
     private const string CompletedTasksKey = "CompletedMinigameTasks";
@@ -27,7 +30,8 @@ public class MinigameController : MonoBehaviour
     {
         completedTasks = PlayerPrefs.GetInt(CompletedTasksKey, 0);
 
-        ChosenMinigame = Random.Range(0, 3);
+        ChosenMinigame = Random.Range(0, 4);
+        ChosenMinigame = 3;
         if (ChosenMinigame == 0)
         {
             AccountingStartPanel.SetActive(true);
@@ -50,6 +54,10 @@ public class MinigameController : MonoBehaviour
             float adjustedTime = 10 - streak;
             CleaningStreakTime.text = adjustedTime.ToString();
         }
+        else if (ChosenMinigame == 3)
+        {
+            CatStartPanel.SetActive(true);
+        }
     }
 
 
@@ -64,6 +72,10 @@ public class MinigameController : MonoBehaviour
     public void StartCleaning()
     {
         CleaningPanel.SetActive(true);
+    }
+    public void StartCat()
+    {
+        CatPanel.SetActive(true);
     }
 
     public void TaskCompleted()
