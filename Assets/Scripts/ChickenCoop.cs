@@ -66,7 +66,10 @@ public class ChickenCoop : MonoBehaviour
 
     public void ShowBarn()
     {
-        ChickenCoopPanel.SetActive(false);
+        SceneTransition.Instance.SwitchPanels(() =>
+        {
+            ChickenCoopPanel.SetActive(false);
+        });
     }
 
 }

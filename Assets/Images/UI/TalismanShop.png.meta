@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 38366e1267472ac44ad5815986a65387
+guid: 16637cdafd12481449b3cc2faec774bf
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 2245952101968248727
-    second: FarmCoin_0
+      213: -5990264467296527832
+    second: TalismanShop_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -113,23 +113,23 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: FarmCoin_0
+      name: TalismanShop_0
       rect:
         serializedVersion: 2
-        x: 0
+        x: 138
         y: 0
-        width: 1080
-        height: 1080
+        width: 843
+        height: 1062
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 79ffb5489893b2f10800000000000000
-      internalID: 2245952101968248727
+      spriteID: 82a552c643e4edca0800000000000000
+      internalID: -5990264467296527832
       vertices: []
       indices: 
       edges: []
@@ -138,7 +138,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 1f0126c4b12c65b4b9dcc9c2664a5c7e
+    spriteID: 
     internalID: 0
     vertices: []
     indices: 
@@ -148,7 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      FarmCoin_0: 2245952101968248727
+      TalismanShop_0: -5990264467296527832
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

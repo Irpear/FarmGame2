@@ -20,10 +20,13 @@ public class BarnInventory : MonoBehaviour
 
     public Button foodProcessorButton;
     public Button plantBookButton;
+    public Button TrophyButton;
     public GameObject PlantBookPanel;
+    public GameObject TrophyPanel;
 
     public Image pageImage;
     public Button closeBookButton;
+    //public Button closeTrophiesButton;
 
     public Sprite page1;
     public Sprite page2;
@@ -85,6 +88,14 @@ public class BarnInventory : MonoBehaviour
             closeBookButton.gameObject.SetActive(false);
         });
     }
+
+    public void OpenTrophies()
+    {
+        SceneTransition.Instance.SwitchPanels(() => {
+            TrophyPanel.SetActive(true);
+            //closeTrophiesButton.gameObject.SetActive(false);
+        });
+    }
     public void OpenPlantBookPage2()
     {
         pageImage.sprite = page2;
@@ -93,5 +104,12 @@ public class BarnInventory : MonoBehaviour
     public void ClosePlantBook()
     {
         PlantBookPanel.SetActive(false);
+    }
+    public void CloseTrophies()
+    {
+        SceneTransition.Instance.SwitchPanels(() =>
+        {
+            TrophyPanel.SetActive(false);
+        });
     }
 }

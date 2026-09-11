@@ -741,7 +741,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -3.366, y: 3.006}
+  m_AnchoredPosition: {x: -4.33, y: 3.77}
   m_SizeDelta: {x: 1028.776, y: 2154.679}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &153189685
@@ -1425,8 +1425,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 270.95, y: 534}
-  m_SizeDelta: {x: 303.34, y: 205.74}
+  m_AnchoredPosition: {x: 292, y: 511}
+  m_SizeDelta: {x: 327.47, y: 264.63}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &486389833
 MonoBehaviour:
@@ -1497,14 +1497,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
   m_Material: {fileID: 0}
-  m_Color: {r: 0.5320754, g: 0.52103233, b: 0.52103233, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -7921649188387484213, guid: e520a6ad6d0fb024abb3405d4be439f3, type: 3}
+  m_Sprite: {fileID: 5779036021264795948, guid: 1f865614d87ae6047b3bcc1e0dacc48a, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -3885,8 +3885,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 88.20001, y: -89.20001}
-  m_SizeDelta: {x: 150, y: 150}
+  m_AnchoredPosition: {x: 102.113, y: -103.113}
+  m_SizeDelta: {x: 177.825, y: 177.825}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1039680767
 MonoBehaviour:
@@ -7307,7 +7307,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 313.6, y: -75}
+  m_AnchoredPosition: {x: 313.6, y: -88.912}
   m_SizeDelta: {x: 280.78052, y: 90.05945}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1885195563

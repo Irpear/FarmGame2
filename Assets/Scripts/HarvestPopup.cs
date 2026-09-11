@@ -12,7 +12,7 @@ public class HarvestPopup : MonoBehaviour
     public void Show(int amount, Vector3 startPos)
     {
         transform.position = startPos;
-        text.text = "+" + amount;
+        text.text = "" + amount;
         group.alpha = 1;
         timer = 0f;
     }

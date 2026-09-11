@@ -1,10 +1,52 @@
 fileFormatVersion: 2
-guid: 38366e1267472ac44ad5815986a65387
+guid: 7f7a8b977c9895e499cd6522aa6fa863
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 2245952101968248727
-    second: FarmCoin_0
+      213: -3041291632040565016
+    second: ShopCounter_0
+  - first:
+      213: 3745475820159805990
+    second: ShopCounter_1
+  - first:
+      213: -8697052547921670063
+    second: ShopCounter_2
+  - first:
+      213: -7449763292549623160
+    second: ShopCounter_3
+  - first:
+      213: 5057327366550669416
+    second: ShopCounter_4
+  - first:
+      213: 1594705276892749016
+    second: ShopCounter_5
+  - first:
+      213: -3599170111095468363
+    second: ShopCounter_6
+  - first:
+      213: 7081347564294239700
+    second: ShopCounter_7
+  - first:
+      213: -5889612791597572472
+    second: ShopCounter_8
+  - first:
+      213: -914111596873488625
+    second: ShopCounter_9
+  - first:
+      213: -2280495337804905862
+    second: ShopCounter_10
+  - first:
+      213: -265826463382423511
+    second: ShopCounter_11
+  - first:
+      213: 7720292247796512914
+    second: ShopCounter_12
+  - first:
+      213: -4722008914438414478
+    second: ShopCounter_13
+  - first:
+      213: 761650172685616435
+    second: ShopCounter_14
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -113,13 +155,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: FarmCoin_0
+      name: ShopCounter_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 1080
-        height: 1080
+        x: 235
+        y: 4
+        width: 621
+        height: 1070
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +170,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 79ffb5489893b2f10800000000000000
-      internalID: 2245952101968248727
+      spriteID: 8e6aad5cf592bc5d0800000000000000
+      internalID: -3041291632040565016
       vertices: []
       indices: 
       edges: []
@@ -138,7 +180,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 1f0126c4b12c65b4b9dcc9c2664a5c7e
+    spriteID: 03bb5072757850c42a3a3675b9b28244
     internalID: 0
     vertices: []
     indices: 
@@ -148,7 +190,22 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      FarmCoin_0: 2245952101968248727
+      ShopCounter_0: -3041291632040565016
+      ShopCounter_1: 3745475820159805990
+      ShopCounter_10: -2280495337804905862
+      ShopCounter_11: -265826463382423511
+      ShopCounter_12: 7720292247796512914
+      ShopCounter_13: -4722008914438414478
+      ShopCounter_14: 761650172685616435
+      ShopCounter_15: -1974893667
+      ShopCounter_2: -8697052547921670063
+      ShopCounter_3: -7449763292549623160
+      ShopCounter_4: 5057327366550669416
+      ShopCounter_5: 1594705276892749016
+      ShopCounter_6: -3599170111095468363
+      ShopCounter_7: 7081347564294239700
+      ShopCounter_8: -5889612791597572472
+      ShopCounter_9: -914111596873488625
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 38366e1267472ac44ad5815986a65387
+guid: 6d6565c65b27fc44b8a0ffb0eeb57ed7
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 2245952101968248727
-    second: FarmCoin_0
+      213: -2138534889620764463
+    second: Trophy_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -113,23 +113,23 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: FarmCoin_0
+      name: Trophy_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 1080
-        height: 1080
+        x: 478
+        y: 87
+        width: 1006
+        height: 849
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 79ffb5489893b2f10800000000000000
-      internalID: 2245952101968248727
+      spriteID: 1d8006c29d56252e0800000000000000
+      internalID: -2138534889620764463
       vertices: []
       indices: 
       edges: []
@@ -138,7 +138,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 1f0126c4b12c65b4b9dcc9c2664a5c7e
+    spriteID: 
     internalID: 0
     vertices: []
     indices: 
@@ -148,7 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      FarmCoin_0: 2245952101968248727
+      Trophy_0: -2138534889620764463
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
