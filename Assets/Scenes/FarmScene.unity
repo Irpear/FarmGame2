@@ -4313,6 +4313,10 @@ MonoBehaviour:
   unlockedPlants: 1
   currentHighscore: 1
   taskLeft: 1
+  trophyProfitGoal: 300
+  trophyHarvestGoal: 500
+  trophyMinigameStreakGoal: 10
+  isEndingDay: 0
 --- !u!4 &1080962169
 Transform:
   m_ObjectHideFlags: 0

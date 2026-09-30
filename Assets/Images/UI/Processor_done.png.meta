@@ -131,12 +131,12 @@ TextureImporter:
       name: Processor_done_0
       rect:
         serializedVersion: 2
-        x: 798
-        y: 225
-        width: 364
-        height: 724
+        x: 205
+        y: 0
+        width: 603
+        height: 1080
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -149,121 +149,11 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
-    - serializedVersion: 2
-      name: Processor_done_1
-      rect:
-        serializedVersion: 2
-        x: 1058
-        y: 193
-        width: 43
-        height: 35
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 1ec25d840de4bebf0800000000000000
-      internalID: -294054694180541215
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Processor_done_2
-      rect:
-        serializedVersion: 2
-        x: 830
-        y: 199
-        width: 65
-        height: 15
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 56728e0a3e0891510800000000000000
-      internalID: 1520388064359753573
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Processor_done_3
-      rect:
-        serializedVersion: 2
-        x: 903
-        y: 181
-        width: 33
-        height: 29
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 26566cec24e3bd530800000000000000
-      internalID: 3880763960567686498
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Processor_done_4
-      rect:
-        serializedVersion: 2
-        x: 953
-        y: 168
-        width: 29
-        height: 42
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: f75bff922a4f75d80800000000000000
-      internalID: -8261866014061382273
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Processor_done_5
-      rect:
-        serializedVersion: 2
-        x: 1013
-        y: 170
-        width: 10
-        height: 39
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 2a148911fb2a0d130800000000000000
-      internalID: 3589547844531929506
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
     outline: []
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 5e97eb03825dee720800000000000000
     internalID: 0
     vertices: []
     indices: 
@@ -271,14 +161,11 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     spriteCustomMetadata:
-      entries: []
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":1080.0,"y":1080.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":2,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
       Processor_done_0: 88643622004515083
-      Processor_done_1: -294054694180541215
-      Processor_done_2: 1520388064359753573
-      Processor_done_3: 3880763960567686498
-      Processor_done_4: -8261866014061382273
-      Processor_done_5: 3589547844531929506
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
