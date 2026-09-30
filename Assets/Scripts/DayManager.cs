@@ -20,8 +20,8 @@ public class DayManager : MonoBehaviour
 
     public Plot[] allPlots;
 
-    private Dictionary<string, (string plantType, int growthStage, bool isWatered, bool dead, bool composted, bool isShiny, bool isGrape, int grapeMaxHarvests, int grapeHarvestsDone)> plotStates
-    = new Dictionary<string, (string, int, bool, bool, bool, bool, bool, int, int)>();
+    // key = "x_y" positie van de plot
+    private Dictionary<string, PlotSaveData> plotStates = new Dictionary<string, PlotSaveData>();
 
     public float rainChancePercent = 0;
     public float stormChanceBasePercent = 2;
@@ -35,6 +35,11 @@ public class DayManager : MonoBehaviour
     public int currentHighscore = 1;
 
     public bool taskLeft = true;
+
+    // true zolang de nacht bezig is, dan wordt er niet tussendoor opgeslagen
+    public bool isEndingDay = false;
+
+    private bool saveLoaded = false;
 
     private ComposterState composterState;
 
@@ -73,11 +78,40 @@ public class DayManager : MonoBehaviour
             Destroy(gameObject);
             return;
         }
-        SaveManager.Instance.LoadGame();
+    }
+
+    private void OnDestroy()
+    {
+        if (Instance == this)
+        {
+            SceneManager.sceneLoaded -= OnSceneLoaded;
+            Instance = null;
+        }
+    }
+
+    // App gaat naar de achtergrond (op mobiel vaak de laatste kans om op te slaan)
+    private void OnApplicationPause(bool paused)
+    {
+        if (paused) SaveManager.SaveGame();
+    }
+
+    private void OnApplicationQuit()
+    {
+        SaveManager.SaveGame();
     }
 
     private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
 {
+        // Eerste keer laden: pas hier, want dan hebben CoinManager en SeedManager hun Awake ook gehad
+        if (!saveLoaded)
+        {
+            SaveManager.LoadGame();
+            saveLoaded = true;
+            CoinManager.Instance.UpdateUI();
+        }
+
+        ReturnHeldCompost();
+
         SeedSelectionUI.ActiveSelectedPlant = null;
         SeedSelectionUI.ActiveSelectedTool = null;
         SeedSelectionUI.Instance.ReturnWateringCan();
@@ -118,6 +152,8 @@ public class DayManager : MonoBehaviour
     RestorePlotStates();
 
     UpdateUI();
+
+    SaveManager.SaveGame();
 }
 
     public void SavePlotStates()
@@ -140,8 +176,20 @@ public class DayManager : MonoBehaviour
                     string key = $"{plot.transform.position.x}_{plot.transform.position.y}"; 
                     string plantType = plot.GetPlantedPlant() != null ? plot.GetPlantedPlant().seedType : "";
 
-                    plotStates[key] = (plantType, plot.growthStage, plot.isWatered, plot.dead, plot.composted, plot.isShiny, plot.isGrape, plot.grapeMaxHarvests, plot.grapeHarvestsDone);
-
+                    plotStates[key] = new PlotSaveData
+                    {
+                        key = key,
+                        plantType = plantType,
+                        growthStage = plot.growthStage,
+                        isWatered = plot.isWatered,
+                        dead = plot.dead,
+                        composted = plot.composted,
+                        isShiny = plot.isShiny,
+                        chosenVariant = plot.chosenVariant,
+                        isGrape = plot.isGrape,
+                        grapeMaxHarvests = plot.grapeMaxHarvests,
+                        grapeHarvestsDone = plot.grapeHarvestsDone
+                    };
                 }
             }
         }
@@ -188,7 +236,7 @@ public class DayManager : MonoBehaviour
 
                     plot.isShiny = state.isShiny;
 
-                    plot.chosenVariant = Random.Range(0, 4);
+                    plot.chosenVariant = state.chosenVariant;
 
                     plot.isGrape = state.isGrape;
 
@@ -208,6 +256,9 @@ public class DayManager : MonoBehaviour
 
     public void EndDay()
     {
+        if (isEndingDay) return;
+        isEndingDay = true;
+
         Debug.Log("Day " + currentDay + " ended.");
 
         currentDay++;
@@ -216,33 +267,24 @@ public class DayManager : MonoBehaviour
 
         ProfitHighscoreCheck();
 
-        StartCoroutine(DelayedUIUpdate());
-
         nightTransition.PlayTransition(() => {
-            
+
             Debug.Log("EndDay called. Now day is: " + currentDay);
 
         });
 
-        StartCoroutine(DelayedGrowth());
-
         //events
-        if (Random.value <= (rainChancePercent / 100f))
-        {
-            StartCoroutine(DelayedRain());
-        }
+        bool rain = Random.value <= (rainChancePercent / 100f);
 
         RecalculateStormChance();
 
-        if (Random.value <= (stormChancePercent / 100f))
-        {
-            StartCoroutine(DelayedStorm());
-        }
+        bool storm = Random.value <= (stormChancePercent / 100f);
 
         CheckPlantBook();
 
         ShopManager.ResetDailyStock();
-        SaveManager.Instance.SaveGame();
+
+        StartCoroutine(NightRoutine(rain, storm));
     }
 
     private void ProfitHighscoreCheck()
@@ -262,35 +304,80 @@ public class DayManager : MonoBehaviour
         CoinManager.Instance.profit = 0;
     }
 
-    private IEnumerator DelayedGrowth()
+    // Alles wat 's nachts gebeurt, in volgorde. Pas als alles verwerkt is wordt er opgeslagen,
+    // zodat de save nooit halverwege een dag staat.
+    private IEnumerator NightRoutine(bool rain, bool storm)
     {
+        // 0.5s: gereedschap terug, machines + kippen, planten groeien
         yield return new WaitForSeconds(0.5f);
+
+        ReturnHeldCompost();
+
+        SeedSelectionUI.ActiveSelectedPlant = null;
+        SeedSelectionUI.ActiveSelectedTool = null;
+        SeedSelectionUI.Instance.ReturnWateringCan();
+        SeedSelectionUI.Instance.ReturnScythe();
+
+        FindAnyObjectByType<Composter>()?.ProcessNewDay();
+        ProcessFoodProcessor();
+        ProcessChickens();
+
+        UpdateUI();
+
         foreach (var plot in allPlots)
         {
             plot.AdvanceDay();
         }
 
-        SavePlotStates();
+        // 3s: weer
+        yield return new WaitForSeconds(2.5f);
 
-        yield return new WaitForSeconds(3f);
+        if (rain)
+        {
+            foreach (var plot in allPlots)
+            {
+                plot.WaterPlant();
+            }
+        }
+
+        if (storm)
+        {
+            ApplyStorm();
+        }
+
+        // 3.5s: opgegeten gewassen
+        yield return new WaitForSeconds(0.5f);
         if (anyPlantsEaten == true)
         {
             NotificationManager.Instance.ShowNotification("You left your crops unharvested, the wild animals ate them!", 3f);
             ShopManager.UnlockSeed("grape");
         }
         anyPlantsEaten = false;
-    }
 
-    private IEnumerator DelayedRain()
-    {
-        yield return new WaitForSeconds(3f);
-        foreach (var plot in allPlots)
+        // 4s: meldingen over het weer
+        yield return new WaitForSeconds(0.5f);
+
+        if (rain)
         {
-            plot.WaterPlant();
+            NotificationManager.Instance.ShowNotification("Nice, it rained last night!");
         }
-        yield return new WaitForSeconds(1f);
-        NotificationManager.Instance.ShowNotification("Nice, it rained last night!");
+
+        if (storm)
+        {
+            NotificationManager.Instance.ShowNotification("Oh no! It stormed last night!");
+            ShopManager.UnlockSeed("corn");
+
+            if (PlayerPrefs.GetInt("stormTalisman_available", 0) == 0)
+            {
+                PlayerPrefs.SetInt("stormTalisman_available", 1);
+                NotificationManager.Instance.ShowNotification("A new talisman is available in the store", 3f);
+            }
+        }
+
+        // Nacht klaar → opslaan
         SavePlotStates();
+        isEndingDay = false;
+        SaveManager.SaveGame();
     }
 
     private void RecalculateStormChance()
@@ -309,9 +396,8 @@ public class DayManager : MonoBehaviour
         Debug.Log("Storm chance recalculated: " + stormChancePercent + "%");
     }
 
-    private IEnumerator DelayedStorm()
+    private void ApplyStorm()
     {
-        yield return new WaitForSeconds(3f);
         foreach (var plot in allPlots)
         {
             if (plot.growthStage > 0)
@@ -323,33 +409,6 @@ public class DayManager : MonoBehaviour
                 }
             }
         }
-        yield return new WaitForSeconds(1f);
-        NotificationManager.Instance.ShowNotification("Oh no! It stormed last night!");
-        ShopManager.UnlockSeed("corn");
-
-        if (PlayerPrefs.GetInt("stormTalisman_available", 0) == 0)
-        {
-            PlayerPrefs.SetInt("stormTalisman_available", 1);
-            PlayerPrefs.Save();
-            NotificationManager.Instance.ShowNotification("A new talisman is available in the store", 3f);
-        }
-
-        SavePlotStates();
-    }
-
-    private IEnumerator DelayedUIUpdate()
-    {
-        yield return new WaitForSeconds(0.5f);
-        SeedSelectionUI.ActiveSelectedPlant = null;
-        SeedSelectionUI.ActiveSelectedTool = null;
-        SeedSelectionUI.Instance.ReturnWateringCan();
-        SeedSelectionUI.Instance.ReturnScythe();
-
-        FindAnyObjectByType<Composter>()?.ProcessNewDay();
-        ProcessFoodProcessor();
-        ProcessChickens();
-
-        UpdateUI();
     }
 
     private void UpdateUI()
@@ -368,6 +427,21 @@ public class DayManager : MonoBehaviour
             isReady = comp.isReady,
             isTrashcan = comp.isTrashcan
         };
+    }
+
+    // Compost in de hand gaat terug in de composter, anders raakt hij kwijt
+    // (bij scenewissel, einde dag of ander gereedschap pakken)
+    public void ReturnHeldCompost()
+    {
+        if (SeedSelectionUI.ActiveSelectedTool != "compost") return;
+
+        SeedSelectionUI.ActiveSelectedTool = null;
+
+        composterState.isFull = true;
+        composterState.isReady = true;
+
+        var comp = FindFirstObjectByType<Composter>();
+        if (comp != null) RestoreComposterState(comp);
     }
 
     public void RestoreComposterState(Composter comp)
@@ -407,24 +481,51 @@ public class DayManager : MonoBehaviour
         }
     }
 
-    public void LoadPlotsFromSave(List<PlotSaveData> savedPlots)
-    {
-        plotStates.Clear();
+    // ================= SAVE / LOAD (via SaveManager) =================
 
-        foreach (var p in savedPlots)
-        {
-            plotStates[p.key] = (
-                p.plantType, p.growthStage, p.isWatered, p.dead, p.composted,
-                p.isShiny, p.isGrape, p.grapeMaxHarvests, p.grapeHarvestsDone
-            );
-        }
+    public void SaveTo(SaveData data)
+    {
+        // Als we op de farm zijn eerst de actuele stand ophalen, anders geldt de laatst bewaarde stand
+        SavePlotStates();
+        SaveComposterState(FindFirstObjectByType<Composter>());
+
+        data.currentDay = currentDay;
+        data.unlockedPlants = unlockedPlants;
+        data.taskLeft = taskLeft;
+
+        data.rainChanceBasePercent = rainChancePercent;
+        data.stormChanceBasePercent = stormChanceBasePercent;
+        data.shinyChanceBasePercent = shinyChanceBasePercent;
+
+        data.plots = new List<PlotSaveData>(plotStates.Values);
+
+        data.composterIsFull = composterState.isFull;
+        data.composterIsReady = composterState.isReady;
+        data.composterIsTrashcan = composterState.isTrashcan;
     }
 
-    public void LoadComposterFromSave(bool full, bool ready, bool trash)
+    public void LoadFrom(SaveData data)
     {
-        composterState.isFull = full;
-        composterState.isReady = ready;
-        composterState.isTrashcan = trash;
+        currentDay = data.currentDay;
+        unlockedPlants = data.unlockedPlants;
+        taskLeft = data.taskLeft;
+
+        rainChancePercent = data.rainChanceBasePercent;
+        stormChanceBasePercent = data.stormChanceBasePercent;
+        shinyChanceBasePercent = data.shinyChanceBasePercent;
+
+        plotStates.Clear();
+        if (data.plots != null)
+        {
+            foreach (var p in data.plots)
+            {
+                plotStates[p.key] = p;
+            }
+        }
+
+        composterState.isFull = data.composterIsFull;
+        composterState.isReady = data.composterIsReady;
+        composterState.isTrashcan = data.composterIsTrashcan;
     }
 
 

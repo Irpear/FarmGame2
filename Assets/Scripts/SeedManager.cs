@@ -106,4 +106,26 @@ public class SeedManager : MonoBehaviour
         }
         return total;
     }
+
+    // ================= SAVE / LOAD (via SaveManager) =================
+
+    // JsonUtility kan geen Dictionary opslaan, daarom als lijst
+    public void SaveTo(SaveData data)
+    {
+        data.seeds = new List<SeedSaveData>();
+        foreach (var seed in seeds)
+        {
+            data.seeds.Add(new SeedSaveData { seedType = seed.Key, amount = seed.Value });
+        }
+    }
+
+    public void LoadFrom(SaveData data)
+    {
+        if (data.seeds == null) return;
+
+        foreach (var seed in data.seeds)
+        {
+            seeds[seed.seedType] = seed.amount;
+        }
+    }
 }

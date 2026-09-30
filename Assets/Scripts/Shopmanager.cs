@@ -179,6 +179,7 @@ public class ShopManager : MonoBehaviour
         else
         {
             Debug.Log($"Not enough money. Need {price} coins.");
+            NotificationManager.Instance.ShowNotification("Not enough coins!");
         }
     }
 

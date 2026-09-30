@@ -34,9 +34,15 @@ public class CoinManager : MonoBehaviour
         SceneManager.sceneLoaded += OnSceneLoaded;
     }
 
+    private void OnDestroy()
+    {
+        if (Instance == this)
+            SceneManager.sceneLoaded -= OnSceneLoaded;
+    }
+
     private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
-        // Zoek de coin UI in de nieuwe scene als die opnieuw instantiëert
+        // Zoek de coin UI in de nieuwe scene als die opnieuw instantiï¿½ert
         if (coinText == null)
             coinText = GameObject.Find("CoinText")?.GetComponent<TextMeshProUGUI>();
 
@@ -72,9 +78,31 @@ public class CoinManager : MonoBehaviour
         UpdateUI();
     }
 
-    private void UpdateUI()
+    public void UpdateUI()
     {
         if (coinText != null)
             coinText.text = coins.ToString();
+    }
+
+    // ================= SAVE / LOAD (via SaveManager) =================
+
+    public void SaveTo(SaveData data)
+    {
+        data.coins = coins;
+        data.profit = profit;
+        data.wheatResource = wheatResource;
+        data.cornResource = cornResource;
+        data.animalFood = animalFood;
+        data.animalFood2 = animalFood2;
+    }
+
+    public void LoadFrom(SaveData data)
+    {
+        coins = data.coins;
+        profit = data.profit;
+        wheatResource = data.wheatResource;
+        cornResource = data.cornResource;
+        animalFood = data.animalFood;
+        animalFood2 = data.animalFood2;
     }
 }

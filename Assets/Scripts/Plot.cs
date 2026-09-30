@@ -143,7 +143,8 @@ public class Plot : MonoBehaviour
     private void HarvestPlant()
     {
 
-        if (isGrape)
+        // Dode druif wordt gewoon opgeruimd zoals elke dode plant
+        if (isGrape && !dead)
         {
             HarvestGrape();
             return;

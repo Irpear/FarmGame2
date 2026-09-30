@@ -1,127 +1,67 @@
 using UnityEngine;
 using System.IO;
-using System.Collections.Generic;
 
-//SaveManager.Instance.SaveGame();
-//SaveManager.Instance.LoadGame();
+//SaveManager.SaveGame();
+//SaveManager.LoadGame();
 
+// Wat wordt waar opgeslagen:
+// - save.json:   alles wat in een variabele van DayManager / CoinManager / SeedManager leeft
+//                (dag, coins, seeds, grondstoffen, plots, composter, kansen op regen/storm/shiny)
+// - PlayerPrefs: unlocks, aankopen, streaks, kippen, eieren, feeders, processor en shop stock
+//                (die scripts lezen en schrijven dat zelf al rechtstreeks)
+// SaveGame() schrijft beide tegelijk weg, zodat ze altijd bij elkaar passen.
+//
+// Er wordt opgeslagen: aan het eind van de nacht, bij elke scenewissel en wanneer de app
+// naar de achtergrond gaat of afsluit (zie DayManager).
 
-public class SaveManager : MonoBehaviour
+public static class SaveManager
 {
-    public static SaveManager Instance;
-
-    string path;
-
-    void Awake()
-    {
-        if (Instance != null)
-        {
-            Destroy(gameObject);
-            return;
-        }
-
-        Instance = this;
-        DontDestroyOnLoad(gameObject);
-        path = Application.persistentDataPath + "/save.json";
-    }
+    private static string SavePath => Application.persistentDataPath + "/save.json";
 
     // ================= SAVE =================
 
-    public void SaveGame()
+    public static void SaveGame()
     {
+        if (DayManager.Instance == null || CoinManager.Instance == null || SeedManager.Instance == null)
+            return;
+
+        // Tijdens de nacht is de nieuwe dag nog niet af, DayManager slaat zelf op als alles verwerkt is
+        if (DayManager.Instance.isEndingDay)
+            return;
+
         SaveData data = new SaveData();
 
-        // ---- basic ----
-        data.currentDay = DayManager.Instance.currentDay;
-        data.coins = CoinManager.Instance.coins;
-        data.unlockedPlants = DayManager.Instance.unlockedPlants;
+        DayManager.Instance.SaveTo(data);
+        CoinManager.Instance.SaveTo(data);
+        SeedManager.Instance.SaveTo(data);
 
-        data.rainChanceBasePercent = DayManager.Instance.rainChancePercent;
-        data.stormChanceBasePercent = DayManager.Instance.stormChanceBasePercent;
-
-        // ---- streaks ----
-        data.accountingStreak = PlayerPrefs.GetInt("AccountingStreak", 0);
-        data.cleaningStreak = PlayerPrefs.GetInt("CleaningStreak", 0);
-
-        // ---- plots ----
-        data.plots = new List<PlotSaveData>();
-
-        if (DayManager.Instance.allPlots != null)
-        {
-            foreach (var plot in DayManager.Instance.allPlots)
-            {
-                if (plot == null) continue;
-
-                string key = $"{plot.transform.position.x}_{plot.transform.position.y}";
-                string plantType = plot.GetPlantedPlant() != null ? plot.GetPlantedPlant().seedType : "";
-
-                PlotSaveData p = new PlotSaveData
-                {
-                    key = key,
-                    plantType = plantType,
-                    growthStage = plot.growthStage,
-                    isWatered = plot.isWatered,
-                    dead = plot.dead,
-                    composted = plot.composted,
-                    isShiny = plot.isShiny,
-                    isGrape = plot.isGrape,
-                    grapeMaxHarvests = plot.grapeMaxHarvests,
-                    grapeHarvestsDone = plot.grapeHarvestsDone
-                };
-
-                data.plots.Add(p);
-            }
-        }
-
-        // ---- composter ----
-        var comp = FindFirstObjectByType<Composter>();
-        if (comp != null)
-        {
-            data.composterIsFull = comp.isFull;
-            data.composterIsReady = comp.isReady;
-            data.composterIsTrashcan = comp.isTrashcan;
-        }
-
-        string json = JsonUtility.ToJson(data, true);
-        File.WriteAllText(path, json);
+        File.WriteAllText(SavePath, JsonUtility.ToJson(data, true));
+        PlayerPrefs.Save();
 
         Debug.Log("Saved game");
     }
 
     // ================= LOAD =================
 
-    public void LoadGame()
+    public static void LoadGame()
     {
-        if (!File.Exists(path)) return;
+        if (!File.Exists(SavePath)) return;
 
-        string json = File.ReadAllText(path);
-        SaveData data = JsonUtility.FromJson<SaveData>(json);
+        SaveData data = JsonUtility.FromJson<SaveData>(File.ReadAllText(SavePath));
+        if (data == null) return;
 
-        // ---- basic ----
-        DayManager.Instance.currentDay = data.currentDay;
-        CoinManager.Instance.coins = data.coins;
-        DayManager.Instance.unlockedPlants = data.unlockedPlants;
-
-        DayManager.Instance.rainChancePercent = data.rainChanceBasePercent;
-        DayManager.Instance.stormChanceBasePercent = data.stormChanceBasePercent;
-
-        // ---- streaks ----
-        PlayerPrefs.SetInt("AccountingStreak", data.accountingStreak);
-        PlayerPrefs.SetInt("CleaningStreak", data.cleaningStreak);
-
-        // ---- plots ----
-        if (data.plots != null)
-        {
-            DayManager.Instance.LoadPlotsFromSave(data.plots);
-        }
-
-        // ---- composter ----
-        DayManager.Instance.LoadComposterFromSave(
-            data.composterIsFull,
-            data.composterIsReady,
-            data.composterIsTrashcan
-        );
+        DayManager.Instance.LoadFrom(data);
+        CoinManager.Instance.LoadFrom(data);
+        SeedManager.Instance.LoadFrom(data);
 
         Debug.Log("Loaded game");
+    }
+
+    // ================= DELETE =================
+
+    public static void DeleteSave()
+    {
+        if (File.Exists(SavePath))
+            File.Delete(SavePath);
     }
 }

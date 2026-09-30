@@ -87,6 +87,7 @@ public class SeedSelectionUI : MonoBehaviour
 
     private void SelectSeed(PlantData plant)
     {
+        DayManager.Instance?.ReturnHeldCompost();
 
         ActiveSelectedPlant = plant;   // Onthoud de gekozen plant
         ActiveSelectedTool = null;
@@ -160,6 +161,7 @@ public class SeedSelectionUI : MonoBehaviour
 
     public void SelectWateringCan()
     {
+        DayManager.Instance?.ReturnHeldCompost();
         if (ActiveSelectedTool == "wateringCan")
         {
             ActiveSelectedTool = null;
@@ -192,6 +194,7 @@ public class SeedSelectionUI : MonoBehaviour
 
     public void SelectScythe()
     {
+        DayManager.Instance?.ReturnHeldCompost();
         if (ActiveSelectedTool == "scythe")
         {
             ActiveSelectedTool = null;

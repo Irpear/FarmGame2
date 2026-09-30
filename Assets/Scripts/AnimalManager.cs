@@ -30,6 +30,9 @@ public class AnimalManager : MonoBehaviour
             NotificationManager.Instance.ShowNotification("Not enough coins!");
             return;
         }
+
+        // pay
+        CoinManager.Instance.AddCoins(-chicken1Cost);
         Chicken.UnlockChicken(1);
         UpdateUI();
 
@@ -42,6 +45,9 @@ public class AnimalManager : MonoBehaviour
             NotificationManager.Instance.ShowNotification("Not enough coins!");
             return;
         }
+
+        // pay
+        CoinManager.Instance.AddCoins(-chicken2Cost);
         Chicken.UnlockChicken(2);
         UpdateUI();
 

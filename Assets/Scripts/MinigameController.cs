@@ -35,7 +35,7 @@ public class MinigameController : MonoBehaviour
         {
             AccountingStartPanel.SetActive(true);
             int streak = PlayerPrefs.GetInt("AccountingStreak", 0);
-            float adjustedTime = 15 - streak;
+            float adjustedTime = Mathf.Max(15 - streak, 1); // zelfde minimum als in AccountingMinigame
             AccountingStreakTime.text = adjustedTime.ToString();
         }
         else if (ChosenMinigame == 1)
@@ -50,7 +50,7 @@ public class MinigameController : MonoBehaviour
         {
             CleaningStartPanel.SetActive(true);
             int streak = PlayerPrefs.GetInt("CleaningStreak", 0);
-            float adjustedTime = 10 - streak;
+            float adjustedTime = Mathf.Max(10 - streak, 1); // zelfde minimum als in CleaningMinigame
             CleaningStreakTime.text = adjustedTime.ToString();
         }
         else if (ChosenMinigame == 3)

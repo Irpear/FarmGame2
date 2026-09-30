@@ -14,6 +14,12 @@ public class EggSpawner : MonoBehaviour
 
     private void SpawnSavedEggs()
     {
+        // Eieren van een vorige keer openen weghalen, anders staan ze er dubbel
+        foreach (var oldEgg in eggContainer.GetComponentsInChildren<Egg>(true))
+        {
+            Destroy(oldEgg.gameObject);
+        }
+
         int eggCount = PlayerPrefs.GetInt("eggs_to_spawn_count", 0);
 
         for (int i = 0; i < eggCount; i++)
@@ -37,10 +43,31 @@ public class EggSpawner : MonoBehaviour
                 if (eggScript != null)
                 {
                     eggScript.eggType = eggType;
+                    eggScript.spawner = this;
                     eggScript.SetPosition(new Vector2(x, y));
                 }
             }
         }
+    }
+
+    // Schrijft de eieren die nog liggen opnieuw weg, zodat precies het geraapte ei verdwijnt
+    public void SaveRemainingEggs()
+    {
+        int count = 0;
+
+        foreach (var egg in eggContainer.GetComponentsInChildren<Egg>(true))
+        {
+            if (egg.collected) continue;
+
+            Vector2 pos = egg.GetPosition();
+            PlayerPrefs.SetString($"egg_{count}_type", egg.eggType);
+            PlayerPrefs.SetFloat($"egg_{count}_x", pos.x);
+            PlayerPrefs.SetFloat($"egg_{count}_y", pos.y);
+            count++;
+        }
+
+        PlayerPrefs.SetInt("eggs_to_spawn_count", count);
+        PlayerPrefs.Save();
     }
 
     private void ClearEggSpawnData()

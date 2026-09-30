@@ -6,6 +6,9 @@ public class Egg : MonoBehaviour
     public string eggType; // "normal", "large", "golden"
     public int eggValue; // Waarde bij verkoop
 
+    [HideInInspector] public EggSpawner spawner;
+    [HideInInspector] public bool collected = false;
+
     private RectTransform rectTransform;
 
     void Awake()
@@ -27,9 +30,11 @@ public class Egg : MonoBehaviour
         CoinManager.Instance.AddCoins(value);
         NotificationManager.Instance.ShowNotification($"Collected {eggType} egg! +{value} coins");
 
-        int count = PlayerPrefs.GetInt("eggs_to_spawn_count", 0);
-        if (count > 0) count--;
-        PlayerPrefs.SetInt("eggs_to_spawn_count", count);
+        if (collected) return;
+        collected = true;
+
+        // Dit specifieke ei uit de opgeslagen lijst halen
+        if (spawner != null) spawner.SaveRemainingEggs();
 
         if (PlayerPrefs.GetInt("feeder2_available", 0) == 0)
         {
@@ -44,5 +49,10 @@ public class Egg : MonoBehaviour
     public void SetPosition(Vector2 position)
     {
         rectTransform.anchoredPosition = position;
+    }
+
+    public Vector2 GetPosition()
+    {
+        return rectTransform.anchoredPosition;
     }
 }

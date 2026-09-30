@@ -13,10 +13,12 @@ public class ResetPlayerPrefsOnPlay
 
     static void ResetPrefsOnPlay(PlayModeStateChange state)
     {
-        if (state == PlayModeStateChange.EnteredPlayMode)
+        // ExitingEditMode = vlak vóór Play, dus voordat er een Awake draait
+        if (state == PlayModeStateChange.ExitingEditMode)
         {
             PlayerPrefs.DeleteAll();
-            Debug.Log("PlayerPrefs reset for testing!");
+            SaveManager.DeleteSave();
+            Debug.Log("PlayerPrefs + save.json reset for testing!");
         }
     }
 }

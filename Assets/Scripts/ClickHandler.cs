@@ -90,8 +90,15 @@ public class ClickHandler : MonoBehaviour
 
     public void RESETALLPROGRESS()
     {
+        SaveManager.DeleteSave();
         PlayerPrefs.DeleteAll();
         PlayerPrefs.Save();
+
+        // Deze managers blijven tussen scenes bestaan, weghalen zodat ze bij de herstart vers beginnen
+        if (DayManager.Instance != null) Destroy(DayManager.Instance.gameObject);
+        if (CoinManager.Instance != null) Destroy(CoinManager.Instance.gameObject);
+        if (SeedManager.Instance != null) Destroy(SeedManager.Instance.gameObject);
+
         SceneManager.LoadScene(0); // Herstart game
     }
 }

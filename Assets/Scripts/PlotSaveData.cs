@@ -8,6 +8,7 @@ public class PlotSaveData
     public bool dead;
     public bool composted;
     public bool isShiny;
+    public int chosenVariant;
     public bool isGrape;
     public int grapeMaxHarvests;
     public int grapeHarvestsDone;
