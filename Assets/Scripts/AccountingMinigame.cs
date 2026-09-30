@@ -243,6 +243,8 @@ public class AccountingMinigame : MonoBehaviour
         }
         else { NotificationManager.Instance.ShowNotification("Wrong answer! The shopkeeper can't count on you and will do it himself", 3f); }
 
+        Trophies.RecordMinigameResult(Correct);
+
     }
 
 //    private void HandleKeyboard()

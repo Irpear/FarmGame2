@@ -257,5 +257,7 @@ else
         }
         else { NotificationManager.Instance.ShowNotification("The floor is still dirty! The shopkeeper will do it himself", 3f); }
 
+        Trophies.RecordMinigameResult(Correct);
+
     }
 }

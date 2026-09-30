@@ -53,6 +53,7 @@ public class StormTalisman : MonoBehaviour
 
         // mark as purchased
         Purchased = true;
+        Trophies.CheckBuyEverything();
 
         // update visuals
         UpdateUI();

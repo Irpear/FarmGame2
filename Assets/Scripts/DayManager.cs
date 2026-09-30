@@ -36,6 +36,11 @@ public class DayManager : MonoBehaviour
 
     public bool taskLeft = true;
 
+    [Header("Trophies")]
+    public int trophyProfitGoal = 300;   // coins in één dag
+    public int trophyHarvestGoal = 500;  // oogsten in totaal
+    public int trophyMinigameStreakGoal = 10; // minigames achter elkaar gewonnen
+
     // true zolang de nacht bezig is, dan wordt er niet tussendoor opgeslagen
     public bool isEndingDay = false;
 

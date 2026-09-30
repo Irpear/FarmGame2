@@ -47,6 +47,7 @@ public class BarnButton : MonoBehaviour
             ShopManager.UnlockSeed("wheat");
             PlayerPrefs.SetInt("scythe_available", 1);
             NotificationManager.Instance.ShowNotification("More items have been unlocked at the store");
+            Trophies.CheckBuyEverything();
         }
     }
 

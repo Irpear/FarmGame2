@@ -42,6 +42,7 @@ public class ChickenCoop : MonoBehaviour
             PlayerPrefs.Save();
             NotificationManager.Instance.ShowNotification("Chicken coop unlocked!");
             NotificationManager.Instance.ShowNotification("More items have been unlocked at the store");
+            Trophies.CheckBuyEverything();
 
             UpdateUI();
         }

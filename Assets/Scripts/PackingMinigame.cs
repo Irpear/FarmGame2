@@ -223,6 +223,8 @@ public class PackingMinigame : MonoBehaviour
         }
         else { NotificationManager.Instance.ShowNotification("You messed up! The shopkeeper is disappointed and will do it himself", 3f); }
 
+        Trophies.RecordMinigameResult(Correct);
+
     }
 
 }

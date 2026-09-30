@@ -1930,6 +1930,7 @@ GameObject:
   - component: {fileID: 699432368}
   - component: {fileID: 699432370}
   - component: {fileID: 699432369}
+  - component: {fileID: 699432371}
   m_Layer: 5
   m_Name: Achievement1
   m_TagString: Untagged
@@ -1995,6 +1996,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 699432367}
   m_CullTransparentMesh: 1
+--- !u!114 &699432371
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 699432367}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4a62ecf7af2007f468c69ef9e03b7f55, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::TrophyDisplay
+  trophy: 2
+  trophyImage: {fileID: 699432369}
+  descriptionText: {fileID: 1026293354}
 --- !u!1 &700827680
 GameObject:
   m_ObjectHideFlags: 0
@@ -3010,6 +3026,7 @@ GameObject:
   - component: {fileID: 840225658}
   - component: {fileID: 840225660}
   - component: {fileID: 840225659}
+  - component: {fileID: 840225661}
   m_Layer: 5
   m_Name: Achievement3
   m_TagString: Untagged
@@ -3075,6 +3092,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 840225657}
   m_CullTransparentMesh: 1
+--- !u!114 &840225661
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 840225657}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4a62ecf7af2007f468c69ef9e03b7f55, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::TrophyDisplay
+  trophy: 4
+  trophyImage: {fileID: 840225659}
+  descriptionText: {fileID: 945166519}
 --- !u!1 &883701544
 GameObject:
   m_ObjectHideFlags: 0
@@ -3355,6 +3387,7 @@ GameObject:
   - component: {fileID: 900778972}
   - component: {fileID: 900778974}
   - component: {fileID: 900778973}
+  - component: {fileID: 900778975}
   m_Layer: 5
   m_Name: Achievement2
   m_TagString: Untagged
@@ -3420,6 +3453,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 900778971}
   m_CullTransparentMesh: 1
+--- !u!114 &900778975
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 900778971}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4a62ecf7af2007f468c69ef9e03b7f55, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::TrophyDisplay
+  trophy: 1
+  trophyImage: {fileID: 900778973}
+  descriptionText: {fileID: 2137558913}
 --- !u!1 &930417082
 GameObject:
   m_ObjectHideFlags: 0
@@ -3527,7 +3575,7 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 202
+    m_FontSize: 64
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 10
@@ -3538,7 +3586,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: hoi
+  m_Text: 10 minigame streak
 --- !u!222 &945166520
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -3691,6 +3739,7 @@ GameObject:
   - component: {fileID: 1021233537}
   - component: {fileID: 1021233539}
   - component: {fileID: 1021233538}
+  - component: {fileID: 1021233540}
   m_Layer: 5
   m_Name: Achievement4
   m_TagString: Untagged
@@ -3756,6 +3805,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1021233536}
   m_CullTransparentMesh: 1
+--- !u!114 &1021233540
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1021233536}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4a62ecf7af2007f468c69ef9e03b7f55, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::TrophyDisplay
+  trophy: 0
+  trophyImage: {fileID: 1021233538}
+  descriptionText: {fileID: 153649985}
 --- !u!1 &1026293352
 GameObject:
   m_ObjectHideFlags: 0
@@ -5097,6 +5161,7 @@ GameObject:
   - component: {fileID: 1516897363}
   - component: {fileID: 1516897365}
   - component: {fileID: 1516897364}
+  - component: {fileID: 1516897366}
   m_Layer: 5
   m_Name: Achievement5
   m_TagString: Untagged
@@ -5162,6 +5227,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1516897362}
   m_CullTransparentMesh: 1
+--- !u!114 &1516897366
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1516897362}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4a62ecf7af2007f468c69ef9e03b7f55, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::TrophyDisplay
+  trophy: 3
+  trophyImage: {fileID: 1516897364}
+  descriptionText: {fileID: 1608215270}
 --- !u!1 &1572701649
 GameObject:
   m_ObjectHideFlags: 0
@@ -5814,7 +5894,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1762304757
 RectTransform:
   m_ObjectHideFlags: 0
@@ -5837,7 +5917,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 2.8554993, y: -15.099976}
+  m_AnchoredPosition: {x: 2.8554688, y: -15.099976}
   m_SizeDelta: {x: -0.099365, y: -0.18994}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1762304758

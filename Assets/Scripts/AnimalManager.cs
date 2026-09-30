@@ -34,6 +34,7 @@ public class AnimalManager : MonoBehaviour
         // pay
         CoinManager.Instance.AddCoins(-chicken1Cost);
         Chicken.UnlockChicken(1);
+        Trophies.CheckBuyEverything();
         UpdateUI();
 
     }
@@ -49,6 +50,7 @@ public class AnimalManager : MonoBehaviour
         // pay
         CoinManager.Instance.AddCoins(-chicken2Cost);
         Chicken.UnlockChicken(2);
+        Trophies.CheckBuyEverything();
         UpdateUI();
 
     }

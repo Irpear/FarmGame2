@@ -168,6 +168,8 @@ public class Plot : MonoBehaviour
 
             else
             {
+                Trophies.AddHarvest();
+
                 int coins = plantedPlant.harvestCoins;
 
                 if (composted == true)
@@ -320,6 +322,8 @@ public class Plot : MonoBehaviour
             }
 
             UpdateSprite();
+
+            Trophies.CheckFullField(DayManager.Instance.allPlots);
         }
         else
         {
@@ -471,6 +475,8 @@ public class Plot : MonoBehaviour
     private void HarvestGrape()
     {
         grapeHarvestsDone++;
+
+        Trophies.AddHarvest();
 
         int coins = 0;
 

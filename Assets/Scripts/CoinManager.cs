@@ -54,6 +54,8 @@ public class CoinManager : MonoBehaviour
         if (amount > 0) profit += amount;
         coins += amount;
         UpdateUI();
+
+        if (amount > 0) Trophies.CheckProfit();
     }
 
     public void AddWheat(int amount)

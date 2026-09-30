@@ -164,6 +164,8 @@ public class Cat : MonoBehaviour
         }
         else { NotificationManager.Instance.ShowNotification("You messed up! The shopkeeper is disappointed and afraid", 3f); }
 
+        Trophies.RecordMinigameResult(Correct);
+
     }
 
 }

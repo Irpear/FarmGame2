@@ -59,6 +59,7 @@ public class UpgradesManager : MonoBehaviour
         UpdateUI();
 
         NotificationManager.Instance.ShowNotification("Composter unlocked!");
+        Trophies.CheckBuyEverything();
         ShopManager.UnlockSeed("potato");
     }
 
@@ -79,6 +80,7 @@ public class UpgradesManager : MonoBehaviour
         UpdateUI();
 
         NotificationManager.Instance.ShowNotification("Scythe unlocked!");
+        Trophies.CheckBuyEverything();
     }
 
     public void BuyProcessor()
@@ -98,6 +100,7 @@ public class UpgradesManager : MonoBehaviour
         UpdateUI();
 
         NotificationManager.Instance.ShowNotification("Food Processor unlocked!");
+        Trophies.CheckBuyEverything();
     }
 
     public void BuyFeeder2()
@@ -118,6 +121,7 @@ public class UpgradesManager : MonoBehaviour
         UpdateUI();
 
         NotificationManager.Instance.ShowNotification("A second feeder unlocked!");
+        Trophies.CheckBuyEverything();
         NotificationManager.Instance.ShowNotification("More items have been unlocked at the store");
     }
 
@@ -138,6 +142,7 @@ public class UpgradesManager : MonoBehaviour
         UpdateUI();
 
         NotificationManager.Instance.ShowNotification("You bought a book! It can be found in the barn");
+        Trophies.CheckBuyEverything();
     }
 
     private void UpdateUI()

@@ -49,7 +49,15 @@ public class PlotUnlockBarrier : MonoBehaviour
             PlayerPrefs.SetInt("totalUnlockedPlots", plots + 1);
 
             PlayerPrefs.SetInt(barrierID, 1);
+
+            // Laatste barrière? (deze zelf telt nog mee, Destroy gebeurt pas aan het eind van de frame)
+            if (FindObjectsByType<PlotUnlockBarrier>(FindObjectsSortMode.None).Length <= 1)
+            {
+                PlayerPrefs.SetInt("all_plots_unlocked", 1);
+            }
+
             PlayerPrefs.Save();
+            Trophies.CheckBuyEverything();
 
             // geluid/particle hier eventueel
             Destroy(gameObject); // maakt plot eronder vrij

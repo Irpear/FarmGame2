@@ -51,6 +51,14 @@ public class RainTalisman : MonoBehaviour
         // upgrade effect
         ApplyRainIncrease();
 
+        // voor de trofee "alles gekocht"
+        if (Level >= maxLevel)
+        {
+            PlayerPrefs.SetInt("rainTalisman_maxed", 1);
+            PlayerPrefs.Save();
+        }
+        Trophies.CheckBuyEverything();
+
         // update visuals
         UpdateUI();
     }
