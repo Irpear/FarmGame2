@@ -41,6 +41,18 @@ public static class Trophies
         Debug.Log($"Trophy unlocked: {id}");
 
         NotificationManager.Instance?.ShowNotification("You earned a trophy! Check the barn.", 3f);
+
+        if (AllUnlocked())
+            CompletionPopup.OnGameCompleted();
+    }
+
+    public static bool AllUnlocked()
+    {
+        foreach (TrophyId id in System.Enum.GetValues(typeof(TrophyId)))
+        {
+            if (!IsUnlocked(id)) return false;
+        }
+        return true;
     }
 
     public static string GetDescription(TrophyId id)

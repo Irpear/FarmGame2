@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using System.IO;
 
 //SaveManager.SaveGame();
@@ -63,5 +64,22 @@ public static class SaveManager
     {
         if (File.Exists(SavePath))
             File.Delete(SavePath);
+    }
+
+    // ================= RESET =================
+
+    // Alles wissen en vanaf dag 1 beginnen
+    public static void ResetAllProgress()
+    {
+        DeleteSave();
+        PlayerPrefs.DeleteAll();
+        PlayerPrefs.Save();
+
+        // Deze managers blijven tussen scenes bestaan, weghalen zodat ze bij de herstart vers beginnen
+        if (DayManager.Instance != null) Object.Destroy(DayManager.Instance.gameObject);
+        if (CoinManager.Instance != null) Object.Destroy(CoinManager.Instance.gameObject);
+        if (SeedManager.Instance != null) Object.Destroy(SeedManager.Instance.gameObject);
+
+        SceneManager.LoadScene(0); // Herstart game
     }
 }

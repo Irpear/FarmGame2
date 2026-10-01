@@ -38,6 +38,7 @@ public class PlotUnlockBarrier : MonoBehaviour
 
         // UI checks die erboven kliks moeten blokkeren
         if (NotificationManager.Instance.IsShowing()) return;
+        if (CompletionPopup.IsOpen) return;
         if (nightOverlayImage != null && nightOverlayImage.raycastTarget) return;
         if (forceCompostScreen != null && forceCompostScreen.activeSelf) return;
 

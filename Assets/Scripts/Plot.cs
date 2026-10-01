@@ -71,6 +71,7 @@ public class Plot : MonoBehaviour
         void OnMouseUp()
     {
         if (SeedSelectionUI.Instance.IsMenuOpen()) return;
+        if (CompletionPopup.IsOpen) return;
         if (forceCompostScreen != null && forceCompostScreen.activeSelf) return;
         if (nightOverlay != null && nightOverlay.activeInHierarchy && nightOverlayImage != null && nightOverlayImage.raycastTarget)
             return;
