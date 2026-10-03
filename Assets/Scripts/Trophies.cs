@@ -128,6 +128,9 @@ public static class Trophies
             "barn_unlocked",
             "coop_unlocked",
             "all_plots_unlocked",
+            // vuilnis in de schuur (moet gelijk zijn aan de Pile ID's in de Inspector)
+            "trashPile_1",
+            "trashPile_2",
             // upgrades
             "composter_unlocked",
             "scythe_unlocked",

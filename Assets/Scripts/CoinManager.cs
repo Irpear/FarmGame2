@@ -49,13 +49,16 @@ public class CoinManager : MonoBehaviour
         UpdateUI();
     }
 
-    public void AddCoins(int amount)
+    // countAsProfit = false voor coins die niet als 'verdiend' tellen (bv. uit vuilnis)
+    public void AddCoins(int amount, bool countAsProfit = true)
     {
-        if (amount > 0) profit += amount;
+        bool profitable = amount > 0 && countAsProfit;
+
+        if (profitable) profit += amount;
         coins += amount;
         UpdateUI();
 
-        if (amount > 0) Trophies.CheckProfit();
+        if (profitable) Trophies.CheckProfit();
     }
 
     public void AddWheat(int amount)
