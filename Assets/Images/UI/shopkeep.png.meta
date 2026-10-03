@@ -116,12 +116,12 @@ TextureImporter:
       name: shopkeep_0
       rect:
         serializedVersion: 2
-        x: 308
-        y: 10
-        width: 436
-        height: 822
+        x: 0
+        y: 0
+        width: 1080
+        height: 1080
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -138,7 +138,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 5b47f9b42c3e0444eba54052ac586e98
     internalID: 0
     vertices: []
     indices: 
