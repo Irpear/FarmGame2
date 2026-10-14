@@ -103,7 +103,15 @@ public class Plot : MonoBehaviour
         {
             if (SeedSelectionUI.ActiveSelectedTool == "wateringCan")
             {
-                WaterPlant();
+                // Rijpe plant? Eerst oogsten, water geven kan daarna met een tweede klik
+                if (plantedPlant != null && !dead && growthStage >= maxGrowthStage)
+                {
+                    HarvestPlant();
+                }
+                else
+                {
+                    WaterPlant();
+                }
             }
 
             if (SeedSelectionUI.ActiveSelectedTool == "compost")
