@@ -5,11 +5,11 @@ using static System.Net.Mime.MediaTypeNames;
 
 public class RainTalisman : MonoBehaviour
 {
-    public int maxLevel = 10;
+    public int maxLevel = 5;
     public int baseCost = 100;
-    public int costIncrease = 100;
+    public int costIncrease = 10;
 
-    public float increasePercent = 5f; // +5% regen per level
+    public float increasePercent = 10f; // +10% regen per level
 
     public TextMeshProUGUI costText;
     public TextMeshProUGUI percentageInfoText;
@@ -92,7 +92,7 @@ public class RainTalisman : MonoBehaviour
         if (Level >= maxLevel)
         {
             costText.text = "MAX";
-            percentageInfoText.text = $"Rain chance = 50%";
+            percentageInfoText.text = $"Rain chance = {DayManager.Instance.rainChancePercent}%";
             ButtonUtils.SetInteractable(btn, false);
         }
         else

@@ -5,7 +5,7 @@ using TMPro;
 public class StormTalisman : MonoBehaviour
 {
     [Header("Settings")]
-    public int cost = 1000;                 // vaste prijs
+    public int cost = 250;                  // vaste prijs
     public float increasePercent = -1f;     // hoeveel % storm extra
 
     [Header("UI References")]

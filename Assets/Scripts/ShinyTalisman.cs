@@ -5,7 +5,7 @@ using TMPro;
 public class ShinyTalisman : MonoBehaviour
 {
     [Header("Settings")]
-    public int cost = 1000;                 // vaste prijs
+    public int cost = 250;                  // vaste prijs
     public float increasePercent = 1f;     // hoeveel % shiny extra
 
     [Header("UI References")]

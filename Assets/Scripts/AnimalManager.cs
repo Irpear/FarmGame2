@@ -1,3 +1,4 @@
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -5,7 +6,7 @@ public class AnimalManager : MonoBehaviour
 {
 
     public int chicken1Cost = 100;
-    public int chicken2Cost = 1000;
+    public int chicken2Cost = 150;
 
     public Button buyChicken1Button;
     public Button buyChicken2Button;
@@ -58,6 +59,9 @@ public class AnimalManager : MonoBehaviour
 
     private void UpdateUI()
     {
+        // Prijzen altijd uit de Inspector-waarden, zodat tekst en prijs niet uit elkaar lopen
+        SetCostText(costTextChicken1, chicken1Cost);
+        SetCostText(costTextChicken2, chicken2Cost);
 
         if (PlayerPrefs.GetInt("chicken1_unlocked", 0) == 1 || PlayerPrefs.GetInt("chicken1_available", 0) == 0)
         {
@@ -74,5 +78,11 @@ public class AnimalManager : MonoBehaviour
             infoTextChicken2.gameObject.SetActive(false);
             coinImageChicken2.gameObject.SetActive(false);
         }
+    }
+
+    private void SetCostText(GameObject textObject, int cost)
+    {
+        var text = textObject != null ? textObject.GetComponent<TMP_Text>() : null;
+        if (text != null) text.text = cost.ToString();
     }
 }

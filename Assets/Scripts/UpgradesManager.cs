@@ -4,11 +4,11 @@ using UnityEngine.UI;
 
 public class UpgradesManager : MonoBehaviour
 {
-    public int composterCost = 400;
-    public int scytheCost = 100;
-    public int processorCost = 400;
-    public int feeder2Cost = 200;
-    public int plantBookCost = 350;
+    public int composterCost = 140;
+    public int scytheCost = 70;
+    public int processorCost = 160;
+    public int feeder2Cost = 40;
+    public int plantBookCost = 120;
 
     public Button buyComposterButton;
     public Button buyScytheButton;
@@ -147,6 +147,12 @@ public class UpgradesManager : MonoBehaviour
 
     private void UpdateUI()
     {
+        // Prijzen altijd uit de Inspector-waarden, zodat tekst en prijs niet uit elkaar lopen
+        costTextComposter.text = composterCost.ToString();
+        costTextScythe.text = scytheCost.ToString();
+        costTextProcessor.text = processorCost.ToString();
+        costTextFeeder2.text = feeder2Cost.ToString();
+        costTextPlantBook.text = plantBookCost.ToString();
 
         if (PlayerPrefs.GetInt("composter_unlocked", 0) == 1)
         {

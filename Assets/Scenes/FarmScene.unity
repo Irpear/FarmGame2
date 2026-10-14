@@ -1921,7 +1921,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8938287504189784668, guid: a4b06d3b1d0106f41974861df2365bb9, type: 3}
       propertyPath: unlockCost
-      value: 30
+      value: 15
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2034,7 +2034,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8938287504189784668, guid: a4b06d3b1d0106f41974861df2365bb9, type: 3}
       propertyPath: unlockCost
-      value: 40
+      value: 25
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2926,7 +2926,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8938287504189784668, guid: a4b06d3b1d0106f41974861df2365bb9, type: 3}
       propertyPath: unlockCost
-      value: 95
+      value: 80
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -5279,7 +5279,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8938287504189784668, guid: a4b06d3b1d0106f41974861df2365bb9, type: 3}
       propertyPath: unlockCost
-      value: 75
+      value: 60
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -5871,7 +5871,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8938287504189784668, guid: a4b06d3b1d0106f41974861df2365bb9, type: 3}
       propertyPath: unlockCost
-      value: 65
+      value: 50
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -5984,7 +5984,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8938287504189784668, guid: a4b06d3b1d0106f41974861df2365bb9, type: 3}
       propertyPath: unlockCost
-      value: 90
+      value: 75
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -6097,7 +6097,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8938287504189784668, guid: a4b06d3b1d0106f41974861df2365bb9, type: 3}
       propertyPath: unlockCost
-      value: 30
+      value: 15
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -6660,7 +6660,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8938287504189784668, guid: a4b06d3b1d0106f41974861df2365bb9, type: 3}
       propertyPath: unlockCost
-      value: 35
+      value: 20
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -7141,7 +7141,7 @@ MonoBehaviour:
   barnButtonImage: {fileID: 1682127035}
   barnLockedSprite: {fileID: 21300000, guid: 80e7cdaa6858a784fb5780461b371cee, type: 3}
   barnSprite: {fileID: 21300000, guid: cb3056e208a29aa4ba0ec6fa9aa5e256, type: 3}
-  barnCost: 500
+  barnCost: 300
 --- !u!1 &1737820126
 GameObject:
   m_ObjectHideFlags: 0
@@ -8357,7 +8357,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8938287504189784668, guid: a4b06d3b1d0106f41974861df2365bb9, type: 3}
       propertyPath: unlockCost
-      value: 45
+      value: 30
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -9242,7 +9242,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8938287504189784668, guid: a4b06d3b1d0106f41974861df2365bb9, type: 3}
       propertyPath: unlockCost
-      value: 35
+      value: 20
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

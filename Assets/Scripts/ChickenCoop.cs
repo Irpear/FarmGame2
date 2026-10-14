@@ -16,7 +16,7 @@ public class ChickenCoop : MonoBehaviour
     public GameObject chicken1;
     public GameObject chicken2;
 
-    public int coopCost = 200;
+    public int coopCost = 80;
 
 
     void Awake()

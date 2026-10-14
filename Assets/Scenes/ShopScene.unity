@@ -2970,7 +2970,7 @@ MonoBehaviour:
   m_fontColor32:
     serializedVersion: 2
     rgba: 4278190080
-  m_fontColor: {r: 0, g: 0, b: 0, a: 1}
+  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -3607,10 +3607,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: af2a25330bd9c0c409bc2e3d2ae3239e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  maxLevel: 10
+  maxLevel: 5
   baseCost: 100
-  costIncrease: 100
-  increasePercent: 5
+  costIncrease: 10
+  increasePercent: 10
   costText: {fileID: 969491065}
   percentageInfoText: {fileID: 438332054}
   levelSprites: []
@@ -5378,7 +5378,7 @@ MonoBehaviour:
   m_fontColor32:
     serializedVersion: 2
     rgba: 4278190080
-  m_fontColor: {r: 0, g: 0, b: 0, a: 1}
+  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -6140,11 +6140,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e699d7b351f8b6468710ddb0d55fc96, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  composterCost: 400
-  scytheCost: 100
-  processorCost: 400
-  feeder2Cost: 200
-  plantBookCost: 350
+  composterCost: 140
+  scytheCost: 70
+  processorCost: 160
+  feeder2Cost: 40
+  plantBookCost: 120
   buyComposterButton: {fileID: 784326969}
   buyScytheButton: {fileID: 1444071604}
   buyProcessorButton: {fileID: 506942124}
@@ -8058,7 +8058,7 @@ MonoBehaviour:
   m_fontColor32:
     serializedVersion: 2
     rgba: 4278190080
-  m_fontColor: {r: 0, g: 0, b: 0, a: 1}
+  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -8615,7 +8615,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fd85d9e0a9d17454ab7e1a86ab03abf2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  cost: 1000
+  cost: 250
   increasePercent: -1
   costText: {fileID: 1595254595}
   percentageInfoText: {fileID: 2034831174}
@@ -8918,7 +8918,7 @@ MonoBehaviour:
   m_fontColor32:
     serializedVersion: 2
     rgba: 4278190080
-  m_fontColor: {r: 0, g: 0, b: 0, a: 1}
+  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -9037,7 +9037,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: '::'
   chicken1Cost: 100
-  chicken2Cost: 1000
+  chicken2Cost: 150
   buyChicken1Button: {fileID: 360004819}
   buyChicken2Button: {fileID: 871106932}
   costTextChicken1: {fileID: 116143884}
@@ -9325,7 +9325,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 965a2cbea2e06524986b6020414f474a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  cost: 1000
+  cost: 250
   increasePercent: 1
   costText: {fileID: 1424918173}
   percentageInfoText: {fileID: 2108752557}
@@ -9903,7 +9903,7 @@ MonoBehaviour:
   m_fontColor32:
     serializedVersion: 2
     rgba: 4278190080
-  m_fontColor: {r: 0, g: 0, b: 0, a: 1}
+  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:

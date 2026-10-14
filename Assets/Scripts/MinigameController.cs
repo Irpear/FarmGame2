@@ -84,7 +84,7 @@ public class MinigameController : MonoBehaviour
         PlayerPrefs.SetInt(CompletedTasksKey, completedTasks);
         PlayerPrefs.Save();
 
-        if (completedTasks == 15)
+        if (completedTasks == 20)
         {
             PlayerPrefs.SetInt("shinyTalisman_available", 1);
             PlayerPrefs.Save();

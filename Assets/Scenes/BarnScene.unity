@@ -7552,7 +7552,7 @@ MonoBehaviour:
   foodSelectionPanel: {fileID: 1791191482}
   chicken1: {fileID: 445767309}
   chicken2: {fileID: 1386955143}
-  coopCost: 200
+  coopCost: 80
 --- !u!1 &2137558911
 GameObject:
   m_ObjectHideFlags: 0

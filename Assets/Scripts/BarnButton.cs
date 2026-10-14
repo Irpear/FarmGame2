@@ -11,7 +11,7 @@ public class BarnButton : MonoBehaviour
     public Sprite barnLockedSprite;
     public Sprite barnSprite;
 
-    public int barnCost = 500;
+    public int barnCost = 300;
 
     private const string PREF_KEY = "barn_unlocked";
 
