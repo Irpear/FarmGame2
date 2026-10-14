@@ -3209,9 +3209,9 @@ MonoBehaviour:
   totalExpense: {fileID: 138402180}
   profitInput: {fileID: 1570963961}
   signButton: {fileID: 1618084858}
-  incomeMin: 400
-  incomeMax: 1000
-  expenseMin: 50
+  incomeMin: 50
+  incomeMax: 500
+  expenseMin: 25
   expenseMax: 400
   timeLimit: 15
   minigamePanel: {fileID: 1249203213}

@@ -25,10 +25,10 @@ public class AccountingMinigame : MonoBehaviour
     public Button signButton;
 
     [Header("Number Ranges")]
-    public int incomeMin = 400;
-    public int incomeMax = 1000;
-    public int expenseMin = 50;
-    public int expenseMax = 400;
+    public int incomeMin = 50;
+    public int incomeMax = 500;
+    public int expenseMin = 25;
+    public int expenseMax = 400; // wordt verlaagd als het income laag is, expenses komen nooit boven het income
 
     [Header("Timer")]
     public float timeLimit = 15f;
@@ -129,10 +129,14 @@ public class AccountingMinigame : MonoBehaviour
         totalIncome.text = totalInc.ToString();
 
         // Genereer expenses
-        int exp1 = Random.Range(expenseMin, expenseMax + 1);
-        int exp2 = Random.Range(expenseMin, expenseMax + 1);
-        int exp3 = Random.Range(expenseMin, expenseMax + 1);
-        int exp4 = Random.Range(expenseMin, expenseMax + 1);
+        // Elke expense max een kwart van het totale income, dan kunnen ze samen nooit hoger zijn dan het income
+        int maxExpense = Mathf.Min(expenseMax, totalInc / 4);
+        maxExpense = Mathf.Max(maxExpense, expenseMin); // alleen nodig als expenseMin te hoog is ingesteld
+
+        int exp1 = Random.Range(expenseMin, maxExpense + 1);
+        int exp2 = Random.Range(expenseMin, maxExpense + 1);
+        int exp3 = Random.Range(expenseMin, maxExpense + 1);
+        int exp4 = Random.Range(expenseMin, maxExpense + 1);
 
         expense1.text = exp1.ToString();
         expense2.text = exp2.ToString();
