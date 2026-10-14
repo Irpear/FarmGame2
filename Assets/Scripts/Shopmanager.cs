@@ -63,7 +63,7 @@ public class ShopManager : MonoBehaviour
             return;
         }
 
-        minigameButton.interactable = DayManager.Instance.taskLeft;
+        ButtonUtils.SetInteractable(minigameButton, DayManager.Instance.taskLeft);
     }
 
     public void CheckUnlocks()
@@ -86,7 +86,7 @@ public class ShopManager : MonoBehaviour
     {
         if (button != null)
         {
-            button.interactable = unlocked;
+            ButtonUtils.SetInteractable(button, unlocked);
 
             foreach (Transform child in button.transform)
             {

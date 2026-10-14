@@ -26,7 +26,8 @@ public class ShinyTalisman : MonoBehaviour
         set { PlayerPrefs.SetInt(PREF_KEY, value ? 1 : 0); PlayerPrefs.Save(); }
     }
 
-    private void Start()
+    // Awake i.p.v. Start: anders is de talisman bij het openen van het panel 1 frame ontgrendeld te zien
+    private void Awake()
     {
         btn = GetComponent<Button>();
         img = GetComponent<Image>();
@@ -64,7 +65,7 @@ public class ShinyTalisman : MonoBehaviour
     {
         if (PlayerPrefs.GetInt("shinyTalisman_available", 0) == 0)
         {
-            btn.interactable = false;
+            ButtonUtils.SetInteractable(btn, false);
             costText.gameObject.SetActive(false);
             percentageInfoText.gameObject.SetActive(false);
             coinImage.gameObject.SetActive(false);
@@ -75,7 +76,7 @@ public class ShinyTalisman : MonoBehaviour
         {
             costText.text = "MAX";
             percentageInfoText.text = $"Base shiny chance = 2%";
-            btn.interactable = false;
+            ButtonUtils.SetInteractable(btn, false);
 
             if (purchasedSprite != null)
                 img.sprite = purchasedSprite;

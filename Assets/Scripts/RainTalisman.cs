@@ -25,7 +25,8 @@ public class RainTalisman : MonoBehaviour
         set { PlayerPrefs.SetInt("RainUpgradeLevel", value); PlayerPrefs.Save(); }
     }
 
-    private void Start()
+    // Awake i.p.v. Start: anders is de talisman bij het openen van het panel 1 frame ontgrendeld te zien
+    private void Awake()
     {
         btn = GetComponent<Button>();
         img = GetComponent<UnityEngine.UI.Image>();
@@ -81,7 +82,7 @@ public class RainTalisman : MonoBehaviour
 
         if (PlayerPrefs.GetInt("rainTalisman_available", 0) == 0)
         {
-            btn.interactable = false;
+            ButtonUtils.SetInteractable(btn, false);
             costText.gameObject.SetActive(false);
             percentageInfoText.gameObject.SetActive(false);
             coinImage.gameObject.SetActive(false);
@@ -92,7 +93,7 @@ public class RainTalisman : MonoBehaviour
         {
             costText.text = "MAX";
             percentageInfoText.text = $"Rain chance = 50%";
-            btn.interactable = false;
+            ButtonUtils.SetInteractable(btn, false);
         }
         else
         {

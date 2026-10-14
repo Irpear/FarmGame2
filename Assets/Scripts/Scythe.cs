@@ -21,7 +21,7 @@ public class Scythe : MonoBehaviour
 
     private void UpdateUI()
     {
-        if (Purchased) ScytheButton.interactable = true;
-        else ScytheButton.interactable = false;
+        if (Purchased) ButtonUtils.SetInteractable(ScytheButton, true);
+        else ButtonUtils.SetInteractable(ScytheButton, false);
     }
 }

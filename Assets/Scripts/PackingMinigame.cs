@@ -175,12 +175,12 @@ public class PackingMinigame : MonoBehaviour
 
     private void SetButtonsInteractable(bool interactable)
     {
-        carrotButton.interactable = interactable;
-        tomatoButton.interactable = interactable;
-        wheatButton.interactable = interactable;
-        cornButton.interactable = interactable;
-        grapeButton.interactable = interactable;
-        potatoButton.interactable = interactable;
+        ButtonUtils.SetInteractable(carrotButton, interactable);
+        ButtonUtils.SetInteractable(tomatoButton, interactable);
+        ButtonUtils.SetInteractable(wheatButton, interactable);
+        ButtonUtils.SetInteractable(cornButton, interactable);
+        ButtonUtils.SetInteractable(grapeButton, interactable);
+        ButtonUtils.SetInteractable(potatoButton, interactable);
     }
 
     private void OnCorrectOrder()

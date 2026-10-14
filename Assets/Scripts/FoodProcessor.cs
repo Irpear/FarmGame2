@@ -81,11 +81,11 @@ public class FoodProcessor : MonoBehaviour
         // Wheat
         int wheatCount = CoinManager.Instance.wheatResource;
         wheatResourceText.text = wheatCount > 0 ? $"Wheat ({wheatCount})" : "";
-        wheatResourceButton.interactable = wheatCount > 0;
+        ButtonUtils.SetInteractable(wheatResourceButton, wheatCount > 0);
         // Corn
         int cornCount = CoinManager.Instance.cornResource;
         cornResourceText.text = cornCount > 0 ? $"Corn ({cornCount})" : "";
-        cornResourceButton.interactable = cornCount > 0;
+        ButtonUtils.SetInteractable(cornResourceButton, cornCount > 0);
     }
 
     public void SelectWheat()

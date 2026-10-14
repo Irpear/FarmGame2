@@ -153,7 +153,7 @@ public class AccountingMinigame : MonoBehaviour
 
         sign.SetActive(true);
         done = true;
-        signButton.interactable = false;
+        ButtonUtils.SetInteractable(signButton, false);
 
         // Probeer input te parsen
         if (int.TryParse(profitInput.text, out int playerAnswer))
@@ -186,7 +186,7 @@ public class AccountingMinigame : MonoBehaviour
         PlayerPrefs.SetInt("AccountingStreak", 0);
 
         StartCoroutine(CloseMinigame());
-        signButton.interactable = false;
+        ButtonUtils.SetInteractable(signButton, false);
     }
 
     private void OnCorrectAnswer()

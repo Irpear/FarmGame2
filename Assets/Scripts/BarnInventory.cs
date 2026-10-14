@@ -56,28 +56,28 @@ public class BarnInventory : MonoBehaviour
         // Wheat
         int wheatCount = CoinManager.Instance.wheatResource;
         wheatResourceText.text = wheatCount > 0 ? $"Wheat ({wheatCount})" : "";
-        wheatResourceButton.interactable = wheatCount > 0;
+        ButtonUtils.SetInteractable(wheatResourceButton, wheatCount > 0);
         // Corn
         int cornCount = CoinManager.Instance.cornResource;
         cornResourceText.text = cornCount > 0 ? $"Corn ({cornCount})" : "";
-        cornResourceButton.interactable = cornCount > 0;
+        ButtonUtils.SetInteractable(cornResourceButton, cornCount > 0);
         // Animal Food
         int animalFoodCount = CoinManager.Instance.animalFood;
         animalFoodText.text = animalFoodCount > 0 ? $"Animal food ({animalFoodCount})" : "";
-        animalFoodButton.interactable = animalFoodCount > 0;
+        ButtonUtils.SetInteractable(animalFoodButton, animalFoodCount > 0);
         // Animal Food 2
         int animalFood2Count = CoinManager.Instance.animalFood2;
         animalFood2Text.text = animalFood2Count > 0 ? $"Animal food 2 ({animalFood2Count})" : "";
-        animalFood2Button.interactable = animalFood2Count > 0;
+        ButtonUtils.SetInteractable(animalFood2Button, animalFood2Count > 0);
 
     }
 
     private void UpdateUnlocksUI()
     {
-        if (PlayerPrefs.GetInt("processor_unlocked", 0) == 1) foodProcessorButton.interactable = true;
-        else foodProcessorButton.interactable = false;
-        if (PlayerPrefs.GetInt("plantbook_unlocked", 0) == 1) plantBookButton.interactable = true;
-        else plantBookButton.interactable = false;
+        if (PlayerPrefs.GetInt("processor_unlocked", 0) == 1) ButtonUtils.SetInteractable(foodProcessorButton, true);
+        else ButtonUtils.SetInteractable(foodProcessorButton, false);
+        if (PlayerPrefs.GetInt("plantbook_unlocked", 0) == 1) ButtonUtils.SetInteractable(plantBookButton, true);
+        else ButtonUtils.SetInteractable(plantBookButton, false);
     }
 
     public void OpenPlantBook()

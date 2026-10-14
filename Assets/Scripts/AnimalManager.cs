@@ -61,7 +61,7 @@ public class AnimalManager : MonoBehaviour
 
         if (PlayerPrefs.GetInt("chicken1_unlocked", 0) == 1 || PlayerPrefs.GetInt("chicken1_available", 0) == 0)
         {
-            buyChicken1Button.interactable = false;
+            ButtonUtils.SetInteractable(buyChicken1Button, false);
             costTextChicken1.gameObject.SetActive(false);
             infoTextChicken1.gameObject.SetActive(false);
             coinImageChicken1.gameObject.SetActive(false);
@@ -69,7 +69,7 @@ public class AnimalManager : MonoBehaviour
 
         if (PlayerPrefs.GetInt("chicken2_unlocked", 0) == 1 || PlayerPrefs.GetInt("chicken2_available", 0) == 0)
         {
-            buyChicken2Button.interactable = false;
+            ButtonUtils.SetInteractable(buyChicken2Button, false);
             costTextChicken2.gameObject.SetActive(false);
             infoTextChicken2.gameObject.SetActive(false);
             coinImageChicken2.gameObject.SetActive(false);

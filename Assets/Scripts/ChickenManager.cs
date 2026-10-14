@@ -118,25 +118,25 @@ public class ChickenManager : MonoBehaviour
     {
         int animalFoodCount = CoinManager.Instance.animalFood;
         animalFoodText.text = animalFoodCount > 0 ? $"Animal food ({animalFoodCount})" : "";
-        animalFoodButton.interactable = animalFoodCount > 0;
+        ButtonUtils.SetInteractable(animalFoodButton, animalFoodCount > 0);
 
         int wheatCount = CoinManager.Instance.wheatResource;
         wheatText.text = wheatCount > 0 ? $"Wheat ({wheatCount})" : "";
-        wheatButton.interactable = wheatCount > 0;
+        ButtonUtils.SetInteractable(wheatButton, wheatCount > 0);
 
         int animalFood2Count = CoinManager.Instance.animalFood2;
         animalFood2Text.text = animalFood2Count > 0 ? $"Animal food 2 ({animalFood2Count})" : "";
-        animalFood2Button.interactable = animalFood2Count > 0;
+        ButtonUtils.SetInteractable(animalFood2Button, animalFood2Count > 0);
 
         int cornCount = CoinManager.Instance.cornResource;
         cornText.text = cornCount > 0 ? $"Corn ({cornCount})" : "";
-        cornButton.interactable = cornCount > 0;
+        ButtonUtils.SetInteractable(cornButton, cornCount > 0);
     }
 
     private void UpdateUI()
     {
-        if (PlayerPrefs.GetInt("feeder2_unlocked", 0) == 1) { feeder2.interactable = true; }
-        else { feeder2.interactable = false; }
+        if (PlayerPrefs.GetInt("feeder2_unlocked", 0) == 1) { ButtonUtils.SetInteractable(feeder2, true); }
+        else { ButtonUtils.SetInteractable(feeder2, false); }
 
 
             feederImage.sprite = GetFeederFull(1) ? feederFull : feederEmpty;

@@ -150,7 +150,7 @@ public class UpgradesManager : MonoBehaviour
 
         if (PlayerPrefs.GetInt("composter_unlocked", 0) == 1)
         {
-            buyComposterButton.interactable = false;
+            ButtonUtils.SetInteractable(buyComposterButton, false);
             costTextComposter.gameObject.SetActive(false);
             infoTextComposter.gameObject.SetActive(false);
             coinImageComposter.gameObject.SetActive(false);
@@ -158,7 +158,7 @@ public class UpgradesManager : MonoBehaviour
 
         if (PlayerPrefs.GetInt("scythe_unlocked", 0) == 1 || PlayerPrefs.GetInt("scythe_available", 0) == 0)
         {
-            buyScytheButton.interactable = false;
+            ButtonUtils.SetInteractable(buyScytheButton, false);
             costTextScythe.gameObject.SetActive(false);
             infoTextScythe.gameObject.SetActive(false);
             coinImageScythe.gameObject.SetActive(false);
@@ -166,7 +166,7 @@ public class UpgradesManager : MonoBehaviour
 
         if (PlayerPrefs.GetInt("processor_unlocked", 0) == 1 || PlayerPrefs.GetInt("processor_available", 0) == 0)
         {
-            buyProcessorButton.interactable = false;
+            ButtonUtils.SetInteractable(buyProcessorButton, false);
             costTextProcessor.gameObject.SetActive(false);
             infoTextProcessor.gameObject.SetActive(false);
             coinImageProcessor.gameObject.SetActive(false);
@@ -174,7 +174,7 @@ public class UpgradesManager : MonoBehaviour
 
         if (PlayerPrefs.GetInt("feeder2_unlocked", 0) == 1 || PlayerPrefs.GetInt("feeder2_available", 0) == 0)
         {
-            buyFeeder2Button.interactable = false;
+            ButtonUtils.SetInteractable(buyFeeder2Button, false);
             costTextFeeder2.gameObject.SetActive(false);
             infoTextFeeder2.gameObject.SetActive(false);
             coinImageFeeder2.gameObject.SetActive(false);
@@ -182,7 +182,7 @@ public class UpgradesManager : MonoBehaviour
 
         if (PlayerPrefs.GetInt("plantbook_unlocked", 0) == 1 || PlayerPrefs.GetInt("plantbook_available", 0) == 0)
         {
-            buyPlantBookButton.interactable = false;
+            ButtonUtils.SetInteractable(buyPlantBookButton, false);
             costTextPlantBook.gameObject.SetActive(false);
             infoTextPlantBook.gameObject.SetActive(false);
             coinImagePlantBook.gameObject.SetActive(false);
