@@ -1445,7 +1445,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 866e4644bb48d724d87051641499a598, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  coins: 10000
+  coins: 0
   profit: 0
   coinText: {fileID: 1885195563}
   wheatResource: 0
@@ -5176,11 +5176,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: '::'
   startCarrotSeeds: 6
-  startTomatoSeeds: 6
-  startWheatSeeds: 6
-  startCornSeeds: 6
-  startGrapeSeeds: 6
-  startPotatoSeeds: 6
+  startTomatoSeeds: 0
+  startWheatSeeds: 0
+  startCornSeeds: 0
+  startGrapeSeeds: 0
+  startPotatoSeeds: 0
 --- !u!1001 &1155524032
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6915,7 +6915,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 150.00002, y: 150.00005}
+  m_AnchoredPosition: {x: 173, y: 177}
   m_SizeDelta: {x: 150, y: 150}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1638622499
